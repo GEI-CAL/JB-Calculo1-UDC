@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Teorema de Taylor &#8212; Calculo en una variable</title>
+    <title>3.5. Teorema de Taylor &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Integración de una función de variable real" href="../04/README.html" />
+    <link rel="prev" title="3.4. Aplicaciones de la derivada" href="04.AplicacionesDerivada.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01/README.html">
    1. Conjuntos de números
@@ -196,16 +198,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
    3. Derivación
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01.DerivacionDefProp.html">
      3.1. Definición de derivada y propiedades básicas
@@ -226,51 +228,24 @@ const thebe_selector_output = ".output, .cell_output"
      3.4. Aplicaciones de la derivada
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.ConcavidadConvexidad.html">
-     3.5. Convexidad y concavidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06.TeoremaTaylor.html">
-     3.6. Teorema de Taylor
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07.Boletin3.html">
-     3.7. Boletín 3
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.5. Teorema de Taylor
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../04/README.html">
    4. Integración
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
-     4.1. Integración indefinida
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
-     4.2. Integral de Riemann
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
    5. Python para cálculo de una variable
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -293,11 +268,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
      5.4. Gráficas con Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/05.Derivacion.html">
-     5.5. Derivación en Python
     </a>
    </li>
   </ul>
@@ -361,7 +331,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/03/05.TeoremaTaylor.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/03/05.TeoremaTaylor.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -465,34 +435,34 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejemplo-practico">
-   Ejemplo práctico
+   3.5.1. Ejemplo práctico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#enunciado-del-teorema">
-   Enunciado del teorema
+   3.5.2. Enunciado del teorema
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#acotacion-del-error">
-     Acotación del error
+     3.5.2.1. Acotación del error
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#completamos-el-ejemplo-practico">
-   Completamos el ejemplo práctico
+   3.5.3. Completamos el ejemplo práctico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-propuesto">
-   Ejercicio propuesto
+   3.5.4. Ejercicio propuesto
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   Ejercicios para practicar un poco más
+   3.5.5. Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -516,34 +486,34 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejemplo-practico">
-   Ejemplo práctico
+   3.5.1. Ejemplo práctico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#enunciado-del-teorema">
-   Enunciado del teorema
+   3.5.2. Enunciado del teorema
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#acotacion-del-error">
-     Acotación del error
+     3.5.2.1. Acotación del error
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#completamos-el-ejemplo-practico">
-   Completamos el ejemplo práctico
+   3.5.3. Completamos el ejemplo práctico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-propuesto">
-   Ejercicio propuesto
+   3.5.4. Ejercicio propuesto
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   Ejercicios para practicar un poco más
+   3.5.5. Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -557,10 +527,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-taylor">
-<h1>Teorema de Taylor<a class="headerlink" href="#teorema-de-taylor" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.5. </span>Teorema de Taylor<a class="headerlink" href="#teorema-de-taylor" title="Permalink to this headline">#</a></h1>
 <p>El teorema de Taylor lo usaremos para aproximar en un punto una función compleja (en el sentido de que es difícil calcular su valor exacto en ese punto) mediante un polinomio de grado <span class="math notranslate nohighlight">\(n\)</span> (fácilmente evaluable), para lo que necesitaremos que la función de partida sea derivable <span class="math notranslate nohighlight">\(n+1\)</span> veces.</p>
 <section id="ejemplo-practico">
-<h2>Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5.1. </span>Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permalink to this headline">#</a></h2>
 <p>Supongamos que queremos aproximar el valor del logaritmo neperiano de 1.3,  <span class="math notranslate nohighlight">\(\ln(1.3)\)</span>. Una primera aproximación sería tomar</p>
 <div class="math notranslate nohighlight">
 \[
@@ -662,7 +632,7 @@ aproximación de <span class="math notranslate nohighlight">\(\ln(1.3)\)</span>)
 <p>Y ahora, ¿podemos mejorarla? La respuesta vuelve a ser sí: mediante el teorema de Taylor.</p>
 </section>
 <section id="enunciado-del-teorema">
-<h2>Enunciado del teorema<a class="headerlink" href="#enunciado-del-teorema" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5.2. </span>Enunciado del teorema<a class="headerlink" href="#enunciado-del-teorema" title="Permalink to this headline">#</a></h2>
 <p>En primer lugar, definimos el polinomio de Taylor:</p>
 <div class="proof definition admonition" id="def_Taylor">
 <p class="admonition-title"><span>Definition </span> (Polinomio de Taylor )</p>
@@ -703,7 +673,7 @@ P_{n,f,x_0}(x):=f(x_0)+\frac{f'(x_0)}{1!}\left(x-x_0\right)+
 </ul>
 </section>
 </div><section id="acotacion-del-error">
-<h3>Acotación del error<a class="headerlink" href="#acotacion-del-error" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.5.2.1. </span>Acotación del error<a class="headerlink" href="#acotacion-del-error" title="Permalink to this headline">#</a></h3>
 <p>Una consecuencia directa del Teorema de Taylor es que</p>
 <div class="math notranslate nohighlight">
 \[
@@ -739,7 +709,7 @@ R_{n,f,x_0}(x):=\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1}.
 </section>
 </section>
 <section id="completamos-el-ejemplo-practico">
-<h2>Completamos el ejemplo práctico<a class="headerlink" href="#completamos-el-ejemplo-practico" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5.3. </span>Completamos el ejemplo práctico<a class="headerlink" href="#completamos-el-ejemplo-practico" title="Permalink to this headline">#</a></h2>
 <p>Vamos a mejorar la aproximación de <span class="math notranslate nohighlight">\(\ln(1.3)\)</span> que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. También acotaremos el error cometido. A continuación usamos la función <code class="docutils literal notranslate"><span class="pre">series</span></code> de <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> para obtener el polinomio de Taylor de orden <span class="math notranslate nohighlight">\(n\)</span> centrado en <span class="math notranslate nohighlight">\(x_0\)</span> para una función dada.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -856,11 +826,11 @@ P_{2,f,1}(1.3)=1.3-1-\frac{(1.3-1)^2}{2}=0.3-\frac{0.09}{2} = \frac{51}{200}=0.2
 alcanza su máximo en valor absoluto en el extremo de la izquierda (es decir, en <span class="math notranslate nohighlight">\(s=1\)</span>).</p>
 </section>
 <section id="ejercicio-propuesto">
-<h2>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5.4. </span>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Permalink to this headline">#</a></h2>
 <p>Usando <code class="docutils literal notranslate"><span class="pre">Python</span></code> calcula el polinomio de Taylor de diferentes órdenes para <span class="math notranslate nohighlight">\(f(x)=\cos(x)\)</span> centrado en 0, y comprueba gráficamente como los de mayor orden aproximan mucho mejor la función dada.</p>
 </section>
 <section id="ejercicios-para-practicar-un-poco-mas">
-<h2>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5.5. </span>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/ejercicio-de-taylor.html">https://existelimite.blogspot.com/2012/12/ejercicio-de-taylor.html</a></p></li>
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2013/01/aproximar-una-raiz-cuarta-con-el.html">https://existelimite.blogspot.com/2013/01/aproximar-una-raiz-cuarta-con-el.html</a></p></li>
@@ -897,6 +867,20 @@ alcanza su máximo en valor absoluto en el extremo de la izquierda (es decir, en
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04.AplicacionesDerivada.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.4. </span>Aplicaciones de la derivada</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../04/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Integración de una función de variable real</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
@@ -907,13 +891,6 @@ alcanza su máximo en valor absoluto en el extremo de la izquierda (es decir, en
     By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
   
       &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <div>
-Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
-</div>
-
-    </div>
 </p>
         </footer>
     </div>

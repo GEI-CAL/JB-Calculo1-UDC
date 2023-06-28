@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.5. Integración impropia &#8212; Calculo en una variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.6. Aplicaciones de la integral" href="06.AplicacionesIntegral.html" />
+    <link rel="prev" title="4.4. Integración numérica" href="04.IntegracionNumerica.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Conjuntos de números
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Conjuntos clásicos de números
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Numeros complejos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Funciones reales de variable real
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Funciones elementales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Límites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletín 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
+     3.4. Aplicaciones de la derivada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/07.Boletin3.html">
+     3.7. Boletín 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   4. Integración
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.IntegracionIndefinida.html">
+     4.1. Integración indefinida
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.IntegracionRiemann.html">
+     4.2. Integral de Riemann
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.TeoremaFundamental.html">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     5.1. Introducción a SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     5.2. Límites y continuidad en SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     5.3. Introducción a NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     5.4. Gráficas con Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/05.Derivacion.html">
+     5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/04/05.IntegracionImpropia.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/04/05.IntegracionImpropia.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales-impropias-de-primera-especie">
+   4.5.1. Integrales impropias de primera especie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales-impropias-de-segunda-especie">
+   4.5.2. Integrales impropias de segunda especie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales-impropias-de-tercera-especie">
+   4.5.3. Integrales impropias de tercera especie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-informacion">
+   4.5.4. Más información
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otros-ejercicios">
+   4.5.5. Otros ejercicios
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Integración impropia</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales-impropias-de-primera-especie">
+   4.5.1. Integrales impropias de primera especie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales-impropias-de-segunda-especie">
+   4.5.2. Integrales impropias de segunda especie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales-impropias-de-tercera-especie">
+   4.5.3. Integrales impropias de tercera especie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-informacion">
+   4.5.4. Más información
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otros-ejercicios">
+   4.5.5. Otros ejercicios
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="integracion-impropia">
+<h1><span class="section-number">4.5. </span>Integración impropia<a class="headerlink" href="#integracion-impropia" title="Permalink to this headline">#</a></h1>
+<p>Anteriormente hemos definido la integral de Riemann de funciones acotadas en intervalos acotados.  Aunque parezca paradójico, en algunas ocasiones también es posible calcular la integral de una función no necesariamente acotada en intervalos no necesariamente acotados; por ejemplo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_1^{\infty} \frac{dx}{x^3} \, , \qquad \qquad \int_{-1}^{1} \frac{dx}{x^2} \, .
+\end{equation*}\]</div>
+<p>Estas integrales se denominan <strong>impropias</strong> y pueden clasificarse en:</p>
+<ul class="simple">
+<li><p>de primera especie, si la función está acotada pero el intervalo es infinito,</p></li>
+<li><p>de segunda especie, si el intervalo es finito pero la función no está acotada en el intervalo,</p></li>
+<li><p>de tercera especie, cuando ni la función ni el intervalo de integración están acotados.</p></li>
+</ul>
+<section id="integrales-impropias-de-primera-especie">
+<h2><span class="section-number">4.5.1. </span>Integrales impropias de primera especie<a class="headerlink" href="#integrales-impropias-de-primera-especie" title="Permalink to this headline">#</a></h2>
+<p>En estas integrales, <strong>la función es acotada pero el intervalo de integración es infinito</strong>.</p>
+<p>Sea <span class="math notranslate nohighlight">\(f: [a,+\infty) \rightarrow \mathbb{R}\)</span> integrable en <span class="math notranslate nohighlight">\([a, b]\)</span> para cualquier <span class="math notranslate nohighlight">\(b \geq a\)</span>.  Entonces, se define:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_a^{+\infty} f(x) \, dx = \underset{b \rightarrow +\infty}{\lim} \int_a^b f(x) \, dx \, .
+\end{equation*}\]</div>
+<p>Su cálculo tiene dos partes:</p>
+<ol class="simple">
+<li><p>Calculamos la integral definida en un intervalo finito.</p></li>
+<li><p>Hacemos que el extremo superior del intervalo tienda a infinito.</p></li>
+</ol>
+<p>Veamos un ejemplo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+I = \int_0^{+\infty} e^{-2x} \, dx \, .
+\end{equation*}\]</div>
+<p>La función del integrando está acotada y tiene una primitiva inmediata, pero el intervalo de integración no está acotado por la derecha.  Por lo tanto, vamos a calcular nuestra integral impropia como</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I = \int_0^{+\infty} e^{-2x} \, dx &amp;= \underset{b \rightarrow +\infty}{\lim} \int_0^{b} e^{-2x} \, dx = \\
+  &amp;= \underset{b \rightarrow +\infty}{\lim} \left[ -\frac{1}{2} e^{-2x} \right]_0^b
+   = \underset{b \rightarrow +\infty}{\lim} \left( -\frac{1}{2} \right) \left[ e^{-2b} - 1 \right]
+   = -\frac{1}{2} \left[ 0 - 1 \right] = \frac{1}{2} \, .
+\end{align*}\]</div>
+<p>Hemos obtenido un resultado finito.  En estos casos, decimos que <strong>la integral impropia es convergente</strong>.</p>
+<p>De forma similar podemos resolver una integral impropia donde el intervalo no está acotado por la izquierda.</p>
+<p>Si <span class="math notranslate nohighlight">\(f: (-\infty, b] \rightarrow \mathbb{R}\)</span> es integrable en <span class="math notranslate nohighlight">\([a, b]\)</span> para cualquier <span class="math notranslate nohighlight">\(a \leq b\)</span>, se define:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_{-\infty}^b f(x) \, dx = \underset{a \rightarrow -\infty}{\lim} \int_a^b f(x) \, dx \, .
+\end{equation*}\]</div>
+<p>Por ejemplo,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_{-\infty}^{-3} \frac{dx}{x^2} \, dx = \underset{a \rightarrow -\infty}{\lim} \int_a^{-3} \frac{dx}{x^2} \, dx
+   = \underset{a \rightarrow -\infty}{\lim} \left[ -\frac{1}{x} \right]_a^{-3}
+   =  \underset{a \rightarrow -\infty}{\lim} \left[ \frac{1}{3} + \frac{1}{a} \right]
+   = \frac{1}{3} \, ,
+\end{equation*}\]</div>
+<p>o bien</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_{-\infty}^1 e^{-x} \, dx = \underset{a \rightarrow -\infty}{\lim} \int_a^1 e^{-x} \, dx
+   = \underset{a \rightarrow -\infty}{\lim} \left[ -e^{-x} \right]_a^1
+   = \underset{a \rightarrow -\infty}{\lim} \left[ -e^{-1} + e^{-a} \right] = +\infty \, .
+\end{equation*}\]</div>
+<p>En el primer caso estamos, de nuevo, ante una integral convergente (porque el resultado es finito), mientras que la segunda integral es <strong>divergente</strong>.</p>
+<p>Si el intervalo no está acotado en ninguno de sus extremos, debemos descomponer la integral en dos integrales impropias donde -en cada una de ellas- solo uno de los extremos no está acotado:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_{-\infty}^{+\infty} \frac{dx}{x^2+1} 
+    &amp;= \int_{-\infty}^c \frac{dx}{x^2+1} + \int_c^{+\infty} \frac{dx}{x^2+1} = \\
+    &amp;= \underset{a \rightarrow -\infty}{\lim} \int_a^c \frac{dx}{x^2+1} 
+     + \underset{b \rightarrow +\infty}{\lim} \int_c^b \frac{dx}{x^2+1} \\
+    &amp;= \underset{a \rightarrow -\infty}{\lim} \left[ \arctan (x) \right]_a^c 
+     + \underset{b \rightarrow +\infty}{\lim} \left[ \arctan (x) \right]_c^b \\ 
+    &amp;= \left[ \arctan (c) - \underset{a \rightarrow -\infty}{\lim} \arctan (a) \right]
+     + \left[ \underset{b \rightarrow +\infty}{\lim} \arctan (b) - \arctan (c) \right] \\
+    &amp;= \arctan (c) - \left( -\frac{\pi}{2} \right) + \frac{\pi}{2} - \arctan (c) = \pi \, .
+\end{align*}\]</div>
+<p>Si la integral está bien planteada, el resultado será independiente del punto <span class="math notranslate nohighlight">\(c\)</span> introducido.</p>
+<div class="proof remark admonition" id="rem_impropia">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<p>En este caso, <strong>si una de las integrales en la descomposición es divergente, toda la integral se dice divergente</strong>, independientemente de lo que le pase a la otra integral.</p>
+</section>
+</div></section>
+<section id="integrales-impropias-de-segunda-especie">
+<h2><span class="section-number">4.5.2. </span>Integrales impropias de segunda especie<a class="headerlink" href="#integrales-impropias-de-segunda-especie" title="Permalink to this headline">#</a></h2>
+<p>Decimos que <strong>una integral impropia es de segunda especie cuando el intervalo de integración es finito pero la función a integrar, <span class="math notranslate nohighlight">\(f\)</span>, no está acotada en algún punto del intervalo</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\underset{x \rightarrow c}{\lim} f(x) = \pm \infty \qquad \text{ con } c \in [a,b] \, .
+\end{equation*}\]</div>
+<p>En estos casos debemos tener la precaución de tomar límites en un entorno del punto (o puntos) donde la función deja de estar acotada.</p>
+<p>Por ejemplo, consideremos la integral</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_2^4 \frac{dx}{\sqrt{x-2}} \, .
+\end{equation*}\]</div>
+<p>Podemos comprobar que el integrando, <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sqrt{x-2}}\)</span>, tiende a infinito cuando <span class="math notranslate nohighlight">\(x\)</span> tiende a <span class="math notranslate nohighlight">\(2\)</span>; como este punto es, precisamente, el extremo izquierdo del intervalo, basta con calcular la integral en el intervalo <span class="math notranslate nohighlight">\([c, 4]\)</span> y hacer que <span class="math notranslate nohighlight">\(c\)</span> tienda a <span class="math notranslate nohighlight">\(2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_2^4 \frac{dx}{\sqrt{x-2}} &amp;= \underset{c \rightarrow 2}{\lim} \int_c^4 (x-2)^{-1/2} \, dx = \\
+    &amp;= \underset{c \rightarrow 2}{\lim} \left[ \frac{(x-2)^{1/2}}{1/2} \right]_c^4
+     = 2 \underset{c \rightarrow 2}{\lim} \left[ \sqrt{4-2} - \sqrt{c-2} \right] = 2 \sqrt{2} \, .
+\end{align*}\]</div>
+<p>Se hace de manera similar si la función tiende a infinito cuando nos acercamos al límite derecho del intervalo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_2^4 \frac{dx}{(x-4)^{1/3}} &amp;= \underset{c \rightarrow 4}{\lim} \int_2^c (x-4)^{-1/3} \, dx 
+   = \underset{c \rightarrow 4}{\lim} \left[ \frac{(x-4)^{2/3}}{2/3} \right]_2^c \\
+   &amp;= \frac{3}{2} \underset{c \rightarrow 4}{\lim} \left[ (c-4)^{2/3} - (2-4)^{2/3} \right]
+   = -\frac{3}{2} 2^{2/3} \, .
+\end{align*}\]</div>
+<p>Y si el punto donde la función tiende a infinito está en el interior del intervalo de integración, basta con descomponer la integral en una suma de otras dos como las que acabamos de describir. Por ejemplo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_1^4 \frac{dx}{(x-2)^{1/3}} &amp;= \int_1^2 \frac{dx}{(x-2)^{1/3}} + \int_2^4 \frac{dx}{(x-2)^{1/3}} \\
+     &amp;=\underset{b \rightarrow 2}{\lim} \int_1^b (x-2)^{-1/3} \, dx 
+                                 + \underset{a \rightarrow 2}{\lim} \int_a^4 (x-2)^{-1/3} \, dx  \\
+    &amp;= \underset{b \rightarrow 2}{\lim} \left[ \frac{(x-2)^{2/3}}{2/3} \right]_1^b
+     + \underset{a \rightarrow 2}{\lim} \left[ \frac{(x-2)^{2/3}}{2/3} \right]_a^4  \\
+    &amp;= \frac{3}{2} \underset{b \rightarrow 2}{\lim} \left[ (b-2)^{2/3} - (1-2)^{2/3} \right]
+     + \frac{3}{2} \underset{a \rightarrow 2}{\lim} \left[ (4-2)^{2/3} - (a-2)^{2/3} \right]  \\
+    &amp;= \frac{3}{2} \left[ 0 - 1 \right] + \frac{3}{2} \left[ 2^{2/3} - 0 \right] 
+     = \frac{3}{2} \left(\sqrt[3]{4} - 1 \right) \, .
+\end{align*}\]</div>
+</section>
+<section id="integrales-impropias-de-tercera-especie">
+<h2><span class="section-number">4.5.3. </span>Integrales impropias de tercera especie<a class="headerlink" href="#integrales-impropias-de-tercera-especie" title="Permalink to this headline">#</a></h2>
+<p>En este grupo incluimos las <strong>integrales en las que tanto el intervalo como la función no están acotadas</strong>.</p>
+<p>Para resolverlas, basta con combinar las técnicas que hemos visto en las secciones anteriores.</p>
+<p>Veamos un ejemplo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_1^{+\infty} \frac{dx}{(x-4)^{2/5}} \, .
+\end{equation*}\]</div>
+<p>Vemos que el intervalo de integración es infinito y, además, la función a integrar no está acotada en <span class="math notranslate nohighlight">\(x = 4\)</span>.</p>
+<p>Para resolverla, la descomponemos en:</p>
+<ul class="simple">
+<li><p>una integral entre <span class="math notranslate nohighlight">\(1\)</span> y <span class="math notranslate nohighlight">\(4\)</span> (impropia de segunda especie),</p></li>
+<li><p>una integral entre <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(6\)</span> (impropia de segunda especie),</p></li>
+<li><p>una integral entre <span class="math notranslate nohighlight">\(6\)</span> y <span class="math notranslate nohighlight">\(+\infty\)</span> (impropia de primera especie).</p></li>
+</ul>
+<p>Hemos escogido el punto <span class="math notranslate nohighlight">\(6\)</span> como podríamos haber escogido cualquier otro en <span class="math notranslate nohighlight">\((4, +\infty)\)</span>.  De esta manera,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_1^{+\infty} \frac{dx}{(x-4)^{2/5}} &amp;= \int_1^4 \frac{dx}{(x-4)^{2/5}} 
+       + \int_4^6 \frac{dx}{(x-4)^{2/5}} + \int_6^{+\infty} \frac{dx}{(x-4)^{2/5}} \\
+    &amp;= \underset{b \rightarrow 4}{\lim} \int_1^b (x-4)^{-2/5} \, dx 
+     + \underset{a \rightarrow 4}{\lim} \int_a^6 (x-4)^{-2/5} \, dx \\
+    &amp; \hphantom{=} + \underset{c \rightarrow +\infty}{\lim} \int_6^c (x-4)^{-2/5} \, dx \\
+    &amp;= \underset{b \rightarrow 4}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_1^b
+     + \underset{a \rightarrow 4}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_a^6
+     + \underset{c \rightarrow +\infty}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_6^c \\
+    &amp;= \dfrac{5}{3} \left[ \underset{b \rightarrow 4}{\lim} \left( (b-4)^{3/5} - (-3)^{3/5} \right) 
+                         + \underset{a \rightarrow 4}{\lim} \left( (6-4)^{3/5} - (a-4)^{3/5} \right) \right. \\
+    &amp; \hphantom{= \dfrac{5}{3}} \left. + \underset{c \rightarrow +\infty}{\lim} \left( (c-4)^{3/5} - 2^{3/5} \right) \right]  \\
+    &amp;= \dfrac{5}{3} \left[ 0 + 3^{3/5} + 2^{3/5} - 0 
+                    + \underset{c \rightarrow +\infty}{\lim} (c-4)^{3/5} - 2^{3/5} \right] = +\infty \, .
+\end{align*}\]</div>
+<p>Por lo tanto, en este ejemplo, estamos ante una integral divergente.</p>
+<p>Recordamos que basta con que uno de los trozos sea divergente para que toda la integral sea considerada del mismo modo.</p>
+</section>
+<section id="mas-informacion">
+<h2><span class="section-number">4.5.4. </span>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">#</a></h2>
+<p>Puedes encontrar más información, y algunos ejemplos/ejercicios en</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://es.wikipedia.org/wiki/Integral_impropia">https://es.wikipedia.org/wiki/Integral_impropia</a></p></li>
+<li><p><a class="reference external" href="https://es.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-13/a/improper-integrals-review">https://es.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-13/a/improper-integrals-review</a></p></li>
+</ul>
+</section>
+<section id="otros-ejercicios">
+<h2><span class="section-number">4.5.5. </span>Otros ejercicios<a class="headerlink" href="#otros-ejercicios" title="Permalink to this headline">#</a></h2>
+<p>Además de los ejercicios que puedes encontrar en los boletines, te recomendamos que eches un vistazo a</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ehu.eus/~mtpalezp/mundo/ana1/EJERCICIOSINTEGRALIMPROPIA.pdf">https://www.ehu.eus/~mtpalezp/mundo/ana1/EJERCICIOSINTEGRALIMPROPIA.pdf</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/search/label/Integraci%C3%B3n%20impropia">https://existelimite.blogspot.com/search/label/Integración impropia</a> (son un poco más difíciles de lo habitual, pero… ¡tú puedes!).</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04.IntegracionNumerica.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.4. </span>Integración numérica</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06.AplicacionesIntegral.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.6. </span>Aplicaciones de la integral</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

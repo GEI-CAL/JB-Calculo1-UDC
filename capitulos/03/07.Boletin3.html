@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -265,6 +265,36 @@ const thebe_selector_output = ".output, .cell_output"
      4.2. Integral de Riemann
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/03.TeoremaFundamental.html">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -300,6 +330,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -539,7 +574,7 @@ title="Print to PDF"
 \[\begin{split}
     f(x)=
     \begin{cases}
-    \displaystyle{x+x^2 sen\left(\frac 1x\right)} &amp; \text{  si  } x\neq 0 \\
+    \displaystyle{x+x^2 \sin\left(\frac 1x\right)} &amp; \text{  si  } x\neq 0 \\
             0 &amp; \text{  si  } x = 0
     \end{cases}
     \end{split}\]</div>
@@ -554,7 +589,7 @@ title="Print to PDF"
 \[\begin{split}
     f(x) =
     \begin{cases}
-    \displaystyle{\frac{1-\textbf{e}^{-x}}{x} }            &amp; \quad \text{si } x \neq 0 \\
+    \displaystyle{\frac{1-e^{-x}}{x} }            &amp; \quad \text{si } x \neq 0 \\
     1 &amp; \quad \text{si } x = 0
     \end{cases}
     \end{split}\]</div>
@@ -570,13 +605,13 @@ title="Print to PDF"
 <li><p>Calcula las dos primeras iteraciones usando ese algoritmo. Para ello usa como aproximación inicial el valor <span class="math notranslate nohighlight">\(x_0=0\)</span>.</p></li>
 </ol>
 </li>
-<li><p>Sea <span class="math notranslate nohighlight">\(f(x) = \displaystyle \arctan \left( \frac{sen (x)}{1 + \cos (x)} \right )\)</span>. Calcula la recta tangente a la gráfica de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
-<li><p>Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = (4x+1)^{(2+ sen (x^2))}\)</span>.  Calcula su derivada en cualquier punto.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f(x) = \displaystyle \arctan \left( \frac{\sin (x)}{1 + \cos (x)} \right )\)</span>. Calcula la recta tangente a la gráfica de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
+<li><p>Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = (4x+1)^{(2+ \sin (x^2))}\)</span>.  Calcula su derivada en cualquier punto.</p></li>
 <li><p>Si consideramos la función <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> dada por</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     f(x)=\displaystyle{\left\{ \begin{array}{ccl}
-                            \displaystyle{\frac{sen^2(3x)}{3x^2}} &amp; si &amp; x\neq 0 \\
+                            \displaystyle{\frac{\sin^2(3x)}{3x^2}} &amp; si &amp; x\neq 0 \\
                                 \\
                             \displaystyle{\frac13 }&amp; si &amp; x=0
                             \end{array}
@@ -593,7 +628,7 @@ title="Print to PDF"
 <li><p>Calcula los valores de <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> para que</p>
 <div class="math notranslate nohighlight">
 \[
-    \displaystyle{\lim_{x\rightarrow 0}\frac{ax^2+bx+1-\mathbf{e}^{2x}}{sen(x^2)}=1}
+    \displaystyle{\lim_{x\rightarrow 0}\frac{ax^2+bx+1-e^{2x}}{\sin(x^2)}=1}
     \]</div>
 </li>
 <li><p>Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle f(x) = \frac{1}{2} x |x|\)</span>. ¿Cuál es la clase de <span class="math notranslate nohighlight">\(f\)</span>?</p></li>
@@ -630,7 +665,7 @@ title="Print to PDF"
 </li>
 <li><p>Calcula los extremos relativos, y absolutos si existen, de la función definida en el
 intervalo <span class="math notranslate nohighlight">\(\left [ -\frac{1}{2} , \frac{3}{2} \right ]\)</span> por <span class="math notranslate nohighlight">\(f(x) = x^2 - 2|x| + 2\)</span>.</p></li>
-<li><p>Considera la función <span class="math notranslate nohighlight">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle{f(x)=\frac{|x|}{\mathbf{e}^{x-1}}}\)</span>.</p>
+<li><p>Considera la función <span class="math notranslate nohighlight">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle{f(x)=\frac{|x|}{e^{x-1}}}\)</span>.</p>
 <ol class="simple">
 <li><p>Estudia la continuidad y derivabilidad de la función.</p></li>
 <li><p>Esboza la gráfica de <span class="math notranslate nohighlight">\(f\)</span>. Para ello calcula sus extremos relativos, puntos de inflexión y asíntotas. Determina también su(s) intervalo(s) de concavidad y/o convexidad.</p></li>
@@ -639,7 +674,7 @@ intervalo <span class="math notranslate nohighlight">\(\left [ -\frac{1}{2} , \f
 </li>
 <li><p>Demuestra que la ecuación <span class="math notranslate nohighlight">\(x^4-4\,x^3-1=0\)</span> tiene una única raíz en el intervalo <span class="math notranslate nohighlight">\([4,5]\)</span>.<br />
 Plantea el método de Newton-Raphson para resolver la ecuación del apartado anterior. Partiendo de <span class="math notranslate nohighlight">\(x_0=4\)</span>, obtén la aproximación <span class="math notranslate nohighlight">\(x_1\)</span> a mano y la aproximación <span class="math notranslate nohighlight">\(x_7\)</span> utilizando <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p></li>
-<li><p>¿En qué intervalo es creciente la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x)=x^3\mathbf{e}^x\)</span>? ¿Es cóncava o convexa en ese intervalo? Esboza su gráfica.</p></li>
+<li><p>¿En qué intervalo es creciente la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x)=x^3e^x\)</span>? ¿Es cóncava o convexa en ese intervalo? Esboza su gráfica.</p></li>
 <li><p>Halla la condición que debe cumplir <span class="math notranslate nohighlight">\(\lambda\)</span> para que el polinomio <span class="math notranslate nohighlight">\(x^4 + x^3 + \lambda x^2\)</span> sea cóncavo en algún intervalo. Determina ese intervalo en función de <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
 <li><p>Encuentra un polinomio cúbico sin extremos locales pero con  punto de inflexión y tangente horizontal en <span class="math notranslate nohighlight">\(P=(1,\, 20)\)</span>.</p></li>
 <li><p>Esboza la gráfica de una función cuya pendiente sea siempre positiva y creciente. ¿Conoces alguna función elemental que sea ejemplo de esta situación? <br>  Esboza la gráfica de una función cuya pendiente sea siempre positiva y decreciente. ¿Conoces alguna función elemental que sea ejemplo de esta situación?</p></li>
@@ -651,24 +686,24 @@ Plantea el método de Newton-Raphson para resolver la ecuación del apartado ant
 <li><p>Utiliza este polinomio para aproximar el valor de <span class="math notranslate nohighlight">\(\ln(1.1)\)</span>, acotando el error cometido.</p></li>
 </ol>
 </li>
-<li><p>Construye el polinomio de Taylor, <span class="math notranslate nohighlight">\(p\)</span>, de primer orden para la función <span class="math notranslate nohighlight">\(g(x) = sen (x)\)</span>, centrado en el punto <span class="math notranslate nohighlight">\(x_0 = \pi/2\)</span>.</p>
+<li><p>Construye el polinomio de Taylor, <span class="math notranslate nohighlight">\(p\)</span>, de primer orden para la función <span class="math notranslate nohighlight">\(g(x) = \sin (x)\)</span>, centrado en el punto <span class="math notranslate nohighlight">\(x_0 = \pi/2\)</span>.</p>
 <p>Ahora considera la función <span class="math notranslate nohighlight">\(f\)</span> definida como sigue:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     f(x) =
-    \begin{cases} sen (x) \quad  &amp; \quad \quad \text{si } x \leq \pi/2 \\
+    \begin{cases} \sin (x) \quad  &amp; \quad \quad \text{si } x \leq \pi/2 \\
                         p(x) \quad    &amp; \quad \quad \text{si } x &gt; \pi/2
     \end{cases}
     \end{split}\]</div>
 <p>siendo <span class="math notranslate nohighlight">\(p\)</span> el polinomio construido en el apartado anterior. ¿Cuál es la clase de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>?</p>
 </li>
-<li><p>Determina el polinomio de Taylor de orden dos de la función <span class="math notranslate nohighlight">\(f(x)= arcsen(x)\)</span> relativo al punto <span class="math notranslate nohighlight">\(x_{0}=0\)</span>. <br> Utiliza el polinomio anterior para obtener, de forma aproximada, el ángulo cuyo seno es <span class="math notranslate nohighlight">\(\displaystyle{\frac{1}{10}}\)</span>.</p></li>
+<li><p>Determina el polinomio de Taylor de orden dos de la función <span class="math notranslate nohighlight">\(f(x)= \arcsin(x)\)</span> relativo al punto <span class="math notranslate nohighlight">\(x_{0}=0\)</span>. <br> Utiliza el polinomio anterior para obtener, de forma aproximada, el ángulo cuyo seno es <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span>.</p></li>
 <li><p>Sea la función dada por</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{array}{cccl}
     f: &amp; \mathcal{D}om(f) \subset \mathbb{R} &amp; \longrightarrow &amp; \mathbb{R} \\
-    &amp;        x                    &amp; \rightsquigarrow &amp; f(x) = \dfrac{x^2}{\mathbf{e}^x}
+    &amp;        x                    &amp; \rightsquigarrow &amp; f(x) = \dfrac{x^2}{e^x}
     \end{array}
     \end{split}\]</div>
 <ol class="simple">
@@ -690,7 +725,7 @@ abscisa es <span class="math notranslate nohighlight">\(x = 4\)</span>.</p></li>
 <li><p>Calcula el límite:</p>
 <div class="math notranslate nohighlight">
 \[
-    \displaystyle{\lim_{x\rightarrow 0} \dfrac{(1+x)^{\frac{1}{x}} - \mathbf{e}}{x}.}
+    \displaystyle{\lim_{x\rightarrow 0} \dfrac{(1+x)^{\frac{1}{x}} - e}{x}.}
     \]</div>
 </li>
 <li><p>Se considera la función <span class="math notranslate nohighlight">\(f: \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
@@ -713,7 +748,7 @@ abscisa es <span class="math notranslate nohighlight">\(x = 4\)</span>.</p></li>
 \)</span>. <br> ¿Cuántas veces es <span class="math notranslate nohighlight">\(f\)</span> derivable en <span class="math notranslate nohighlight">\(x_{0}=0\)</span>?</p></li>
 <li><p>Comprueba que la función <span class="math notranslate nohighlight">\(F\)</span>, dada por <span class="math notranslate nohighlight">\(F(x) = \dfrac{1}{4} x^2 - \ln x\)</span>, tiene un  mínimo relativo, <span class="math notranslate nohighlight">\(x_{\min}\)</span>, en el intervalo <span class="math notranslate nohighlight">\((1,3)\)</span>.<br />
 Utiliza el algoritmo de dicotomía, partiendo de <span class="math notranslate nohighlight">\(a = 1\)</span> y <span class="math notranslate nohighlight">\(b = 3\)</span>, para aproximar <span class="math notranslate nohighlight">\(x_{\min}\)</span> con un error menor que <span class="math notranslate nohighlight">\(\frac{1}{7}\)</span>.</p></li>
-<li><p>Consideramos la ecuación , <span class="math notranslate nohighlight">\(x \mathbf{e}^{-x} = \mathbf{e}^{-3}\)</span>.</p>
+<li><p>Consideramos la ecuación , <span class="math notranslate nohighlight">\(x e^{-x} = e^{-3}\)</span>.</p>
 <ol class="simple">
 <li><p>Comprueba que tiene exactamente dos soluciones en <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
 <li><p>Plantea el método de Newton-Raphson a partir de un punto en el intervalo <span class="math notranslate nohighlight">\([2,5]\)</span>. Calcula <span class="math notranslate nohighlight">\(x_2\)</span> a partir de <span class="math notranslate nohighlight">\(x_0 = 2\)</span>.</p></li>
@@ -737,8 +772,8 @@ Utiliza el algoritmo de dicotomía, partiendo de <span class="math notranslate n
 <div class="math notranslate nohighlight">
 \[\begin{split}
     f(x) =
-    \begin{cases} \dfrac{sen( x)}{x} - 1 \quad  &amp; \quad \quad \text{si } x &lt; 0 \\ &amp; \\
-                        x^3 \mathbf{e}^{-x^2} \quad           &amp; \quad \quad \text{si } x \geq 0 \, .
+    \begin{cases} \dfrac{\sin( x)}{x} - 1 \quad  &amp; \quad \quad \text{si } x &lt; 0 \\ &amp; \\
+                        x^3 e^{-x^2} \quad           &amp; \quad \quad \text{si } x \geq 0 \, .
     \end{cases}
     \end{split}\]</div>
 <ol class="simple">
@@ -751,7 +786,7 @@ Utiliza el algoritmo de dicotomía, partiendo de <span class="math notranslate n
 <div class="math notranslate nohighlight">
 \[\begin{split}
         f(x) =
-    \begin{cases} \dfrac{sen (x)}{x} \, &amp; \quad \quad \text{si } x &lt; 0 \\
+    \begin{cases} \dfrac{\sin (x)}{x} \, &amp; \quad \quad \text{si } x &lt; 0 \\
                             2 - \cos(x) \,        &amp; \quad \quad \text{si } x \geq 0 \, .
     \end{cases}
     \end{split}\]</div>

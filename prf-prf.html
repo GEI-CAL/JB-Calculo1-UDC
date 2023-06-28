@@ -20,7 +20,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -267,6 +267,36 @@ const thebe_selector_output = ".output, .cell_output"
      4.2. Integral de Riemann
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/03.TeoremaFundamental.html">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -302,6 +332,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="capitulos/05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -416,6 +451,7 @@ title="Fullscreen mode"
    <a href="#cap-def_extremo_absoluto"><strong>def_extremo_absoluto</strong></a> | 
    <a href="#cap-def_extremo_relativo"><strong>def_extremo_relativo</strong></a> | 
    <a href="#cap-def_integ_riemann"><strong>def_integ_riemann</strong></a> | 
+   <a href="#cap-def_intnum"><strong>def_intnum</strong></a> | 
    <a href="#cap-def_log"><strong>def_log</strong></a> | 
    <a href="#cap-def_particion"><strong>def_particion</strong></a> | 
    <a href="#cap-def_primitiva"><strong>def_primitiva</strong></a> | 
@@ -425,14 +461,17 @@ title="Fullscreen mode"
    <a href="#cap-def_seno"><strong>def_seno</strong></a> | 
    <a href="#cap-def_sumas_Riemann"><strong>def_sumas_Riemann</strong></a> | 
    <a href="#cap-def_tangente"><strong>def_tangente</strong></a> | 
+   <a href="#cap-ex_Barrow"><strong>ex_Barrow</strong></a> | 
    <a href="#cap-ex_Riemann_1"><strong>ex_Riemann_1</strong></a> | 
    <a href="#cap-ex_clase_funcion"><strong>ex_clase_funcion</strong></a> | 
    <a href="#cap-ex_indefinida_cambio_variable"><strong>ex_indefinida_cambio_variable</strong></a> | 
    <a href="#cap-ex_indefinida_partes"><strong>ex_indefinida_partes</strong></a> | 
    <a href="#cap-ex_indefinida_partes_2"><strong>ex_indefinida_partes_2</strong></a> | 
    <a href="#cap-ex_integ_racionales"><strong>ex_integ_racionales</strong></a> | 
+   <a href="#cap-ex_intnumersimple"><strong>ex_intnumersimple</strong></a> | 
    <a href="#cap-ex_sumas_Riemann"><strong>ex_sumas_Riemann</strong></a> | 
    <a href="#cap-example_Rolle"><strong>example_Rolle</strong></a> | 
+   <a href="#cap-prop_Barrow"><strong>prop_Barrow</strong></a> | 
    <a href="#cap-prop_Riemann_aritmetica"><strong>prop_Riemann_aritmetica</strong></a> | 
    <a href="#cap-prop_acotaciones_Riemann"><strong>prop_acotaciones_Riemann</strong></a> | 
    <a href="#cap-prop_aditividad_intervalos"><strong>prop_aditividad_intervalos</strong></a> | 
@@ -450,6 +489,7 @@ title="Fullscreen mode"
    <a href="#cap-prop_derivable_continua"><strong>prop_derivable_continua</strong></a> | 
    <a href="#cap-prop_derivadas_elementales"><strong>prop_derivadas_elementales</strong></a> | 
    <a href="#cap-prop_derivadas_laterales"><strong>prop_derivadas_laterales</strong></a> | 
+   <a href="#cap-prop_fundamental"><strong>prop_fundamental</strong></a> | 
    <a href="#cap-prop_indeterminaciones"><strong>prop_indeterminaciones</strong></a> | 
    <a href="#cap-prop_integ_cambio_variable"><strong>prop_integ_cambio_variable</strong></a> | 
    <a href="#cap-prop_integ_racionales"><strong>prop_integ_racionales</strong></a> | 
@@ -463,6 +503,8 @@ title="Fullscreen mode"
    <a href="#cap-prop_valor_abs"><strong>prop_valor_abs</strong></a> | 
    <a href="#cap-rem_Rolle"><strong>rem_Rolle</strong></a> | 
    <a href="#cap-rem_Taylor"><strong>rem_Taylor</strong></a> | 
+   <a href="#cap-rem_aplicaciones"><strong>rem_aplicaciones</strong></a> | 
+   <a href="#cap-rem_impropia"><strong>rem_impropia</strong></a> | 
    <a href="#cap-remark_cont"><strong>remark_cont</strong></a> | 
    <a href="#cap-remark_derivada"><strong>remark_derivada</strong></a> | 
    <a href="#cap-rm_lhopital"><strong>rm_lhopital</strong></a> | 
@@ -473,6 +515,7 @@ title="Fullscreen mode"
    <a href="#cap-th_Weierstrass"><strong>th_Weierstrass</strong></a> | 
    <a href="#cap-th_cond_necesaria_extremo"><strong>th_cond_necesaria_extremo</strong></a> | 
    <a href="#cap-th_dicotomia_estimacion"><strong>th_dicotomia_estimacion</strong></a> | 
+   <a href="#cap-th_fundamental"><strong>th_fundamental</strong></a> | 
    <a href="#cap-th_lhopital"><strong>th_lhopital</strong></a> | 
    <a href="#cap-th_primitivas"><strong>th_primitivas</strong></a>
    </div>
@@ -623,6 +666,14 @@ title="Fullscreen mode"
        <a href="capitulos/04/02.IntegracionRiemann.html#def_integ_riemann"><code class="xref">def_integ_riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_intnum"><td></td><td>
+       <strong>def_intnum</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/04.IntegracionNumerica.html#def_intnum"><code class="xref">def_intnum</code></a> <em>(capitulos/04/04.IntegracionNumerica)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_log"><td></td><td>
        <strong>def_log</strong></td><td></td></tr>
      <tr>
@@ -695,6 +746,14 @@ title="Fullscreen mode"
        <a href="capitulos/02/03.FuncionesElementales.html#def_tangente"><code class="xref">def_tangente</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_Barrow"><td></td><td>
+       <strong>ex_Barrow</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/03.TeoremaFundamental.html#ex_Barrow"><code class="xref">ex_Barrow</code></a> <em>(capitulos/04/03.TeoremaFundamental)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex_Riemann_1"><td></td><td>
        <strong>ex_Riemann_1</strong></td><td></td></tr>
      <tr>
@@ -743,6 +802,14 @@ title="Fullscreen mode"
        <a href="capitulos/04/01.IntegracionIndefinida.html#ex_integ_racionales"><code class="xref">ex_integ_racionales</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_intnumersimple"><td></td><td>
+       <strong>ex_intnumersimple</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/04.IntegracionNumerica.html#ex_intnumersimple"><code class="xref">ex_intnumersimple</code></a> <em>(capitulos/04/04.IntegracionNumerica)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex_sumas_Riemann"><td></td><td>
        <strong>ex_sumas_Riemann</strong></td><td></td></tr>
      <tr>
@@ -758,6 +825,14 @@ title="Fullscreen mode"
        <td>
        <a href="capitulos/03/04.AplicacionesDerivada.html#example_Rolle"><code class="xref">example_Rolle</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
        <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_Barrow"><td></td><td>
+       <strong>prop_Barrow</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/03.TeoremaFundamental.html#prop_Barrow"><code class="xref">prop_Barrow</code></a> <em>(capitulos/04/03.TeoremaFundamental)</em></td><td>
+       <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_Riemann_aritmetica"><td></td><td>
        <strong>prop_Riemann_aritmetica</strong></td><td></td></tr>
@@ -895,6 +970,14 @@ title="Fullscreen mode"
        <a href="capitulos/03/01.DerivacionDefProp.html#prop_derivadas_laterales"><code class="xref">prop_derivadas_laterales</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_fundamental"><td></td><td>
+       <strong>prop_fundamental</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/03.TeoremaFundamental.html#prop_fundamental"><code class="xref">prop_fundamental</code></a> <em>(capitulos/04/03.TeoremaFundamental)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_indeterminaciones"><td></td><td>
        <strong>prop_indeterminaciones</strong></td><td></td></tr>
      <tr>
@@ -999,6 +1082,22 @@ title="Fullscreen mode"
        <a href="capitulos/03/06.TeoremaTaylor.html#rem_Taylor"><code class="xref">rem_Taylor</code></a> <em>(capitulos/03/06.TeoremaTaylor)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-rem_aplicaciones"><td></td><td>
+       <strong>rem_aplicaciones</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/06.AplicacionesIntegral.html#rem_aplicaciones"><code class="xref">rem_aplicaciones</code></a> <em>(capitulos/04/06.AplicacionesIntegral)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-rem_impropia"><td></td><td>
+       <strong>rem_impropia</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/05.IntegracionImpropia.html#rem_impropia"><code class="xref">rem_impropia</code></a> <em>(capitulos/04/05.IntegracionImpropia)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark_cont"><td></td><td>
        <strong>remark_cont</strong></td><td></td></tr>
      <tr>
@@ -1077,6 +1176,14 @@ title="Fullscreen mode"
        <td></td>
        <td>
        <a href="capitulos/02/06.Dicotomia.html#th_dicotomia_estimacion"><code class="xref">th_dicotomia_estimacion</code></a> <em>(capitulos/02/06.Dicotomia)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_fundamental"><td></td><td>
+       <strong>th_fundamental</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/03.TeoremaFundamental.html#th_fundamental"><code class="xref">th_fundamental</code></a> <em>(capitulos/04/03.TeoremaFundamental)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-th_lhopital"><td></td><td>

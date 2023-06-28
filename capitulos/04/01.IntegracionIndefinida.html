@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -265,6 +265,36 @@ const thebe_selector_output = ".output, .cell_output"
      4.2. Integral de Riemann
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.TeoremaFundamental.html">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -300,6 +330,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -471,28 +506,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   4.1.2. Definición de primitiva
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion-de-la-integral-indefinida">
-   4.1.2. Definición de la integral indefinida
+   4.1.3. Definición de la integral indefinida
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#principales-metodos-para-obtener-las-integrales-indefinidas">
-   4.1.3. Principales métodos para obtener las integrales indefinidas
+   4.1.4. Principales métodos para obtener las integrales indefinidas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integracion-por-partes">
-     4.1.3.1. Integración por partes
+     4.1.4.1. Integración por partes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integracion-por-cambio-de-variable">
-     4.1.3.2. Integración por cambio de variable
+     4.1.4.2. Integración por cambio de variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integracion-por-descomposicion-de-fracciones-racionales">
-     4.1.3.3. Integración por descomposición de fracciones racionales
+     4.1.4.3. Integración por descomposición de fracciones racionales
     </a>
    </li>
   </ul>
@@ -522,28 +562,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   4.1.2. Definición de primitiva
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion-de-la-integral-indefinida">
-   4.1.2. Definición de la integral indefinida
+   4.1.3. Definición de la integral indefinida
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#principales-metodos-para-obtener-las-integrales-indefinidas">
-   4.1.3. Principales métodos para obtener las integrales indefinidas
+   4.1.4. Principales métodos para obtener las integrales indefinidas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integracion-por-partes">
-     4.1.3.1. Integración por partes
+     4.1.4.1. Integración por partes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integracion-por-cambio-de-variable">
-     4.1.3.2. Integración por cambio de variable
+     4.1.4.2. Integración por cambio de variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integracion-por-descomposicion-de-fracciones-racionales">
-     4.1.3.3. Integración por descomposición de fracciones racionales
+     4.1.4.3. Integración por descomposición de fracciones racionales
     </a>
    </li>
   </ul>
@@ -559,7 +604,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="la-integral-indefinida">
-<h1><span class="section-number">4.1. </span>La integral indefinida<a class="headerlink" href="#la-integral-indefinida" title="Permalink to this headline">#</a></h1>
+<span id="sec-integral-indefinida"></span><h1><span class="section-number">4.1. </span>La integral indefinida<a class="headerlink" href="#la-integral-indefinida" title="Permalink to this headline">#</a></h1>
 <section id="definicion-de-primitiva">
 <h2><span class="section-number">4.1.1. </span>Definición de primitiva<a class="headerlink" href="#definicion-de-primitiva" title="Permalink to this headline">#</a></h2>
 <p>La primitiva de una función es la expresión que se obtiene mediante el proceso opuesto a la derivación. De aquí que la primitiva también se conozca con el nombre de antiderivada. Realmente, una función no tiene una única primitiva, sino que una familia de funciones. Veámoslo con un ejemplo.</p>
@@ -574,28 +619,50 @@ title="Print to PDF"
 \[ F'(x) = f(x), \quad \forall x \in I.\]</div>
 </section>
 </div><div class="proof theorem admonition" id="th_primitivas">
-<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 4.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Si <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span> son dos primitivas de una misma función <span class="math notranslate nohighlight">\(f\)</span> en un intervalo <span class="math notranslate nohighlight">\(I\)</span>, entonces,</p>
 <div class="math notranslate nohighlight">
-\[ \exists k \in \mathbb{R} \text{ tal que } F(x)=G(x)+k, \quad \forall x \in I.\]</div>
+\[ \exists k \in \mathbb{R} \mbox{ tal que } F(x)=G(x)+k, \quad \forall x \in I.\]</div>
+</section>
+</div><p>Como consecuencia del anterior teorema, una vez conocida una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.</p>
+</section>
+<section id="id1">
+<h2><span class="section-number">4.1.2. </span>Definición de primitiva<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>La primitiva de una función es la expresión que se obtiene mediante el proceso opuesto a la derivación. De aquí que la primitiva también se conozca con el nombre de antiderivada. Realmente, una función no tiene una única primitiva, sino que una familia de funciones. Veámoslo con un ejemplo.</p>
+<p>Si tenemos la función <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> sabemos que su derivada se obtiene en dos pasos, i) se multiplica la función por el exponente y ii) se disminuye el exponente en una unidad, esto es, <span class="math notranslate nohighlight">\(f'(x)=2x\)</span>. Entonces, para calcular la primitiva de <span class="math notranslate nohighlight">\(f\)</span> procedemos en sentido opuesto, i) se aumenta el exponente en una unidad y ii) se divide por el exponente (nuevo al hacer el paso i)). De este modo obtenemos que <span class="math notranslate nohighlight">\(F(x) = \dfrac{x^3}{3}\)</span>, podemos comprobar que al aplicar la derivada a <span class="math notranslate nohighlight">\(F\)</span> obtenemos nuestra función inicial <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Tal y como hemos mencionado, la primitiva no es única, de este modo le podemos añadir cualquier constante a <span class="math notranslate nohighlight">\(F(x)\)</span> y su derivada seguirá siendo la función de inicio <span class="math notranslate nohighlight">\(f\)</span> (la derivada de una constante era 0). Entonces, para este caso, la familia de primitivas estaría dada por <span class="math notranslate nohighlight">\(F(x) = \dfrac{x^3}{3} +C\)</span>, donde <span class="math notranslate nohighlight">\(C\)</span> es una constante cualesquiera.</p>
+<p>Veamos pues, las definiciones formales de primitiva.</p>
+<div class="proof definition admonition" id="def_primitiva">
+<p class="admonition-title"><span>Definition </span> (Primitiva)</p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:I\rightarrow \mathbb{R}\)</span>. Se dice que F es una primitiva de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(I\)</span> si</p>
+<div class="math notranslate nohighlight">
+\[ F'(x) = f(x), \quad \forall x \in I.\]</div>
+</section>
+</div><div class="proof theorem admonition" id="th_primitivas">
+<p class="admonition-title"><span class="caption-number">Theorem 4.2 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Si <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span> son dos primitivas de una misma función <span class="math notranslate nohighlight">\(f\)</span> en un intervalo <span class="math notranslate nohighlight">\(I\)</span>, entonces,</p>
+<div class="math notranslate nohighlight">
+\[ \exists k \in \mathbb{R} \mbox{ tal que } F(x)=G(x)+k, \quad \forall x \in I.\]</div>
 </section>
 </div><p>Como consecuencia del anterior teorema, una vez conocida una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.</p>
 </section>
 <section id="definicion-de-la-integral-indefinida">
-<h2><span class="section-number">4.1.2. </span>Definición de la integral indefinida<a class="headerlink" href="#definicion-de-la-integral-indefinida" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.3. </span>Definición de la integral indefinida<a class="headerlink" href="#definicion-de-la-integral-indefinida" title="Permalink to this headline">#</a></h2>
 <p>La integración indefinida es el proceso por el cual se obtienen las primitivas de una función. La notación más habitual para denotar a la integral indefinida de la función <span class="math notranslate nohighlight">\(f\)</span> es <span class="math notranslate nohighlight">\(\int f(x) \mathrm{d}x\)</span>, que es la que utilizamos para su definición.</p>
 <div class="proof definition admonition" id="def_primitiva">
 <p class="admonition-title"><span>Definition </span> (Integral indefinida)</p>
 <section class="definition-content" id="proof-content">
 <p>Dada una función <span class="math notranslate nohighlight">\(f:I\rightarrow \mathbb{R}\)</span>, se llama integral indefinida de <span class="math notranslate nohighlight">\(f\)</span> al conjunto de todas las primitivas de <span class="math notranslate nohighlight">\(f\)</span>, y se escribe</p>
 <div class="math notranslate nohighlight">
-\[\int f(x)\, \mathrm{d}x = \{ F \text{ tal que } F'(x)=f(x), \quad \forall x \in I\}.\]</div>
+\[\int f(x)\, \mathrm{d}x = \{ F : F'(x)=f(x), \quad \forall x \in I\}.\]</div>
 </section>
-</div><p>Utilizando el <a class="reference internal" href="#th_primitivas">Theorem 4.1</a>, es inmediato deducir que si conocemos una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span> su integral indefinida será</p>
+</div><p>Utilizando el <a class="reference internal" href="#th_primitivas">Theorem 4.2</a>, es inmediato deducir que si conocemos una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, su integral indefinida será</p>
 <div class="math notranslate nohighlight">
 \[\int f(x) \, \mathrm{d}x = \{ F(x) +k, \quad \forall k \in \mathbb{R}\}.\]</div>
-<p>Entre las propiedades de la integral está la linealidad, que pasamos a enunciar.</p>
+<p>Entre las propiedades de la integral está la linealidad, es decir:</p>
 <div class="proof property admonition" id="prop_linealidad_int_indef">
 <p class="admonition-title"><span>Property </span> (Linealidad de la integración indefinida)</p>
 <section class="property-content" id="proof-content">
@@ -619,12 +686,17 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \int \dfrac{1}{\sqrt{1-x^2}} \, \mathrm{d}x = \arcsin(x) + C\)</span>.</p></li>
 </ul>
 </section>
-</div></section>
+</div><p>¿Te apetece practicar un poco con las llamadas <em>integrales inmediatas</em>? Aquí puedes hacerlo:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.matesfacil.com/ejercicios-resueltos-integrales-inmediatas.htm">https://www.matesfacil.com/ejercicios-resueltos-integrales-inmediatas.htm</a></p></li>
+<li><p><a class="reference external" href="https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-INM.HTML">https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-INM.HTML</a></p></li>
+</ul>
+</section>
 <section id="principales-metodos-para-obtener-las-integrales-indefinidas">
-<h2><span class="section-number">4.1.3. </span>Principales métodos para obtener las integrales indefinidas<a class="headerlink" href="#principales-metodos-para-obtener-las-integrales-indefinidas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.4. </span>Principales métodos para obtener las integrales indefinidas<a class="headerlink" href="#principales-metodos-para-obtener-las-integrales-indefinidas" title="Permalink to this headline">#</a></h2>
 <p>Los métodos más comunes para obtener la integral indefinida de una función son la integración por partes, la integración por cambio de variable y la integración por descomposición de fracciones racionales.</p>
 <section id="integracion-por-partes">
-<h3><span class="section-number">4.1.3.1. </span>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.1.4.1. </span>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Permalink to this headline">#</a></h3>
 <p>La integración por partes se utiliza para hallar de forma más sencilla la integral de algunas funciones <span class="math notranslate nohighlight">\(f\)</span> que son producto de otras dos. Veamos el enunciado de este método.</p>
 <div class="proof property admonition" id="prop_integracion_ind_partes">
 <p class="admonition-title"><span>Property </span> (Integración por partes para la integral indefinida)</p>
@@ -640,6 +712,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>polinomio (actúa como <span class="math notranslate nohighlight">\(u\)</span>) contra exponencial (actúa como <span class="math notranslate nohighlight">\(dv\)</span>),</p></li>
 <li><p>polinomio (<span class="math notranslate nohighlight">\(u\)</span>) contra seno o coseno (<span class="math notranslate nohighlight">\(dv\)</span>),</p></li>
+<li><p>inversa de trigonométrica o logarítmica (<span class="math notranslate nohighlight">\(u\)</span>) contra polinomio (<span class="math notranslate nohighlight">\(dv\)</span>),</p></li>
 <li><p>exponencial (<span class="math notranslate nohighlight">\(u\)</span> o <span class="math notranslate nohighlight">\(dv\)</span>) contra seno o coseno (<span class="math notranslate nohighlight">\(dv\)</span> o <span class="math notranslate nohighlight">\(u\)</span>).</p></li>
 </ul>
 <p>Veamos un ejemplo para aplicar el método de integración por partes.</p>
@@ -683,9 +756,14 @@ title="Print to PDF"
 </li>
 </ul>
 </section>
-</div></section>
+</div><p>Aquí puedes encontrar ejemplos para practicar:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.matesfacil.com/resueltos-integracion-por-partes.htm">https://www.matesfacil.com/resueltos-integracion-por-partes.htm</a></p></li>
+<li><p><a class="reference external" href="https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-PART.HTML">https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-PART.HTML</a></p></li>
+</ul>
+</section>
 <section id="integracion-por-cambio-de-variable">
-<h3><span class="section-number">4.1.3.2. </span>Integración por cambio de variable<a class="headerlink" href="#integracion-por-cambio-de-variable" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.1.4.2. </span>Integración por cambio de variable<a class="headerlink" href="#integracion-por-cambio-de-variable" title="Permalink to this headline">#</a></h3>
 <p>Este método de integración se podría decir que es lo opuesto a la regla de la cadena en derivación. Lo que pretendemos al utilizar este método es convertir la función a integrar en algo más sencillo.</p>
 <div class="proof property admonition" id="prop_integ_cambio_variable">
 <p class="admonition-title"><span>Property </span> (Integración por cambio de variable)</p>
@@ -730,9 +808,14 @@ title="Print to PDF"
 </li>
 </ul>
 </section>
-</div></section>
+</div><p>Aquí puedes practicar:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.matesfacil.com/resueltos-integracion-por-sustitucion.htm">https://www.matesfacil.com/resueltos-integracion-por-sustitucion.htm</a></p></li>
+<li><p><a class="reference external" href="https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-SUST.HTML">https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-SUST.HTML</a></p></li>
+</ul>
+</section>
 <section id="integracion-por-descomposicion-de-fracciones-racionales">
-<h3><span class="section-number">4.1.3.3. </span>Integración por descomposición de fracciones racionales<a class="headerlink" href="#integracion-por-descomposicion-de-fracciones-racionales" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.1.4.3. </span>Integración por descomposición de fracciones racionales<a class="headerlink" href="#integracion-por-descomposicion-de-fracciones-racionales" title="Permalink to this headline">#</a></h3>
 <p>Este método se utiliza para integrar funciones racionales <span class="math notranslate nohighlight">\(f(x)=\dfrac{p_m(x)}{q_n(x)}\)</span> en las cuales el grado del numerador (<span class="math notranslate nohighlight">\(m\)</span>) es menor que el grado del denominador (<span class="math notranslate nohighlight">\(n\)</span>). Esto siempre es posible ya que de no ser el caso, se puede efectuar la división, esto es, si <span class="math notranslate nohighlight">\(m\ge n\)</span> entonces <span class="math notranslate nohighlight">\(\dfrac{p_m(x)}{q_n(x)} = c_r(x) + \dfrac{r_s(x)}{q_n(x)}\)</span>  donde el cociente es un polinomio que se puede integrar directamente y la nueva función a integrar por este método se corresponde con el resto de la división partido del divisor <span class="math notranslate nohighlight">\(\dfrac{r_s(x)}{q_n(x)}\)</span> verificándose que <span class="math notranslate nohighlight">\(s&lt;n\)</span>.</p>
 <div class="proof property admonition" id="prop_integ_racionales">
 <p class="admonition-title"><span>Property </span></p>

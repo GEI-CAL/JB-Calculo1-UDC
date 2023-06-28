@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Teorema Fundamental del Cálculo &#8212; Calculo en una variable</title>
+    <title>4.3. Teorema Fundamental del Cálculo &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.4. Integración numérica" href="04.IntegracionNumerica.html" />
+    <link rel="prev" title="4.2. Integración de Riemann" href="02.IntegracionRiemann.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01/README.html">
    1. Conjuntos de números
@@ -243,16 +245,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
    4. Integración
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01.IntegracionIndefinida.html">
      4.1. Integración indefinida
@@ -261,6 +263,36 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="02.IntegracionRiemann.html">
      4.2. Integral de Riemann
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin4.html">
+     4.8. Boletín 4
     </a>
    </li>
   </ul>
@@ -298,6 +330,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -464,26 +501,24 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#consecuencia">
-   Consecuencia
+  <a class="reference internal nav-link" href="#enunciado-del-teorema">
+   4.3.1. Enunciado del teorema
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicios-de-aplicacion-del-teorema-fundamental-del-calculo">
-   Ejercicios de aplicación del teorema fundamental del cálculo.
+  <a class="reference internal nav-link" href="#primera-consecuencia-derivacion-de-una-funcion-integral">
+   4.3.2. Primera consecuencia: derivación de una función integral
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regla-de-barrow">
-   Regla de Barrow
+  <a class="reference internal nav-link" href="#segunda-consecuencia-regla-de-barrow">
+   4.3.3. Segunda consecuencia: Regla de Barrow
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integracion-por-partes">
-     Integración por partes
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integracion-por-partes-en-la-integral-de-riemann">
+   4.3.4. Integración por partes en la integral de Riemann
+  </a>
  </li>
 </ul>
 
@@ -505,26 +540,24 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#consecuencia">
-   Consecuencia
+  <a class="reference internal nav-link" href="#enunciado-del-teorema">
+   4.3.1. Enunciado del teorema
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicios-de-aplicacion-del-teorema-fundamental-del-calculo">
-   Ejercicios de aplicación del teorema fundamental del cálculo.
+  <a class="reference internal nav-link" href="#primera-consecuencia-derivacion-de-una-funcion-integral">
+   4.3.2. Primera consecuencia: derivación de una función integral
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regla-de-barrow">
-   Regla de Barrow
+  <a class="reference internal nav-link" href="#segunda-consecuencia-regla-de-barrow">
+   4.3.3. Segunda consecuencia: Regla de Barrow
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integracion-por-partes">
-     Integración por partes
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integracion-por-partes-en-la-integral-de-riemann">
+   4.3.4. Integración por partes en la integral de Riemann
+  </a>
  </li>
 </ul>
 
@@ -537,45 +570,154 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="teorema-fundamental-del-calculo">
-<h1>Teorema Fundamental del Cálculo<a class="headerlink" href="#teorema-fundamental-del-calculo" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4.3. </span>Teorema Fundamental del Cálculo<a class="headerlink" href="#teorema-fundamental-del-calculo" title="Permalink to this headline">#</a></h1>
+<section id="enunciado-del-teorema">
+<h2><span class="section-number">4.3.1. </span>Enunciado del teorema<a class="headerlink" href="#enunciado-del-teorema" title="Permalink to this headline">#</a></h2>
 <p>Calcular el valor de una integral definida empleando geometría o límites de las sumas de Riemann para particiones infinitamente refinadas, es, en general, una tarea complicada. En esta sección presentamos el teorema fundamental del cálculo, que nos da un medio para calcular muchas integrales. De hecho, reducirá el problema de integración al cálculo de primitivas, es decir, al problema inverso de la derivación.</p>
-<p><strong>Teorema</strong> Sea <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span>.  Para <span class="math notranslate nohighlight">\(a \leq x \leq b\)</span>, sea: $<span class="math notranslate nohighlight">\(F(x) = \int_a ^x f(t) \,dt .\)</span><span class="math notranslate nohighlight">\(
-Entonces, \)</span>F \in {\cal C}[a,b]<span class="math notranslate nohighlight">\(.  Además, si \)</span>f<span class="math notranslate nohighlight">\( es continua en \)</span>[a,b]<span class="math notranslate nohighlight">\(, entonces \)</span>F<span class="math notranslate nohighlight">\( es derivable en \)</span>[a,b]<span class="math notranslate nohighlight">\(
-y \)</span>F^{,\prime} (x) = f(x)<span class="math notranslate nohighlight">\(, \)</span>\forall x \in [a,b]$.</p>
+<div class="proof theorem admonition" id="th_fundamental">
+<p class="admonition-title"><span>Theorem </span> (Teorema fundamental del Cálculo)</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span>.  Para <span class="math notranslate nohighlight">\(a \leq x \leq b\)</span>, sea:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_a ^x f(t) \,dt .\]</div>
+<p>Entonces, <span class="math notranslate nohighlight">\(F \in {\cal C}[a,b]\)</span>.  Además, si <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces <span class="math notranslate nohighlight">\(F\)</span> es derivable en <span class="math notranslate nohighlight">\([a,b]\)</span>
+y <span class="math notranslate nohighlight">\(F^{\,\prime} (x) = f(x)\)</span>, <span class="math notranslate nohighlight">\(\forall x \in [a,b]\)</span>.</p>
 <p>También puede enunciarse de la siguiente manera:</p>
 <p>Si <span class="math notranslate nohighlight">\(f : I \longrightarrow \mathbb R\)</span> es continua en <span class="math notranslate nohighlight">\(I\)</span>, entonces tiene primitivas en <span class="math notranslate nohighlight">\(I\)</span>;
-una de ellas es la integral definida <span class="math notranslate nohighlight">\(F\)</span> dada por:
-$<span class="math notranslate nohighlight">\(F(x) = \int_a ^x f(t) \,dt,\)</span><span class="math notranslate nohighlight">\(
-donde \)</span>a \in I$ <em>es cualquiera</em>.</p>
-<section id="consecuencia">
-<h2>Consecuencia<a class="headerlink" href="#consecuencia" title="Permalink to this headline">#</a></h2>
-<p><strong>Teorema</strong>
-Sea la función <span class="math notranslate nohighlight">\(F\)</span> dada por la integral definida:
-$<span class="math notranslate nohighlight">\(F(x) = \int_{a(x)}^{b(x)} f(t) \, dt.\)</span><span class="math notranslate nohighlight">\(
-Entonces, la derivada de \)</span>F<span class="math notranslate nohighlight">\( con respecto a \)</span>x<span class="math notranslate nohighlight">\( viene dada por: 
-\)</span><span class="math notranslate nohighlight">\(F^{\,\prime}(x) = f(b(x)) \, b^{\prime}(x) - f(a(x)) \, a^{\prime}(x). \)</span>$</p>
+una de ellas es la integral definida <span class="math notranslate nohighlight">\(F\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_a ^x f(t) \,dt,\]</div>
+<p>donde <span class="math notranslate nohighlight">\(a \in I\)</span> <em>es cualquiera</em>.</p>
 </section>
-<section id="ejercicios-de-aplicacion-del-teorema-fundamental-del-calculo">
-<h2>Ejercicios de aplicación del teorema fundamental del cálculo.<a class="headerlink" href="#ejercicios-de-aplicacion-del-teorema-fundamental-del-calculo" title="Permalink to this headline">#</a></h2>
+</div><p>Sería bueno que practicaras un poco en el cálculo de <span class="math notranslate nohighlight">\(F\)</span> para casos sencillos. Aquí tienes un par de ejemplos detallados:</p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/11/un-ejercicio-sobre-el-teorema.html">https://existelimite.blogspot.com/2012/11/un-ejercicio-sobre-el-teorema.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/un-ejercicio-en-flashback-sobre-el.html">https://existelimite.blogspot.com/2012/12/un-ejercicio-en-flashback-sobre-el.html</a></p></li>
+</ul>
+</section>
+<section id="primera-consecuencia-derivacion-de-una-funcion-integral">
+<h2><span class="section-number">4.3.2. </span>Primera consecuencia: derivación de una función integral<a class="headerlink" href="#primera-consecuencia-derivacion-de-una-funcion-integral" title="Permalink to this headline">#</a></h2>
+<p>Vamos a <em>jugar</em> un poco con este teorema. Empezamos con un ejercicio en 4 partes:</p>
+<p><strong>EJERCICIO:</strong></p>
+<ol>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{1}^{x} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>Según el teorema fundamental, como la función que está dentro de la integral, <span class="math notranslate nohighlight">\(f(t)=t^2\sin(t)\)</span>, es continua, la derivada de <span class="math notranslate nohighlight">\(F\)</span> en <span class="math notranslate nohighlight">\(x\)</span> coincide con el valor del integrando en ese punto:</p>
+<div class="math notranslate nohighlight">
+\[
+     F'(x) = f(x) = x^2\sin(x).
+    \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{1}^{x^3} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>En este caso, tenemos que combinar el teorema fundamental con la regla de la cadena para obtener:</p>
+<div class="math notranslate nohighlight">
+\[
+     F'(x) = F'(x^3)3x^2 = f(x^3)3x^2 = \left(x^{3}\right)^{2}\sin(x^{3}) 3x^2 = 3x^{8}\sin(x^{3}).
+    \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{\ln(x)}^{1} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>Ahora, en primer lugar le damos la vuelta a la integral (cambiando su signo) para que la parte variable quede en la parte superior,</p>
+<div class="math notranslate nohighlight">
+\[
+    F(x) = \int_{\ln(x)}^{1} t^2\sin(t)\, dt = - \int_{1}^{\ln(x)} t^2\sin(t)\, dt = \int_{1}^{\ln(x)} - t^2\sin(t)\, dt,
+    \]</div>
+<p>y ahora actuamos como en el apartado anterior:</p>
+<div class="math notranslate nohighlight">
+\[
+     F'(x) = F'(\ln(x))\frac{1}{x} = -(\ln(x))^2\sin(\ln(x))\frac{1}{x} = -\frac{(\ln(x))^2}{x}\sin(\ln(x)). 
+    \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{\ln(x)}^{x^3} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>Primero utilizamos la aditividad en intervalos:</p>
+<div class="math notranslate nohighlight">
+\[
+    F(x)= \displaystyle \int_{\ln(x)}^{x^3} t^2\sin(t)\, dt = \int_{\ln(x)}^{1} t^2\sin(t)\, dt + \int_{1}^{x^3} t^2\sin(t)\, dt,
+    \]</div>
+<p>y, a continuación, juntando los resultados de los anteriores apartados:</p>
+<div class="math notranslate nohighlight">
+\[
+    F'(x) = 3x^{8}\sin(x^{3}) - \frac{(\ln(x))^2}{x}\sin(\ln(x)).
+    \]</div>
+</li>
+</ol>
+<p>Estas cuentas, hechas para un caso particular, se pueden generalizar fácilmente:</p>
+<div class="proof property admonition" id="prop_fundamental">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Sea la función <span class="math notranslate nohighlight">\(F\)</span> dada por la integral definida:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \int_{a(x)}^{b(x)} f(t) \, dt.
+\]</div>
+<p>Entonces, la derivada de <span class="math notranslate nohighlight">\(F\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+F^{\,\prime}(x) = f(b(x)) \, b^{\prime}(x) - f(a(x)) \, a^{\prime}(x). 
+\]</div>
+</section>
+</div><p>Esto abre un mundo de posibilidades. Por ejemplo, si conocemos la derivada podemos buscar los puntos críticos, estudiar la concavidad/convexidad o, incluso, ¡calcular el polinomio de Taylor para funciones definidas a partir de una integral!</p>
+<p>Puede ser buena idea practicar un poco:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/calculo-de-la-derivada-de-f-mediante-el.html">https://existelimite.blogspot.com/2012/12/calculo-de-la-derivada-de-f-mediante-el.html</a></p></li>
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2017/01/examen-de-enero-de-2017-aplicacion-del.html">https://existelimite.blogspot.com/2017/01/examen-de-enero-de-2017-aplicacion-del.html</a></p></li>
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2014/02/calculo-de-extremos-de-f-mediante-el.html">https://existelimite.blogspot.com/2014/02/calculo-de-extremos-de-f-mediante-el.html</a></p></li>
 </ul>
 </section>
-<section id="regla-de-barrow">
-<h2>Regla de Barrow<a class="headerlink" href="#regla-de-barrow" title="Permalink to this headline">#</a></h2>
-<p>Si <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span> y existe una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces: $<span class="math notranslate nohighlight">\(\int_a ^b f(x) \,dx = \left. \begin{array}{c} \, \\ \, \end{array} F(x) \right|_a^b = F(b) - F(a).\)</span>$</p>
-<p>Ejemplo:
-Calcula el área bajo la curva <span class="math notranslate nohighlight">\(y=\cos x\)</span> en <span class="math notranslate nohighlight">\(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\)</span>.</p>
-<p>Solución: $<span class="math notranslate nohighlight">\(A = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos x \, dx = \sin x \lvert_{-\frac{\pi}{2}}^{\frac{\pi}{2}} = \sin\left(\frac{\pi}{2}\right) - \sin\left(-\frac{\pi}{2}\right) = 1 - (-1) = 2.\)</span>$
-Así, el área de la región son dos unidades cuadradas.</p>
-<section id="integracion-por-partes">
-<h3>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Permalink to this headline">#</a></h3>
-<p><strong>Teorema</strong>
-Si <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span> son dos funciones derivables en <span class="math notranslate nohighlight">\([a,b]\)</span>, y se tiene:
-$<span class="math notranslate nohighlight">\(\begin{cases} F^{\,\prime} = f \\ G^{\,\prime} = g \end{cases} \hspace{20mm} \text{en } [a,b],\)</span><span class="math notranslate nohighlight">\( siendo \)</span>f<span class="math notranslate nohighlight">\( y \)</span>g<span class="math notranslate nohighlight">\( integrables en \)</span>[a,b]<span class="math notranslate nohighlight">\(, entonces \)</span><span class="math notranslate nohighlight">\(\int_a ^b F(x) \,g(x) \,dx = F(b) \,G(b) - F(a) \,G(a) - \int_a ^b f(x) \,G(x) \,dx.\)</span>$</p>
+<section id="segunda-consecuencia-regla-de-barrow">
+<h2><span class="section-number">4.3.3. </span>Segunda consecuencia: Regla de Barrow<a class="headerlink" href="#segunda-consecuencia-regla-de-barrow" title="Permalink to this headline">#</a></h2>
+<div class="proof property admonition" id="prop_Barrow">
+<p class="admonition-title"><span>Property </span> (Regla de Barrow)</p>
+<section class="property-content" id="proof-content">
+<p>Si <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span> y existe una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_a ^b f(x) \,dx = \left. \begin{array}{c} \, \\ \, \end{array} F(x) \right|_a^b = F(b) - F(a).
+\end{split}\]</div>
 </section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Pese a que no es muy habitual en este curso, al ser muy sencilla y creemos que didáctica, vamos a mostrar la demostración de esta propiedad… aunque sólo para el caso más fácil: supondremos que <span class="math notranslate nohighlight">\(f\)</span> es una función continua.</p>
+<p>Supongamos entonces que podemos calcular una primitiva, <span class="math notranslate nohighlight">\(F\)</span>, para nuestra función <span class="math notranslate nohighlight">\(f\)</span> (con las técnicas aprendidas (ejem…) en el instituto o en la Sección <a class="reference internal" href="01.IntegracionIndefinida.html#sec-integral-indefinida"><span class="std std-ref">La integral indefinida</span></a>).</p>
+<p>Por otra parte, gracias al Teorema Fundamental del Cálculo, conocemos otra primitiva de <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+G(x) = \int_a ^x f(t) \,dt.
+\]</div>
+<p>Como también sabemos que dos primitivas distintas de una misma función se diferencian en una constante, resulta que: <span class="math notranslate nohighlight">\(F(x) = G(x) + C\)</span>. Entonces:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+F(b) - F(a) &amp;=&amp; \left(G(b)+C\right) - \left(G(a)+C\right) = G(b) - G(a) = \int_{a}^{b} f(t)\, dt - \int_{a}^{a} f(t)\, dt \\
+&amp;=&amp; \int_{a}^{b} f(t)\, dt - 0 = \int_{a}^{b} f(t)\, dt.
+\end{eqnarray*}\]</div>
+</div>
+<p>La Regla de Barrow (insistimos: una consecuencia directa del Teorema Fundamental del Cálculo) une la integración de Riemann (algo puramente geométrico) con el cálculo de primitivas (una operación aritmética):
+para calcular el área por debajo de una función positiva basta calcular una primitiva de ésta, evaluarla en los dos extremos y restar. Veamos un</p>
+<div class="proof example admonition" id="ex_Barrow">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Calcula el área bajo la curva <span class="math notranslate nohighlight">\(y=\cos x\)</span> en <span class="math notranslate nohighlight">\(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\)</span>.</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+A = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos x \, dx = \sin x \lvert_{-\frac{\pi}{2}}^{\frac{\pi}{2}} = \sin\left(\frac{\pi}{2}\right) - \sin\left(-\frac{\pi}{2}\right) = 1 - (-1) = 2.
+\]</div>
+<p>Así, el área de la región son dos unidades cuadradas.</p>
 </section>
+</div></section>
+<section id="integracion-por-partes-en-la-integral-de-riemann">
+<h2><span class="section-number">4.3.4. </span>Integración por partes en la integral de Riemann<a class="headerlink" href="#integracion-por-partes-en-la-integral-de-riemann" title="Permalink to this headline">#</a></h2>
+<div class="proof property admonition" id="prop_fundamental">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Si <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span> son dos funciones derivables en <span class="math notranslate nohighlight">\([a,b]\)</span>, y se tiene:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} F^{\,\prime} = f \\ G^{\,\prime} = g \end{cases} \hspace{20mm} \text{en } [a,b],
+\end{split}\]</div>
+<p>siendo <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> integrables en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a ^b F(x) \,g(x) \,dx = F(b) \,G(b) - F(a) \,G(a) - \int_a ^b f(x) \,G(x) \,dx.
+\]</div>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -605,6 +747,20 @@ $<span class="math notranslate nohighlight">\(\begin{cases} F^{\,\prime} = f \\ 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="02.IntegracionRiemann.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.2. </span>Integración de Riemann</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04.IntegracionNumerica.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Integración numérica</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

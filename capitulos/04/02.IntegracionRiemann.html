@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Python para cálculo de una variable" href="../05/README.html" />
+    <link rel="next" title="4.3. Teorema Fundamental del Cálculo" href="03.TeoremaFundamental.html" />
     <link rel="prev" title="4.1. La integral indefinida" href="01.IntegracionIndefinida.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -265,6 +265,36 @@ const thebe_selector_output = ".output, .cell_output"
      4.2. Integral de Riemann
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.TeoremaFundamental.html">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -300,6 +330,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -547,9 +582,11 @@ title="Print to PDF"
 a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_{n-1} &lt; x_n = b.
 \]</div>
 </section>
-</div><p>Dada una partición <span class="math notranslate nohighlight">\(\mathcal P\)</span>, denotamos
-$<span class="math notranslate nohighlight">\(M_i = \underset{x_{i-1} \leq x \leq x_i}{\sup} f(x),\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(m_i = \underset{x_{i-1} \leq x \leq x_i}{\inf} f(x).\)</span>$</p>
+</div><p>Dada una partición <span class="math notranslate nohighlight">\(\mathcal P\)</span>, denotamos</p>
+<div class="math notranslate nohighlight">
+\[M_i = \underset{x_{i-1} \leq x \leq x_i}{\sup} f(x),\]</div>
+<div class="math notranslate nohighlight">
+\[m_i = \underset{x_{i-1} \leq x \leq x_i}{\inf} f(x).\]</div>
 <section id="sumas-de-riemann">
 <h2><span class="section-number">4.2.1. </span>Sumas de Riemann<a class="headerlink" href="#sumas-de-riemann" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="def_sumas_Riemann">
@@ -780,10 +817,10 @@ U(\mathcal P,f) - L(\mathcal P,f) &lt; \varepsilon. \]</div>
             <p class="prev-next-title"><span class="section-number">4.1. </span>La integral indefinida</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../05/README.html" title="next page">
+    <a class='right-next' id="next-link" href="03.TeoremaFundamental.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Python para cálculo de una variable</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Teorema Fundamental del Cálculo</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.8. Boletín IV: Integración de funciones de una variable &#8212; Calculo en una variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Python para cálculo de una variable" href="../05/README.html" />
+    <link rel="prev" title="4.7. Ecuaciones Diferenciales Ordinarias (EDOs)" href="07.EcuacionesDiferenciales.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Conjuntos de números
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Conjuntos clásicos de números
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Numeros complejos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Funciones reales de variable real
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Funciones elementales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Límites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletín 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
+     3.4. Aplicaciones de la derivada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/07.Boletin3.html">
+     3.7. Boletín 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   4. Integración
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.IntegracionIndefinida.html">
+     4.1. Integración indefinida
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.IntegracionRiemann.html">
+     4.2. Integral de Riemann
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.TeoremaFundamental.html">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.8. Boletín 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     5.1. Introducción a SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     5.2. Límites y continuidad en SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     5.3. Introducción a NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     5.4. Gráficas con Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/05.Derivacion.html">
+     5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/04/08.Boletin4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/04/08.Boletin4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios-basicos">
+   4.8.1. Ejercicios básicos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios-complementarios">
+   4.8.2. Ejercicios complementarios
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Boletín IV:  Integración de funciones de una variable</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios-basicos">
+   4.8.1. Ejercicios básicos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios-complementarios">
+   4.8.2. Ejercicios complementarios
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="boletin-iv-integracion-de-funciones-de-una-variable">
+<h1><span class="section-number">4.8. </span>Boletín IV:  Integración de funciones de una variable<a class="headerlink" href="#boletin-iv-integracion-de-funciones-de-una-variable" title="Permalink to this headline">#</a></h1>
+<section id="ejercicios-basicos">
+<h2><span class="section-number">4.8.1. </span>Ejercicios básicos<a class="headerlink" href="#ejercicios-basicos" title="Permalink to this headline">#</a></h2>
+<ol>
+<li><p>Demuestra que <span class="math notranslate nohighlight">\(\displaystyle{\,\,8-\frac14\sqrt{1-4x^2}}\)</span> es una primitiva de  <span class="math notranslate nohighlight">\(\displaystyle{\,\,\frac{x}{\sqrt{1-4x^2}}}.\)</span> ¿Es su única primitiva? En caso afirmativo justifica el porqué, en caso negativo encuentra otra.</p></li>
+<li><p>Calcula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{array}{lll}
+    \text{$a)$ } \displaystyle{\int x^3\,\cos \left(x^4+2\right) \, dx} &amp; \qquad
+    \text{$b)$ } \displaystyle{\int \ln(x) \, dx} &amp; \qquad
+    \text{$c)$ }  \displaystyle{\int \cos (x)\,\cos\left(sen(x)\right) \, dx}  \\
+    \\
+    \text{$d)$ } \displaystyle{\int x^2\,(4x^3+7)^9 \, dx} &amp; \qquad
+    \text{$e)$ } \displaystyle{\int e^x\,sen (2x+5) \, dx} &amp; \qquad
+    \text{$f)$ } \displaystyle{\int \frac{x}{1+x^4}\, dx }
+    \end{array}
+    \end{split}\]</div>
+</li>
+<li><p>Sea la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = x^3 -2\)</span>. Consideramos la partición <span class="math notranslate nohighlight">\(P=\{-2,-1,1,4\}\)</span>. Elige la opción correcta.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{array}{lll}
+    \\
+    \text{$a)$ $L(f,P)=-19$,     $U(f,P)=181$  }    &amp; \qquad
+    \text{$b)$ $L(f,P)= 19$,     $U(f,P)=181$}    \\
+    \\
+    \text{$c)$ $L(f,P)=-1$,      $U(f,P)=181$ }   &amp; \qquad
+    \text{$d)$ $L(f,P)=-1$,      $U(f,P)=191$}
+    \end{array}
+    \end{split}\]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función continua en <span class="math notranslate nohighlight">\(x \in [2,4]\)</span>, de la que sabemos que <span class="math notranslate nohighlight">\(\underset{x \in [2,4]}{\min} f(x) = 3\)</span> y <span class="math notranslate nohighlight">\(\underset{x \in [2,4]}{\max} f(x) = 6\)</span>.</p>
+<ul class="simple">
+<li><p>¿Puede valer <span class="math notranslate nohighlight">\(15\)</span> unidades de superficie el área de la figura limitada por el eje <span class="math notranslate nohighlight">\(OX\)</span>, la gráfica de <span class="math notranslate nohighlight">\(y = f(x)\)</span>,  y las rectas <span class="math notranslate nohighlight">\(x = 2\)</span> y <span class="math notranslate nohighlight">\(x = 4\)</span>?</p></li>
+<li><p>¿Entre qué valores puede oscilar el área anterior?</p></li>
+</ul>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> son funciones continuas, halla:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(4)\,\,\)</span> si <span class="math notranslate nohighlight">\(\displaystyle{\,\int_0^x f(t) \,  = x \, \cos (\pi x)},\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g(1)\,\,\)</span> si <span class="math notranslate nohighlight">\(\displaystyle{\,\int_{x^2}^{x^3} g(t) \,  = x \, \cos (\pi x)}.\)</span></p></li>
+</ul>
+</li>
+<li><p>Halla los extremos relativos de la función <span class="math notranslate nohighlight">\(F(x) = \displaystyle{\int_1^x \frac{sen( t)}{t} \, }\)</span>, con <span class="math notranslate nohighlight">\(x &gt; 1\)</span>.</p></li>
+<li><p>Halla una función <span class="math notranslate nohighlight">\(f\)</span> y un número real <span class="math notranslate nohighlight">\(a\)</span> tales que:</p>
+<div class="math notranslate nohighlight">
+\[
+    6+\int_{a}^x{\frac{f(t)}{t^2}}\, =2\sqrt{x,}\qquad \quad x&gt;0.
+    \]</div>
+</li>
+<li><p>Halla el área de la figura limitada por las rectas <span class="math notranslate nohighlight">\(y = x\)</span>, <span class="math notranslate nohighlight">\(y = 2x\)</span> e <span class="math notranslate nohighlight">\(y = 4\)</span>.</p></li>
+<li><p>Sea la función dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    f(x) = \begin{cases}
+    sen^2(x)          \, &amp; \quad  \text{si } x \in [0,\pi] \\   \quad \\
+                  \dfrac{x}{\pi-x^2} \, &amp; \quad  \text{si } x \in (\pi,2\pi]
+    \end{cases}
+    \end{split}\]</div>
+<ul class="simple">
+<li><p>¿Es <span class="math notranslate nohighlight">\(f\)</span> integrable en <span class="math notranslate nohighlight">\([0,\, 2\pi]\)</span>? Razona la respuesta.</p></li>
+<li><p>Calcula el área limitada por el grafo de <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(x=2\pi\)</span> e <span class="math notranslate nohighlight">\(y=0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Maruja conduce a una velocidad <span class="math notranslate nohighlight">\(v_M(t)= \displaystyle{90+15\cos\left(\frac{\pi}{2}t\right)\,\mathrm{km/h}}\)</span> y Pepe lo hace a una velocidad</p>
+<div class="math notranslate nohighlight">
+\[
+    v_P(t)=85+2t\,\mathrm{km/h},
+    \]</div>
+<p>donde <span class="math notranslate nohighlight">\(t\)</span> mide el tiempo en horas. Supongamos que Maruja y Pepe están en el mismo lugar cuando <span class="math notranslate nohighlight">\(t=0.\)</span> Calcula <span class="math notranslate nohighlight">\(\displaystyle{\int_0^5{(v_M(t)-v_P(t))\,\,}}\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\int_0^{10}{(v_M(t)-v_P(t))\,\,}}.\)</span>
+Interpreta las integrales anteriores en términos de una carrera entre Maruja y Pepe.</p>
+</li>
+<li><p>En un circuito eléctrico se ha medido la corriente en distintos instantes de tiempo, obteniendo el cuadro siguiente:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(t_k\)</span></p></th>
+<th class="text-align:center head"><p>2</p></th>
+<th class="text-align:center head"><p>4</p></th>
+<th class="text-align:center head"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(i(t_k)\)</span></p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>5</p></td>
+<td class="text-align:center"><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<p>Aproxima la carga eléctrica del circuito, <span class="math notranslate nohighlight">\(q = \displaystyle{\int_2^6 i(t) \, },\)</span> mediante las fórmulas del punto medio, trapecio, Simpson y la fórmula del trapecio compuesta con paso <span class="math notranslate nohighlight">\(h=2.\)</span></p>
+</li>
+<li><p>Halla el área limitada por la gráfica de <span class="math notranslate nohighlight">\(f(x) = xe^{-2x}\)</span> y el eje <span class="math notranslate nohighlight">\(OX\)</span> en el intervalo <span class="math notranslate nohighlight">\([0 , \infty)\)</span>.</p></li>
+<li><p>Halla el valor de la integral <span class="math notranslate nohighlight">\(\displaystyle{\int_0^1 x^2 \ln (x) \, dx}.\)</span></p></li>
+<li><p>Calcula <span class="math notranslate nohighlight">\(\displaystyle{\int_0^{\infty} \frac{1}{\sqrt{x} (x+1)} \, dx}\)</span></p></li>
+<li><p>Una esfera de madera de radio <span class="math notranslate nohighlight">\(R = 10\,\)</span>cm se recubre de una capa de acero de <span class="math notranslate nohighlight">\(1\,\)</span>cm de espesor. Calcula, mediante integración, el volumen de acero necesario.</p></li>
+<li><p>En procedimientos de diagnosis médica por imagen (como, por ejemplo, la resonancia magnética), se toman numerosos datos para obtener mediante cálculos computacionales una imagen tridimensional que permita visualizar la parte del cuerpo que se estudia. El proceso es similar al empleado para calcular el volumen de un sólido usando áreas de secciones perpendiculares a un eje. Supongamos que el siguiente cuadro indica el valor del área de unas cuantas secciones de un tumor, tomadas a una distancia de un milímetro entre cada dos imágenes:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x (cm)\)</span></p></th>
+<th class="text-align:center head"><p>0</p></th>
+<th class="text-align:center head"><p>0.1</p></th>
+<th class="text-align:center head"><p>0.2</p></th>
+<th class="text-align:center head"><p>0.3</p></th>
+<th class="text-align:center head"><p>0.4</p></th>
+<th class="text-align:center head"><p>0.5</p></th>
+<th class="text-align:center head"><p>0.6</p></th>
+<th class="text-align:center head"><p>0.7</p></th>
+<th class="text-align:center head"><p>0.8</p></th>
+<th class="text-align:center head"><p>0.9</p></th>
+<th class="text-align:center head"><p>1.0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A(x)(cm^2)\)</span></p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0.1</p></td>
+<td class="text-align:center"><p>0.4</p></td>
+<td class="text-align:center"><p>0.3</p></td>
+<td class="text-align:center"><p>0.6</p></td>
+<td class="text-align:center"><p>0.9</p></td>
+<td class="text-align:center"><p>1.2</p></td>
+<td class="text-align:center"><p>0.8</p></td>
+<td class="text-align:center"><p>0.6</p></td>
+<td class="text-align:center"><p>0.2</p></td>
+<td class="text-align:center"><p>0.1</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Estima el valor  del volumen del tumor en el intervalo <span class="math notranslate nohighlight">\([0,\, 1],\)</span> calculando las sumas superior e inferior para la partición dada en en el cuadro.</p></li>
+<li><p>Estima el volumen del tumor usando la fórmula del punto medio compuesta.</p></li>
+<li><p>Estima el volumen del tumor usando la fórmula  del trapecio compuesta.</p></li>
+</ul>
+</li>
+<li><p>Calcula el valor del área comprendida entre la gráfica de la función <span class="math notranslate nohighlight">\(f(x)=sen(x)\)</span> y el eje <span class="math notranslate nohighlight">\(OX\)</span> limitada
+por las rectas <span class="math notranslate nohighlight">\(x=0\)</span> y <span class="math notranslate nohighlight">\(x=\pi\)</span> <strong>utilizando integración numérica</strong>. Utiliza para ello las fórmulas del punto
+medio compuesto, trapecio compuesto y Simpson compuesto tomando como nodos los puntos <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span>,
+<span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>, <span class="math notranslate nohighlight">\(\frac{3\pi}{4}\)</span> y <span class="math notranslate nohighlight">\(\pi\)</span> (distribuidos en 2 o 4 subintervalos, según proceda). Compara los resultados
+obtenidos con el valor exacto de la integral.</p></li>
+<li><p>Sea la función <span class="math notranslate nohighlight">\(f(x) = \sqrt{-x \ln (x)}\)</span> definida en los puntos <span class="math notranslate nohighlight">\(x\)</span> para
+los cuales <span class="math notranslate nohighlight">\(-x \ln(x) \geq 0\)</span>.  Calcula el volumen del sólido generado al rotar todo su dominio alrededor del eje <span class="math notranslate nohighlight">\(OX\)</span>.</p></li>
+<li><p>Comprueba que <span class="math notranslate nohighlight">\(f(x)=\frac23 e^x+e^{-2x}\)</span> es una solución de la ecuación diferencial <span class="math notranslate nohighlight">\(y'+2y = 2 e^x.\)</span></p></li>
+<li><p>Halla la solución general de la ecuación diferencial:  <span class="math notranslate nohighlight">\(y^{\prime} x = y \ln (y)\)</span>.</p></li>
+<li><p>Resuelve el siguiente problema de valor inicial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      \left\{
+        \begin{array}{c}
+          \displaystyle \cos(y)\,\frac{dy}{dt}= \frac{-t\,sen(y)}{1+t^2}  \\
+                y(1)= \frac{\pi}{2}
+        \end{array}
+      \right.
+    \end{split}\]</div>
+</li>
+<li><p>Resuelve la ecuación diferencial:  <span class="math notranslate nohighlight">\(\displaystyle{y^{\prime} - \frac{y}{x-2} = 2 (x-2)^2}\)</span>.</p></li>
+<li><p>Resuelve la ecuación diferencial: <span class="math notranslate nohighlight">\(y^{\prime} + y = sen(x) \)</span> con la condición inicial <span class="math notranslate nohighlight">\(y(\pi)=1\)</span>.</p></li>
+<li><p>Resuelve el siguiente problema de valor inicial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+        \left\{
+          \begin{array}{c}
+            \displaystyle y^{\prime }\,+ \,2y = e^{3x}  \\
+                  y(0)= \frac{2}{5}
+          \end{array}
+        \right.
+      \end{split}\]</div>
+<p>Calcula <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow \infty}{y(x)}\)</span>.</p>
+</li>
+<li><p>La cantidad de medicamento en un órgano dentro del cuerpo humano sigue la ecuación</p>
+<div class="math notranslate nohighlight">
+\[
+      \frac{dx}{dt}=\text{velocidad de entrada} - \text{velocidad de salida,}
+      \]</div>
+<p>donde <span class="math notranslate nohighlight">\(x(t)\)</span> es la cantidad de medicamento en el instante <span class="math notranslate nohighlight">\(t.\)</span> Recordemos que la velocidad de entrada o salida es igual al producto de la concentración del medicamento (a la entrada o a la salida, respectivamente)
+multiplicada por la velocidad del flujo sanguíneo.</p>
+<p>Queremos que un medicamento llegue a un riñón que tiene un volumen de 120 cm<span class="math notranslate nohighlight">\(^3\)</span>, por lo que se lo suministramos al flujo sanguíneo con una concentración de 0.2 g/cm<span class="math notranslate nohighlight">\(^3\)</span>. Sabemos que dicho flujo circula a una velocidad constante de 3 cm<span class="math notranslate nohighlight">\(^3\)</span>/s.</p>
+<ul class="simple">
+<li><p>Calcula <span class="math notranslate nohighlight">\(x(t)\)</span> en cualquier instante si sabemos que al principio no había vestigio alguno del medicamento.</p></li>
+<li><p>¿En qué momento habrá <span class="math notranslate nohighlight">\(12\,\)</span>g. de medicamento en el riñón?</p></li>
+</ul>
+</li>
+<li><p>Un célebre actor de cine contrae fiebres virulentas mientras rueda una película en áfrica. A consecuencia de ello, el actor fallece a las 8:00 a.m. en la habitación del hotel donde se aloja, con una temperatura corporal en el momento de la muerte de 40<span class="math notranslate nohighlight">\(^{o}\)</span> Celsius. El jefe de seguridad del hotel descubre el cuerpo sin vida dos horas después de su muerte (a las 10:00 a.m.) y avisa a la policía y al forense, que se personan a mediodía (12:00 a.m.). Sabemos que la ley de Newton de enfriamiento de los cuerpos establece que:</p>
+<div class="math notranslate nohighlight">
+\[
+      T'(t)=k\,\left(T(t)-T_\mathrm{amb}\right),
+      \]</div>
+<p>donde <span class="math notranslate nohighlight">\(T(t)\)</span> denota la temperatura del cuerpo (en grados Celsius) transcurrido un tiempo  <span class="math notranslate nohighlight">\(t\)</span> (medido en horas), <span class="math notranslate nohighlight">\(T_\mathrm{amb}\)</span> es  la temperatura ambiente y <span class="math notranslate nohighlight">\(k\)</span> es una constante. Supondremos que la habitación del hotel estaba a una temperatura constante de 20<span class="math notranslate nohighlight">\(^{o}\)</span> Celsius y tomaremos <span class="math notranslate nohighlight">\(k=-0.1\)</span>:</p>
+<ul class="simple">
+<li><p>Determina la temperatura del cadáver cuando lo descubre el jefe de seguridad.</p></li>
+<li><p>Determina la temperatura del cadáver cuando llega el forense.</p></li>
+</ul>
+</li>
+<li><p>Razona la veracidad o falsedad de:</p>
+<div class="math notranslate nohighlight">
+\[
+      \int_1^4 {\frac{1}{3-x}\, dx}=-\ln|x-3|\Big]_{1}^{4}= -\ln(4-3)+\ln|1-3|=-\ln(1)+\ln(2)=\ln(2).
+      \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(g(x)=\frac{{x}^{2}-1}{x}\)</span>:</p>
+<ul class="simple">
+<li><p>Halla <span class="math notranslate nohighlight">\(\displaystyle{\int_a^e g(x) \, dx}\)</span>, siendo <span class="math notranslate nohighlight">\(a\)</span> un número real mayor que cero.</p></li>
+<li><p>Calcula <span class="math notranslate nohighlight">\(\displaystyle{\int_0^e g(x) \, dx}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Calcula:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^{\ln(5)}  \frac{e^{x} \sqrt{e^{x}-1}}{e^{x}+3 } \, dx\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int_1^x \frac{\sin( t)}{t}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^1 \frac{x}{\sqrt{1+{x}^{2}}} \, dx\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^{\pi/4} x^2\cos(x) \, dx\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^{\pi/4} \arctan(x) \, dx\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ejercicios-complementarios">
+<h2><span class="section-number">4.8.2. </span>Ejercicios complementarios<a class="headerlink" href="#ejercicios-complementarios" title="Permalink to this headline">#</a></h2>
+<ol>
+<li><p>¿En qué se transforma la siguiente integral al realizar el cambio de variable <span class="math notranslate nohighlight">\(\sin(3x)=t\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[
+      \int{\frac{\cos(3x)}{\sqrt{5+\sin(3x)}}\,}dx\,
+      \]</div>
+</li>
+<li><p>Resuelve la integral <span class="math notranslate nohighlight">\(\displaystyle \int{\frac{dx}{\sqrt{5x+8}}}\)</span> mediante un cambio de variable.</p></li>
+<li><p>Sea la función</p>
+<div class="math notranslate nohighlight">
+\[
+      f : \mathbb{R} \longrightarrow \mathbb{R}
+      \]</div>
+<p>dada por <span class="math notranslate nohighlight">\(f(x) = 3 - x^2\)</span>. Consideramos la partición <span class="math notranslate nohighlight">\(P=\{-2,-1,1,3\}\)</span>. Elige la opción correcta.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      \begin{array}{lll}
+      \\
+      \text{$a)$ $L(f,P)=9$,     $U(f,P)=12$  }    &amp; \qquad
+      \text{$b)$ $L(f,P)= 9$,     $U(f,P)=10$}    \\
+      \\
+      \text{$c)$ $L(f,P)=-9$,      $U(f,P)=10$ }   &amp; \qquad
+      \text{$d)$ $L(f,P)=-9$,      $U(f,P)=12$}
+      \end{array}
+      \end{split}\]</div>
+</li>
+<li><p>Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      f(x) = \begin{cases} 1 \, , \quad \quad &amp; \text{si } x \in [0,1] \\ 1+x \, , \quad  \quad &amp; \text{si } x \in (1,2] .
+      \end{cases}
+      \end{split}\]</div>
+<p>Se define <span class="math notranslate nohighlight">\(S(x_0)\)</span> como el área limitada por la gráfica de <span class="math notranslate nohighlight">\(f\)</span>, el eje <span class="math notranslate nohighlight">\(OX\)</span> y
+la recta <span class="math notranslate nohighlight">\(x=x_0\)</span> (con <span class="math notranslate nohighlight">\(x_0 \in [0,2])\)</span>.</p>
+<ul class="simple">
+<li><p>Razona, sin construir la función, la continuidad de <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>Obtén <span class="math notranslate nohighlight">\(S(x_0)\)</span> para cada <span class="math notranslate nohighlight">\(x_0\)</span> perteneciente al intervalo <span class="math notranslate nohighlight">\([0,2]\)</span>.</p></li>
+<li><p>Supón que se repite el procedimiento con la función <span class="math notranslate nohighlight">\(S\)</span> en lugar de <span class="math notranslate nohighlight">\(f\)</span>, construyéndose de esta forma la función <span class="math notranslate nohighlight">\(A\)</span>, donde <span class="math notranslate nohighlight">\(A(x_0)\)</span> es el área limitada por la gráfica de <span class="math notranslate nohighlight">\(S\)</span>, el eje <span class="math notranslate nohighlight">\(OX\)</span> y la recta <span class="math notranslate nohighlight">\(x = x_0\)</span>.  Razona, sin construir la función, la derivabilidad de <span class="math notranslate nohighlight">\(A\)</span> y obtén, además, <span class="math notranslate nohighlight">\(A(x_0)\)</span> para todo <span class="math notranslate nohighlight">\(x_0\)</span> perteneciente al intervalo <span class="math notranslate nohighlight">\([0,2]\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Sea la función <span class="math notranslate nohighlight">\(F\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+      F(x) = \int_{\pi/2}^{g(x)} \, f(t) \, dt,
+      \]</div>
+<p>donde <span class="math notranslate nohighlight">\(f(t) = (1-sen^3 (t)) \, e^t\)</span> , y , <span class="math notranslate nohighlight">\(g(x) = \frac{\pi}{2} + e^x\)</span>.</p>
+<ul class="simple">
+<li><p>Determina los puntos críticos de <span class="math notranslate nohighlight">\(F\)</span> en el intervalo <span class="math notranslate nohighlight">\([1\, ,\, \ln(5\pi)]\)</span>.</p></li>
+<li><p>Sin calcular <span class="math notranslate nohighlight">\(F''\)</span>, clasifica los puntos críticos y determina los extremos absolutos de <span class="math notranslate nohighlight">\(F\)</span> en <span class="math notranslate nohighlight">\([1,\,\ln(5\pi)]\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función continua en <span class="math notranslate nohighlight">\([0,\,\infty),\)</span> tal que <span class="math notranslate nohighlight">\(f(0)\neq 0\)</span>. Elige la opción correcta:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F(x)=\displaystyle\int_0^{x^2}{f(t)\,dt}\)</span> es una función derivable y <span class="math notranslate nohighlight">\(F^{\prime}(x)=2xf(x^2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F(x)=\displaystyle\int_0^{x^2}{f(t)\,dt}\)</span> es una función derivable y <span class="math notranslate nohighlight">\(F^{\prime}(x)=2xf(x^2)-f(0)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F(x)=\displaystyle\int_0^{x^2}{f(t)\,dt}\)</span> es una función continua pero no es derivable</p></li>
+<li><p>ninguna de las otras respuestas es correcta</p></li>
+</ul>
+</li>
+<li><p>Consideramos la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = 3 + 6\cos (2x)\)</span>.</p>
+<ul class="simple">
+<li><p>Calcula una primitiva de <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(F\)</span>, tal que <span class="math notranslate nohighlight">\(F(0)= -1\)</span>. Comprueba que <span class="math notranslate nohighlight">\(F'=f\)</span>.</p></li>
+<li><p>Halla razonadamente los extremos absolutos y relativos de <span class="math notranslate nohighlight">\(F\)</span> en <span class="math notranslate nohighlight">\([0,\,2\pi]\)</span></p></li>
+</ul>
+</li>
+<li><p>El valor de <span class="math notranslate nohighlight">\(\displaystyle\int_{-\frac{\pi}{4}}^0{\sin^3(x)\cos(x)\, dx}\,\,\)</span> es:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{-\frac{1}{16}} \,\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\,\,\,\,\frac{1}{16}}\, \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\,\,\,\,\infty} \,\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\,\,\,-2\)</span></p></li>
+</ul>
+</li>
+<li><p>El valor de <span class="math notranslate nohighlight">\(\displaystyle\int_{\frac{\pi}{2}}^{\pi}{\frac{\cos(3x)}{\sqrt{5+\sin(3x)}}\,dx}\,\,\)</span> es:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\infty}\)</span>, porque el denominador se anula en ese intervalo</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{2-\sqrt{5}}  \,\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{2(\sqrt{5}-2)}  \,\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\frac{2}{3}(\sqrt{5}-2)}\)</span></p></li>
+</ul>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f(x) = x (x-a)\)</span>, <span class="math notranslate nohighlight">\(a &gt; 0\)</span>, y <span class="math notranslate nohighlight">\(V_f\)</span> el volumen engendrado al girar en torno al eje <span class="math notranslate nohighlight">\(OX\)</span> la región
+del plano limitada por dicha función y las rectas <span class="math notranslate nohighlight">\(y=0\)</span> y <span class="math notranslate nohighlight">\(x=c,\,\)</span> <span class="math notranslate nohighlight">\(c \geq a &gt; 0\)</span>.  Halla <span class="math notranslate nohighlight">\(c\)</span> para que <span class="math notranslate nohighlight">\(V_f\)</span> sea igual al volumen del cono engendrado por el triángulo de vértices <span class="math notranslate nohighlight">\((0,0)\)</span>, <span class="math notranslate nohighlight">\((c,0)\)</span> y <span class="math notranslate nohighlight">\((c,f(c))\)</span> al girar en torno al eje <span class="math notranslate nohighlight">\(OX\)</span>.</p></li>
+<li><p>Calcula el volumen del cuerpo de revolución que se obtiene al girar, en torno al eje <span class="math notranslate nohighlight">\(OX\)</span>, la intersección de los círculos , <span class="math notranslate nohighlight">\(x^2 + y^2 \leq 16\)</span> , y , <span class="math notranslate nohighlight">\((x-3)^2 + y^2 \leq 25\)</span>.</p></li>
+<li><p>Halla el volumen del sólido generado al girar alrededor del eje <span class="math notranslate nohighlight">\(OX\)</span> el recinto limitado por los semiejes positivos, la parábola <span class="math notranslate nohighlight">\(y = -x^2+2x+3\)</span> y la recta <span class="math notranslate nohighlight">\(y = 2-2x/3\)</span>.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(Q(t) = \cos (\pi t)\)</span> la carga eléctrica de un circuito en un instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<ul class="simple">
+<li><p>Aproxima el valor de la carga en <span class="math notranslate nohighlight">\(t=0.25\)</span> mediante el polinomio de Lagrange, <span class="math notranslate nohighlight">\(P_1\)</span>, relativo a <span class="math notranslate nohighlight">\(Q\)</span> y a los instantes de tiempo <span class="math notranslate nohighlight">\(0\)</span> y <span class="math notranslate nohighlight">\(0.5\)</span>.</p></li>
+<li><p>Calcula el polinomio de Lagrange, <span class="math notranslate nohighlight">\(P_2\)</span>, relativo a <span class="math notranslate nohighlight">\(Q\)</span> y a los instantes <span class="math notranslate nohighlight">\(0.5\)</span> y <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+<li><p>Aproxima la integral definida <span class="math notranslate nohighlight">\(\displaystyle\int_0^{1} Q(t) \,  dt\)</span> empleando los polinomios anteriores.</p></li>
+<li><p>Aproxima la integral anterior mediante la fórmula del trapecio compuesta con <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p></li>
+</ul>
+</li>
+<li><p>El valor aproximado de la integral <span class="math notranslate nohighlight">\(\displaystyle{\int_{\pi/4}^{3\pi/4}{\mbox{cotan}(x)\,}dx\,\,}\)</span>  usando el método de Simpson (simple) es:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle-\frac{\pi}{12}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\frac{\pi}{12}\)</span></p></li>
+<li><p>es una integral impropia porque la función cotangente tiene una asíntota vertical en <span class="math notranslate nohighlight">\([\pi/4,\, 3\pi/4]\)</span></p></li>
+</ul>
+</li>
+<li><p>Calcula la recta, <span class="math notranslate nohighlight">\(r\)</span>, tangente a la función <span class="math notranslate nohighlight">\(f(x)={x}^{2}-2x+1\)</span> por el punto <span class="math notranslate nohighlight">\((3,f(3))\)</span>. A continuación, dibuja la región del plano <span class="math notranslate nohighlight">\(R\)</span> limitada por la gráfica de <span class="math notranslate nohighlight">\(f\)</span>, la recta <span class="math notranslate nohighlight">\(r\)</span> y el semieje positivo <span class="math notranslate nohighlight">\(OX\)</span> y calcula la superficie de dicha región.</p></li>
+<li><p>Halla el área de la figura limitada por la curva <span class="math notranslate nohighlight">\(y=\tan(x)\)</span>, el eje <span class="math notranslate nohighlight">\(OY\)</span>y la recta <span class="math notranslate nohighlight">\(y=1\)</span>. Calcula también el volumen generado al hacer girar la figura anterior alrededor del eje <span class="math notranslate nohighlight">\(OX\)</span>.</p></li>
+<li><p>Calcula la superficie del plano limitada por la gráfica de <span class="math notranslate nohighlight">\(y=\ln(\frac{1}{x})\)</span>, la recta <span class="math notranslate nohighlight">\(x=\frac{1}{2}\)</span> y la recta <span class="math notranslate nohighlight">\(x=2\)</span>.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(\displaystyle f(x)=ax+b+\frac{8}{x}\)</span>, donde <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> son dos números reales.</p>
+<ul class="simple">
+<li><p>Calcula <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> para que la gráfica de <span class="math notranslate nohighlight">\(f\)</span> pase por el punto <span class="math notranslate nohighlight">\((-2,-6)\)</span> y tenga en <span class="math notranslate nohighlight">\(x=-2\)</span> una tangente horizontal.</p></li>
+<li><p>Para los valores de <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> obtenidos en el apartado anterior, calcula el área limitada por la gráfica de <span class="math notranslate nohighlight">\(f\)</span> y las rectas <span class="math notranslate nohighlight">\(x=1\)</span>, <span class="math notranslate nohighlight">\(x=2\)</span> e <span class="math notranslate nohighlight">\(y=0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>El área del recinto limitado por <span class="math notranslate nohighlight">\(y=ln(x)\)</span> y el eje  de abscisas entre <span class="math notranslate nohighlight">\(x=\displaystyle{\frac12}\)</span> y <span class="math notranslate nohighlight">\(x=2\)</span> está dada por:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_{1/2}^2 {|\ln(x)| \, dx}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_{1/2}^2 {\ln(x)\, dx}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\left|\int_{1/2}^2 {\ln(x)\, dx}\right|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\pi \,\int_{1/2}^2{(\ln(x))^2\, dx}\)</span></p></li>
+</ul>
+</li>
+<li><p>El volumen de revolución generado al girar, alrededor del eje OX, la superficie comprendida entre las curvas  <span class="math notranslate nohighlight">\(y=x^2\)</span> e <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> se calcula así:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\pi\,\int_0^{\infty}{\left[ (x^2)^2-(\sqrt{x})^2 \right]}\, dx \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\pi\,\int_0^{1}{\left[ (x^2)^2-(\sqrt{x})^2 \right]}\, dx \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\pi\int_0^{1}{\left[ (\sqrt{x})^2 - (x^2)^2 \right]}\, dx \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^{1}{\left[ (\sqrt{x}-x^2)^2 \right]}\, dx \)</span></p></li>
+</ul>
+</li>
+<li><p>Calcula el volumen que genera la curva <span class="math notranslate nohighlight">\(g(x) = \dfrac{1}{x-1}\)</span> al girar alrededor del eje <span class="math notranslate nohighlight">\(OX,\)</span> para <span class="math notranslate nohighlight">\(0 \leq x \leq 2\)</span>.</p></li>
+<li><p>La integral <span class="math notranslate nohighlight">\(\displaystyle\int_0^5{\frac{1}{\sqrt{25-5x}}}\, dx\)</span>:</p>
+<ul class="simple">
+<li><p>es impropia de tercer tipo</p></li>
+<li><p>es impropia de segundo tipo porque la función integrando no está acotada superiormente en <span class="math notranslate nohighlight">\(x=5\)</span></p></li>
+<li><p>es impropia de segundo tipo porque la función integrando no está acotada inferiormente en <span class="math notranslate nohighlight">\(x=5\)</span></p></li>
+<li><p>es impropia de primer tipo porque la función integrando no está acotada superiormente en <span class="math notranslate nohighlight">\(x=5\)</span></p></li>
+</ul>
+</li>
+<li><p>¿Cuál es la solución del siguiente problema de valor inicial?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      \left\{
+      \begin{array}{c}
+            \displaystyle{y^{\prime } = 2 y^{2} } \\
+                  y(0)= \displaystyle{\frac{1}{2}}
+      \end{array}
+      \right.
+      \end{split}\]</div>
+</li>
+<li><p>¿Cuál es la solución del siguiente problema de valor inicial?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      \left\{ 
+      \begin{array}{l}
+        \displaystyle {y' + \cos(x) y = \cos(x)} \\
+            \displaystyle{ y(0)= 0 \, .}
+      \end{array}\right.
+      \end{split}\]</div>
+</li>
+<li><p>Calcula la solución general de la siguiente ecuación diferencial ordinaria:</p>
+<div class="math notranslate nohighlight">
+\[
+      v^\prime = v + t\,e^t.
+      \]</div>
+</li>
+<li><p>Del  problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      \begin{cases} \displaystyle{y^\prime = -y^2} \\ \displaystyle{y(0)=\frac12} \end{cases}
+      \end{split}\]</div>
+<p>podemos obtener la información siguiente:</p>
+<ul class="simple">
+<li><p>ninguna de las siguientes afirmaciones es correcta</p></li>
+<li><p>la solución de ese problema de valor inicial es una función <span class="math notranslate nohighlight">\(y\)</span>  que es creciente y tal que <span class="math notranslate nohighlight">\(\displaystyle{y^\prime(0)=-\frac14}\)</span></p></li>
+<li><p>la solución de ese problema de valor inicial es <span class="math notranslate nohighlight">\(\displaystyle y= \frac1{2-x}\)</span></p></li>
+<li><p>la solución de ese problema de valor inicial es una función decreciente. Además, la función <span class="math notranslate nohighlight">\(g\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle g(x)=\frac{1}{2}-\frac{x}{4}\)</span> es la recta tangente a la función solución del p.v.i. en el punto de abscisa <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Sea la ecuación diferencial ordinaria <span class="math notranslate nohighlight">\(\displaystyle y^\prime = x^2y\)</span>, donde <span class="math notranslate nohighlight">\(y\)</span> es una función de <span class="math notranslate nohighlight">\(x.\)</span> Entonces:</p>
+<ul class="simple">
+<li><p>la solución general es <span class="math notranslate nohighlight">\(\displaystyle y=k\,e^{-x^3/3}\)</span>, donde <span class="math notranslate nohighlight">\(k\)</span> es constante de integración</p></li>
+<li><p>la solución general es <span class="math notranslate nohighlight">\(\displaystyle y= k\,e^{x^3/3}\)</span>, donde <span class="math notranslate nohighlight">\(k\)</span> es constante de integración</p></li>
+<li><p>no puedo hallar la solución porque no es una ecuación diferencial ordinaria separable ni tampoco lineal</p></li>
+<li><p>la solución general es <span class="math notranslate nohighlight">\(\displaystyle y= \frac{x^3}{3}\,y+k\)</span>, donde <span class="math notranslate nohighlight">\(k\)</span> es constante de integración</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="07.EcuacionesDiferenciales.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.7. </span>Ecuaciones Diferenciales Ordinarias (EDOs)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Python para cálculo de una variable</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
