@@ -2,7 +2,7 @@
 
 En este capítulo introduciremos las primeras definiciones sobre funciones reales de variable real. 
 
-Lo dividimos en 6 secciones:
+Lo dividimos en seis secciones (más un boletín de problemas):
 
 1. Definiciones básicas.
 2. Funciones elementales.

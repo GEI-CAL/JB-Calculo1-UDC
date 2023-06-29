@@ -12,3 +12,5 @@ Dividimos este capítulo en las siguientes secciones:
 2. Límites y continuidad en **Sympy**.
 3. Introducción a **Numpy**.
 4. Graficación de funciones con **Matplotlib**.
+5. Derivación en **Python**.
+6. Integración en **Python**.

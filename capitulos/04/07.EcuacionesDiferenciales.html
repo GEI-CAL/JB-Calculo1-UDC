@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4.7. Ecuaciones Diferenciales Ordinarias (EDOs) &#8212; Calculo en una variable</title>
+    <title>4.7. Ecuaciones diferenciales &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.8. Boletín IV: Integración de funciones de una variable" href="08.Boletin4.html" />
@@ -337,6 +339,33 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/README.html">
+   6. Ejercicios y exámenes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_22.html">
+     6.1. Examen Enero 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_22.html">
+     6.2. Examen Julio 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_23.html">
+     6.3. Examen Enero 2023
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -396,7 +425,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/04/07.EcuacionesDiferenciales.ipynb"
+        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/04/07.EcuacionesDiferenciales.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -476,23 +505,166 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primeras-definiciones">
+   4.7.1. Primeras definiciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelizacion-matematica">
+   4.7.2. Modelización matemática
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ley-de-enfriamiento-de-newton">
+     4.7.2.1. Ley de enfriamiento de Newton
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desintegracion-radiactica">
+     4.7.2.2. Desintegración radiactica
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#segunda-ley-de-newton">
+     4.7.2.3. Segunda ley de Newton
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caida-de-un-cuerpo-en-un-medio-resistente">
+     4.7.2.4. Caída de un cuerpo en un medio resistente
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sympy-para-resolver-edos">
+   4.7.3. Uso de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+   para resolver EDOs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edos-en-variables-separadas">
+   4.7.4. EDOs en variables separadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edos-lineales-de-primer-orden">
+   4.7.5. EDOs lineales de primer orden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   4.7.6. Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ecuaciones Diferenciales Ordinarias (EDOs)</h1>
+                <h1>Ecuaciones diferenciales</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primeras-definiciones">
+   4.7.1. Primeras definiciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelizacion-matematica">
+   4.7.2. Modelización matemática
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ley-de-enfriamiento-de-newton">
+     4.7.2.1. Ley de enfriamiento de Newton
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desintegracion-radiactica">
+     4.7.2.2. Desintegración radiactica
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#segunda-ley-de-newton">
+     4.7.2.3. Segunda ley de Newton
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caida-de-un-cuerpo-en-un-medio-resistente">
+     4.7.2.4. Caída de un cuerpo en un medio resistente
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sympy-para-resolver-edos">
+   4.7.3. Uso de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+   para resolver EDOs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edos-en-variables-separadas">
+   4.7.4. EDOs en variables separadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edos-lineales-de-primer-orden">
+   4.7.5. EDOs lineales de primer orden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   4.7.6. Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -500,8 +672,627 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales-ordinarias-edos">
-<h1><span class="section-number">4.7. </span>Ecuaciones Diferenciales Ordinarias (EDOs)<a class="headerlink" href="#ecuaciones-diferenciales-ordinarias-edos" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales">
+<span id="sec-edos"></span><h1><span class="section-number">4.7. </span>Ecuaciones diferenciales<a class="headerlink" href="#ecuaciones-diferenciales" title="Permalink to this headline">#</a></h1>
+<section id="primeras-definiciones">
+<h2><span class="section-number">4.7.1. </span>Primeras definiciones<a class="headerlink" href="#primeras-definiciones" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_EDO">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<ul class="simple">
+<li><p>Una <strong>ecuación diferencial ordinaria</strong> (E.D.O., o también O.D.E. por sus siglas en inglés <em>Ordinary Differential Equation</em>) es una ecuación en la que aparece una función incógnita, <span class="math notranslate nohighlight">\(y=y(x)\)</span>, y sus derivadas hasta un determinado orden.</p></li>
+<li><p>Se llama <strong>orden</strong> de una ecuación diferencial ordinaria al mayor índice de las derivadas que intervienen en la ecuación.</p></li>
+</ul>
+</section>
+</div><p>Veamos algunos ejemplos sencillos, para entrar en calor:</p>
+<ul class="simple">
+<li><p>EDOs de orden 1:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(y' = x^2 + 1\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\log(xy')=e^{xy}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(y^2 y' + x^2 y = 2\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(T' + T = cos(5t)\)</span>,</p></li>
+</ul>
+</li>
+<li><p>EDOs de orden 2:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(y''+5y'-6y = x^2 + 1\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(mx'' - sx' = g\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="proof definition admonition" id="def_variables_dep_indep">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Dentro de una EDO distinguiremos dos tipos de variables:</p>
+<ul class="simple">
+<li><p><strong>Variable independiente</strong>. Es aquélla que, dentro de la relación establecida, no depende de ninguna otra. Suele representarse mediante las letras <span class="math notranslate nohighlight">\(x\)</span> o <span class="math notranslate nohighlight">\(t\)</span> (aunque esto no es más que una convención).</p></li>
+<li><p><strong>Variable dependiente</strong>. Es aquélla cuyos valores dependen de los que asumen las variables independientes. Suele representarse con la letra <span class="math notranslate nohighlight">\(y\)</span> o con la inicial, muchas veces en mayúscula, de la magnitud que representa (<span class="math notranslate nohighlight">\(a\)</span> para la aceleración, <span class="math notranslate nohighlight">\(T\)</span> para la temperatura,…).</p></li>
+</ul>
+</section>
+</div><p>Fijémonos que, en una EDO con, por ejemplo, <span class="math notranslate nohighlight">\(x\)</span> como variable independiente e <span class="math notranslate nohighlight">\(y\)</span> como variable dependiente, cuando escribimos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y\)</span>, queremos decir <span class="math notranslate nohighlight">\(y(x)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(y'\)</span>, queremos decir <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}\)</span>, <em>etc.</em>.</p></li>
+</ul>
+<p>Una vez asentadas estas primeras definiciones, nos vamos a centrar ya, y en lo que sigue en estas notas, en las EDOs de orden 1. Fijamos a continuación la definición:</p>
+<div class="proof definition admonition" id="def_EDO_orden_uno">
+<p class="admonition-title"><span>Definition </span> (Ecuación diferencial ordinaria de primer orden)</p>
+<section class="definition-content" id="proof-content">
+<p>Una ecuación diferencial ordinaria de primer orden es una ecuación diferencial que tiene la forma</p>
+<div class="math notranslate nohighlight">
+\[
+y'\,=\,f(x,y)\,,
+\]</div>
+<p>donde la incógnita es la función <span class="math notranslate nohighlight">\(y=y(x)\)</span>.</p>
+</section>
+</div><p>Casos particulares de la definición anterior son:</p>
+<ol class="simple">
+<li><p>Cuando <span class="math notranslate nohighlight">\(f=f(x)\)</span>. En este caso, el problema se puede resolver integrando con respecto a la variable independiente <span class="math notranslate nohighlight">\(x\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+y(x)=\int f(x)\,dx\,.
+\]</div>
+<ol class="simple">
+<li><p>Cuando <span class="math notranslate nohighlight">\(f=f(y)\)</span>. En este caso, la EDO se llama <strong>autónoma</strong>. Es un caso muy frecuente en las aplicaciones. Veremos más adelante cómo resolver este tipo de ecuaciones y algunas más generales.</p></li>
+</ol>
+<div class="proof definition admonition" id="def_solucion_EDO">
+<p class="admonition-title"><span>Definition </span> (Solución de la EDO de primer orden)</p>
+<section class="definition-content" id="proof-content">
+<p>Se llama solución de la EDO de primer orden</p>
+<div class="math notranslate nohighlight">
+\[
+y'=f(x,y)\,,\quad x\in (a,b)\,,
+\]</div>
+<p>a cualquier función <span class="math notranslate nohighlight">\(y=y(x)\)</span> tal que <span class="math notranslate nohighlight">\(y'(x)=f(x,y(x))\)</span>, para <span class="math notranslate nohighlight">\(x\in(a,b)\)</span>.</p>
+</section>
+</div><p>Veamos un par de ejemplos sencillos:</p>
+<div class="proof example admonition" id="ex_EDO">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<ol>
+<li><p>Para la siguiente EDO,</p>
+<div class="math notranslate nohighlight">
+\[
+    y'=5y\, ,
+    \]</div>
+<p>la función <span class="math notranslate nohighlight">\(y(x)=e^{5x}\)</span> es una solución, puesto que</p>
+<div class="math notranslate nohighlight">
+\[
+    y'(x)=5e^{5x}=5y(x)\,.
+    \]</div>
+<p>Pero… ¡no es la única solución! Fíjate que <span class="math notranslate nohighlight">\(y_C(x)=e^{5x+C}\)</span>, para cualquier <span class="math notranslate nohighlight">\(C\in\mathbb R\)</span>, también es solución de la EDO anterior, puesto que</p>
+<div class="math notranslate nohighlight">
+\[
+    y'(x)=5e^{5x+C}=5y(x)\,.
+    \]</div>
+<p>Es decir, la EDO dada tiene en realidad infinitas soluciones: para cada valor de la constante <span class="math notranslate nohighlight">\(C\)</span>, obtendremos una solución diferente de la EDO.</p>
+</li>
+<li><p>Las soluciones de la EDO,</p>
+<div class="math notranslate nohighlight">
+\[
+    y'=5x\, ,
+    \]</div>
+<p>son <span class="math notranslate nohighlight">\(\displaystyle y(x) = \frac{5 x^2}{2} + C\)</span>.</p>
+</li>
+</ol>
+</section>
+</div><p>Como acabamos de ver, a través de estos ejemplos, al resolver una EDO de primer orden la solución va a depender de una constante arbitraria que podemos denotar <span class="math notranslate nohighlight">\(C\)</span>. Para determinar dicha constante, es necesario imponer alguna condición adicional. En física y otras ciencias, dicha condición suele describir el estado inicial del sistema, de ahí el nombre que aparece en la siguiente definición:</p>
+<div class="proof definition admonition" id="def_CI_y_PI">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<ul>
+<li><p>Una <strong>condición inicial (c.i.)</strong> es una condición adicional sobre la variable dependiente en una EDO:</p>
+<div class="math notranslate nohighlight">
+\[
+    y(x_0)=y_0\,.
+    \]</div>
+</li>
+<li><p>Un <strong>problema de valor inicial (P.V.I.)</strong> es el problema que consiste en resolver una EDO junto con una condición inicial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{\begin{array}{lcl}
+    y'&amp;=&amp;f(x,y)\,,\\
+    y(x_0)&amp;=&amp;y_0\,.
+    \end{array}\right.
+    \end{split}\]</div>
+</li>
+</ul>
+</section>
+</div><div class="proof example admonition" id="ex_PVI">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<ol>
+<li><p>La única solución del problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{\begin{array}{lcl}
+    y'&amp;=&amp; 5y \,,\\
+    y(0)&amp;=&amp; 1 \,,
+    \end{array}\right.
+    \end{split}\]</div>
+<p>es <span class="math notranslate nohighlight">\(y(x) = e^{5x}\)</span>.</p>
+</li>
+<li><p>La única solución del problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{\begin{array}{lcl}
+    y'&amp;=&amp; 5x \,,\\
+    y(0)&amp;=&amp; 1 \,,
+    \end{array}\right.
+    \end{split}\]</div>
+<p>es <span class="math notranslate nohighlight">\(\displaystyle y(x) = \frac{5x^2}{2}+1\)</span>.</p>
+</li>
+</ol>
+</section>
+</div><p>Un poco más adelante, en esta misma sección, veremos cómo resolver dos tipos especiales de ecuaciones diferenciales ordinarias de primer orden: las ecuaciones en variables separadas y las ecuaciones lineales de primer orden.</p>
+</section>
+<section id="modelizacion-matematica">
+<h2><span class="section-number">4.7.2. </span>Modelización matemática<a class="headerlink" href="#modelizacion-matematica" title="Permalink to this headline">#</a></h2>
+<section id="ley-de-enfriamiento-de-newton">
+<h3><span class="section-number">4.7.2.1. </span>Ley de enfriamiento de Newton<a class="headerlink" href="#ley-de-enfriamiento-de-newton" title="Permalink to this headline">#</a></h3>
+<p>La ley de enfriamiento de Newton (<a class="reference external" href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton</a>) establece que cuando la diferencia de temperaturas entre un cuerpo y su medio ambiente no es demasiado grande, la variación en el tiempo de la temperatura del cuerpo es proporcional a la diferencia de la temperatura entre el cuerpo y el medio externo.</p>
+<p>Podemos escribir matemáticamente esta idea como:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{dT}{dt}\,=\,-k\, (T-T_a)\,,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(T(t)\)</span> es la temperatura en el instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(T_a\)</span> es la temperatura ambiente y <span class="math notranslate nohighlight">\(k&gt;0\)</span> es una constante de proporcionalidad (su valor se determina a partir de los datos del problema). Se trata de una ecuación diferencial ordinaria de primer orden o de orden uno.</p>
+<p>En este caso, para poder determinar la temperatura del sistema de forma unívoca, necesitamos conocer la temperatura en algún instante de tiempo.</p>
+<p>Así, normalmente, este problema se complementa con una condición inicial: <span class="math notranslate nohighlight">\(T(0)=T_0\)</span>, donde <span class="math notranslate nohighlight">\(T_0\)</span> es la temperatura inicial del cuerpo.</p>
+<p><strong>Ejercicio propuesto:</strong></p>
+<ol>
+<li><p>Comprobar que la solución general de la EDO</p>
+<div class="math notranslate nohighlight">
+\[
+    \dfrac{dT}{dt}=-k(T-T_a)\,,
+    \]</div>
+<p>está dada por <span class="math notranslate nohighlight">\(T_C(t)=T_a + C\,e^{-kt}\)</span>, <span class="math notranslate nohighlight">\(C\in\mathbb R\)</span>.</p>
+</li>
+<li><p>Comprobar que la solución del P.V.I.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{\begin{array}{rcl}
+    T'&amp;=&amp;-k(T-T_a)\,,\\
+    T(0)&amp;=&amp;T_0\,,
+    \end{array}\right.
+    \end{split}\]</div>
+<p>está dada por <span class="math notranslate nohighlight">\(T(t)=T_a+(T_0-T_a)e^{-kt}\)</span>.</p>
+</li>
+</ol>
+</section>
+<section id="desintegracion-radiactica">
+<h3><span class="section-number">4.7.2.2. </span>Desintegración radiactica<a class="headerlink" href="#desintegracion-radiactica" title="Permalink to this headline">#</a></h3>
+<p>Según ChatGPT, <em>un material radiactivo se desintegra porque tiene núcleos instables de átomos. Estos núcleos emiten partículas y radiación como parte de un proceso conocido como desintegración nuclear. La desintegración nuclear puede ser espontánea, es decir, que ocurre de manera natural, o puede ser provocada por factores externos como la exposición a ciertas formas de energía. La velocidad a la que un material radiactivo se desintegra depende de su propia estructura atómica y de las condiciones externas en las que se encuentra.</em></p>
+<p>Y seguimos preguntándole a ChatGPT por la <strong>ley de desintegración radiactiva</strong> para obtener lo siguiente: <em>La ley de desintegración radiactiva es una ley científica que describe cómo los núcleos de ciertos elementos radiactivos se desintegran espontáneamente con el tiempo. Según esta ley, la tasa de desintegración de un núcleo radiactivo es proporcional a la cantidad de núcleos presentes en un determinado momento. Esto significa que, si tenemos una cantidad fija de un elemento radiactivo, la tasa a la que se desintegrarán sus núcleos será constante y no cambiará con el tiempo. Esta ley es importante en diversas áreas, como la medicina, la industria y la energía nuclear.</em></p>
+<p>Es decir, la velocidad de desintegración depende del número de núcleos y, por tanto, de la cantidad de material presente. Podéis consultar esta ley en la Wikipedia: <a class="reference external" href="https://es.wikipedia.org/wiki/Radiactividad">https://es.wikipedia.org/wiki/Radiactividad</a>.</p>
+<p>¡Vamos a enunciar esto con una EDO!</p>
+<p>Llamaremos <span class="math notranslate nohighlight">\(N(t)\)</span> al número de núcleos radiactivos en el instante <span class="math notranslate nohighlight">\(t\)</span>. La ley de desintegración radiactiva dice: <em>la tasa a la que se desintegrarán sus núcleos será constante y no cambiará con el tiempo</em>. Como esta tasa es la variación en el número de núcleos, es decir, la derivada de <span class="math notranslate nohighlight">\(N\)</span> en función del tiempo, podemos escribir la ecuación diferencial que rige el proceso:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dN}{dt} = -kN \Leftrightarrow N' = -k N.
+\]</div>
+<p>Si conocemos la cantidad inicial de material, <span class="math notranslate nohighlight">\(N_{0}\)</span>, ya tendremos un problema de valor inicial con el que podremos trabajar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{\begin{array}{lcl}
+\displaystyle\frac{dN}{dt} &amp;=&amp; -kN \\
+N(0) &amp;=&amp; N_{0}
+\end{array} \right.
+\end{split}\]</div>
+<p><strong>Ejercicio propuesto:</strong></p>
+<p>Comprueba que el tiempo de semidesintegración radiactiva (es decir, el tiempo necesario para que se desintegre la mitad del material inicialmente presente) es</p>
+<div class="math notranslate nohighlight">
+\[
+t_{0} = \frac{\ln 2}{k}.
+\]</div>
+</section>
+<section id="segunda-ley-de-newton">
+<h3><span class="section-number">4.7.2.3. </span>Segunda ley de Newton<a class="headerlink" href="#segunda-ley-de-newton" title="Permalink to this headline">#</a></h3>
+<p>La segunda ley de Newton (también conocida como <em>principio fundamental de la dinámica</em>) establece que la aceleración de una partícula es directamente proporcional a la fuerza <span class="math notranslate nohighlight">\(F\)</span> que se ejerce sobre ella e inversamente proporcional a su masa <span class="math notranslate nohighlight">\(m\)</span>, esto es,</p>
+<div class="math notranslate nohighlight">
+\[
+F=m\,a\,.
+\]</div>
+<p>Como, por definición,</p>
+<div class="math notranslate nohighlight">
+\[
+a(t)=x''(t)\,,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(t\)</span> denota el tiempo y <span class="math notranslate nohighlight">\(x(t)\)</span> representa el desplazamiento en el instante <span class="math notranslate nohighlight">\(t\)</span>, podemos expresar la segunda ley de Newton como sigue:</p>
+<div class="math notranslate nohighlight">
+\[
+F=m\,x''\,,
+\]</div>
+<p>que no es otra cosa que una ecuación diferencial ordinaria de orden dos para la función desplazamiento: <span class="math notranslate nohighlight">\(x=x(t)\)</span>.</p>
+</section>
+<section id="caida-de-un-cuerpo-en-un-medio-resistente">
+<h3><span class="section-number">4.7.2.4. </span>Caída de un cuerpo en un medio resistente<a class="headerlink" href="#caida-de-un-cuerpo-en-un-medio-resistente" title="Permalink to this headline">#</a></h3>
+<p>Si dejamos caer un cuerpo en un medio con rozamiento, y suponemos, de manera simplificada, que las únicas fuerzas que afectan a ese cuerpo son la de la gravedad y la de fricción, obtenemos el siguiente sistema de fuerzas, en la que consideramos positiva la dirección descendente:</p>
+<div class="math notranslate nohighlight">
+\[
+F_{\text{total}} = mg - F_{\text{fricción}},
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(m\)</span> es la masa del objeto que cae y <span class="math notranslate nohighlight">\(g\)</span> la constante gravitatoria universal (aproximadamente igual a <span class="math notranslate nohighlight">\(9.81\)</span>).</p>
+<p>Ahora, por un lado pensemos que, según la segunda ley de Newton, <span class="math notranslate nohighlight">\(F_{\text{total}} = ma\)</span>, y, por otro lado, vamos a aceptar la hipótesis habitual de que la fuerza de fricción es opuesta al movimiento y depende de manera directamente proporcional de la velocidad del móvil,  <span class="math notranslate nohighlight">\(F_{\text{fricción}} = kv\)</span>.</p>
+<p>Nos quedará la siguiente ecuación, que podemos escribir como una EDO de orden 1 en función de la velocidad del móvil:</p>
+<div class="math notranslate nohighlight">
+\[
+ma = mg - kv \Leftrightarrow mv' = mg - kv.
+\]</div>
+<p><strong>Nota:</strong> También podríamos escribir este problema como una EDO de orden dos en función de la distancia recorrida por el objeto que cae:</p>
+<div class="math notranslate nohighlight">
+\[
+mx'' = mg - kx' \, .
+\]</div>
+</section>
+</section>
+<section id="uso-de-sympy-para-resolver-edos">
+<h2><span class="section-number">4.7.3. </span>Uso de <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> para resolver EDOs<a class="headerlink" href="#uso-de-sympy-para-resolver-edos" title="Permalink to this headline">#</a></h2>
+<p>A continuación mostramos cómo se puede utilizar <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> en la resolución de EDOs.</p>
+<p>Realmente, es muy sencillo.</p>
+<ol class="simple">
+<li><p>Las variables independientes se definen como símbolos (<code class="docutils literal notranslate"><span class="pre">sp.Symbol</span></code>), mientras que las variables dependientes se definen como funciones (<code class="docutils literal notranslate"><span class="pre">sp.Function</span></code>).</p></li>
+<li><p>Definimos la EDO con el comando <code class="docutils literal notranslate"><span class="pre">sp.Eq</span></code>, destacando la dependencia de la variable dependiente de la independiente. En el siguiente ejemplo, puedes ver cómo en la línea 7 escribimos `v(x)’ cada vez que aparece la variable dependiente <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
+<li><p>Las derivadas se escriben, dentro de la definición <code class="docutils literal notranslate"><span class="pre">sp.Eq</span></code> indicando la variable dependiente y la variable dependiente respecto a la que se derivan. En el ejemplo que aparece a continuación, escribimos <span class="math notranslate nohighlight">\(v'\)</span> como <code class="docutils literal notranslate"><span class="pre">v(x).diff(x)</span></code>.</p></li>
+<li><p>Una vez definida la EDO, la resolvemos con el comando <code class="docutils literal notranslate"><span class="pre">sp.dsolve</span></code>.</p></li>
+<li><p>Podemos usar <code class="docutils literal notranslate"><span class="pre">sp.dsolve</span></code> sin más atributos para encontrar la solución general, o podemos incluir una condición inicial, que debemos definir como <code class="docutils literal notranslate"><span class="pre">ics</span></code>, como se puede ver en la penúltima línea del siguiente código.</p></li>
+</ol>
+<p>Como ejemplo, vamos a calcular la velocidad de un cuerpo con masa <span class="math notranslate nohighlight">\(72\)</span> kilogramos, si suponemos que su velocidad inicial es nula y su coeficiente de resistencia al aire es <span class="math notranslate nohighlight">\(k=0.2\)</span>.</p>
+<p>Es decir, en función de lo que vimos en la sección anterior, vamos a resolver el problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{\begin{array}{rcl}
+    72 v'&amp;=&amp; 72*9.81 - 0.2 v\,,\\
+    v(0) &amp;=&amp; 0\,,
+    \end{array}\right.
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="c1"># Variable independiente</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="c1"># Variable dependiente (definida como Function)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+
+<span class="c1"># Escribimos la EDO </span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="mi">72</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">72</span><span class="o">*</span><span class="mf">9.81</span> <span class="o">-</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Calculamos su solución general (este paso no sería necesario, pero queda como ejemplo)</span>
+<span class="n">s_general</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">)</span>   
+<span class="n">display</span> <span class="p">(</span><span class="n">s_general</span><span class="p">)</span>
+
+<span class="c1"># Calculamos la solución particular que nos preguntan</span>
+<span class="n">s_particular</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mf">0.0</span><span class="p">})</span> 
+<span class="n">display</span> <span class="p">(</span><span class="n">s_particular</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle v{\left(x \right)} = C_{1} e^{- 0.00277777777777778 x} + 3531.6\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle v{\left(x \right)} = 3531.6 - 3531.6 e^{- 0.00277777777777778 x}\]</div>
+</div>
+</div>
+</section>
+<section id="edos-en-variables-separadas">
+<h2><span class="section-number">4.7.4. </span>EDOs en variables separadas<a class="headerlink" href="#edos-en-variables-separadas" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_EDO_separable">
+<p class="admonition-title"><span>Definition </span> (Ecuación diferencial en variables separadas )</p>
+<section class="definition-content" id="proof-content">
+<p>Se dice que la ecuación diferencial</p>
+<div class="math notranslate nohighlight">
+\[
+y'\,=\,f(x,y) \,\,\Leftrightarrow\,\, \frac{dy}{dx}\,=\,f(x,y)
+\]</div>
+<p>es <strong>separable</strong> o en <strong>variables separadas</strong> si <span class="math notranslate nohighlight">\(f\)</span> es de la forma:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y)\,=\,g(x)\,h(y)\,,
+\]</div>
+<p>para ciertas funciones <span class="math notranslate nohighlight">\(g\)</span> y <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</section>
+</div><p>Para resolver una EDO de variables separadas, <em>separamos</em> las variables e integramos:</p>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle
+\frac{dy}{dx}\,=\,g(x)\, h(y) \Rightarrow 
+\displaystyle
+\frac{1}{h(y)}\, dy\,=\, g(x)\, dx
+ \Rightarrow 
+\displaystyle
+\int \frac{1}{h(y)} dy\,=\, \int g(x) dx
+\]</div>
+<div class="proof example admonition" id="ex_EDO_separable">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>La EDO <span class="math notranslate nohighlight">\(y'=5y\)</span> es autónoma, un caso particular de EDO en variables separadas. Para resolverla, separamos las variables e integramos:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{dy}{dx}=5y \Rightarrow \dfrac{1}{y}\,dy = 5\,dx\Rightarrow \int\dfrac{1}{y}\,dy =\int 5\,dx\Rightarrow \ln|y|=5x+C\,,
+\]</div>
+<p>donde en el primer paso hemos supuesto que <span class="math notranslate nohighlight">\(y\neq 0\)</span>.
+Ahora, despejamos <span class="math notranslate nohighlight">\(y\)</span> en función de <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln|y(x)|=5x+C \Rightarrow |y(x)|=e^{5x+C}, \text{ con } C\in\mathbb R. 
+\]</div>
+<p>Notamos que</p>
+<div class="math notranslate nohighlight">
+\[
+e^{5x+C}=e^{5x}e^{C}=C'e^{5x}\,,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(C'=e^C&gt;0\)</span>. Entonces, eliminando el valor absoluto, tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+y(x)=Ce^{5x}, \text{ con } C\neq 0\,.
+\]</div>
+<p>Notamos que para <span class="math notranslate nohighlight">\(C=0\)</span> también obtenemos una solución de la EDO de partida: la solución <span class="math notranslate nohighlight">\(y= 0\)</span>, que habíamos eliminado al dividir por <span class="math notranslate nohighlight">\(y\)</span> en el primer paso. Esta solución recibe el nombre de <strong>solución singular</strong>.
+Las soluciones de la EDO son, por tanto, todas las funciones de la forma:</p>
+<div class="math notranslate nohighlight">
+\[
+y(x)=Ce^{5x}\,,\quad C\in\mathbb R\,.
+\]</div>
+<p>La expresión anterior se denomina la <strong>solución general</strong> de la EDO. Para cada valor de <span class="math notranslate nohighlight">\(C\)</span>, obtenemos una <strong>solución particular</strong>.</p>
+</section>
+</div><div class="proof example admonition" id="ex_EDO_separable_2">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Queremos ahora resolver ahora el problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{\begin{array}{rcl}
+y'&amp;=&amp;5y\,,\\
+y(0)&amp;=&amp;3\,.
+\end{array}\right.
+\end{split}\]</div>
+<p>Ya hemos obtenido la solución general de la EDO:</p>
+<div class="math notranslate nohighlight">
+\[
+y(x)=Ce^{5x}\,,\quad C\in\mathbb R\,.
+\]</div>
+<p>Entonces, simplemente imponemos la condición inicial, <span class="math notranslate nohighlight">\(y(0)=3\)</span>. De la expresión de la solución general:</p>
+<div class="math notranslate nohighlight">
+\[
+y(0)=Ce^{0}=C\,.
+\]</div>
+<p>Luego para que <span class="math notranslate nohighlight">\(y(x)=Ce^{5x}\)</span> sea solución del P.V.I. propuesto, <span class="math notranslate nohighlight">\(C\)</span> debe ser necesariamente igual a <span class="math notranslate nohighlight">\(3\)</span>. La solución del P.V.I. es <span class="math notranslate nohighlight">\(y(x)=3e^{5x}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="ex_EDO_separable_3">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Se desea determinar la temperatura de un cuerpo sabiendo que inicialmente se encuentra a <span class="math notranslate nohighlight">\(10ºC\)</span>, que al cabo de <span class="math notranslate nohighlight">\(2\)</span> horas se encuentra a <span class="math notranslate nohighlight">\(15ºC\)</span> y la temperatura exterior es constante e igual a <span class="math notranslate nohighlight">\(25ºC\)</span>. Para ello, se resuelve el P.V.I. siguiente:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{\begin{array}{rcl}
+T'&amp;=&amp;-k(T-25)\,,\\[1ex]
+T(0)&amp;=&amp;10\,.
+\end{array}\right.
+\end{split}\]</div>
+<p>Comenzamos resolviendo la EDO, que es autónoma, y por tanto, de variables separadas. Para ello, separamos las variables e integramos:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{dT}{dt}=-k(T-25)\Rightarrow \dfrac{1}{T-25}\,dT=-k\,dt\Rightarrow \int\dfrac{1}{T-25}\,dT=-k\,\int dt\,.
+\]</div>
+<p>Resolviendo las integrales, queda que:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln|T-25|=-kt+C \Rightarrow |T-25|=e^{-kt+C}=C'e^{-kt}\,,\quad\text{ con }C'&gt;0\,.
+\]</div>
+<p>Entonces,</p>
+<div class="math notranslate nohighlight">
+\[
+T(t)-25 = Ce^{-kt}\,,\quad\text{ con }C\neq 0.
+\]</div>
+<p>Notamos que para <span class="math notranslate nohighlight">\(C=0\)</span> tenemos también una solución de la EDO: la solución constante <span class="math notranslate nohighlight">\(T(t)=25\)</span>, que habíamos eliminado en el primer paso, al dividir por <span class="math notranslate nohighlight">\(T-25\)</span>. En cualquier caso, ésta no es una solución de nuestro P.V.I.</p>
+<p>Para determinar la solución del P.V.I., imponemos la condición inicial <span class="math notranslate nohighlight">\(T(0)=10\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+10-25 = Ce^{0}=C\Rightarrow C=-15\,.
+\]</div>
+<p>Luego, la solución del P.V.I. planteado está dada por</p>
+<div class="math notranslate nohighlight">
+\[
+T(t)=25-15e^{-kt}\,,\quad t\ge 0.
+\]</div>
+<p>Como además sabemos que al cabo de <span class="math notranslate nohighlight">\(2\)</span> horas, el cuerpo está a una temperatura de <span class="math notranslate nohighlight">\(15ºC\)</span>, podemos determinar con este dato el valor de la constante <span class="math notranslate nohighlight">\(k\)</span>. Poniendo <span class="math notranslate nohighlight">\(t=2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+15=25-15e^{-2k}\Rightarrow 15e^{-2k}=10 \Rightarrow e^{-2k}=\dfrac{2}{3}\Rightarrow -2k=\ln\Big(\dfrac{2}{3}\Big)\,,
+\]</div>
+<p>luego</p>
+<div class="math notranslate nohighlight">
+\[
+k=-\dfrac{1}{2}\ln\Big(\dfrac{2}{3}\Big)\quad\text{ y }\quad T(t)=25-15\Big(\dfrac{2}{3}\Big)^{t/2}\,,\quad t\ge 0. 
+\]</div>
+</section>
+</div><div class="proof example admonition" id="ex_EDO_separable_4">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Veamos, por último, una EDO en variables separadas que no es autónoma.</p>
+<p>Consideramos la EDO de primer orden</p>
+<div class="math notranslate nohighlight">
+\[
+xy'=1+y^2\,.
+\]</div>
+<p>Esta EDO se puede escribir de forma equivalente como</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{dy}{dx}=\dfrac{1+y^2}{x}=\dfrac{1}{x}(1+y^2)\,.
+\]</div>
+<p>Se trata, por tanto, de una EDO en variables separadas (<span class="math notranslate nohighlight">\(g(x)=\frac{1}{x}\)</span> y <span class="math notranslate nohighlight">\(h(y)=1+y^2\)</span>). Para resolverla, separamos las variables e integramos:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{1}{1+y^2}\,dy = \dfrac{1}{x}\,dx\Rightarrow \arctan(y) = \ln|x|+C\,.
+\]</div>
+<p>Despejando,</p>
+<div class="math notranslate nohighlight">
+\[
+y(x)=\tan(\ln|x|+C)\,.
+\]</div>
+</section>
+</div><p><strong>Nota:</strong> Fíjate que en los ejemplos anteriores, siempre es posible comprobar si hemos obtenido la solución correcta… y, si no, podemos usar <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>. Veámosolo, por ejemplo, sobre el último ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Escribimos la EDO </span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Calculamos su solución general (este paso no sería necesario, pero así completamos el ejercicio)</span>
+<span class="n">s_general</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">)</span>   
+<span class="n">display</span> <span class="p">(</span><span class="n">s_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = \tan{\left(C_{1} + \log{\left(x \right)} \right)}\]</div>
+</div>
+</div>
+</section>
+<section id="edos-lineales-de-primer-orden">
+<h2><span class="section-number">4.7.5. </span>EDOs lineales de primer orden<a class="headerlink" href="#edos-lineales-de-primer-orden" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_EDO_lineal">
+<p class="admonition-title"><span>Definition </span> (Ecuación diferencial lineal de primer orden )</p>
+<section class="definition-content" id="proof-content">
+<p>Una ecuación diferencial lineal de primer orden es una EDO de la forma</p>
+<div class="math notranslate nohighlight">
+\[
+y'\,+\,p(x)\,y\,=\,q(x)\,,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(q\)</span> son funciones de <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</section>
+</div><p>Veremos a continuación cómo resolver este tipo de EDOs.</p>
+<p>Si fuésemos capaces de encontrar una función <span class="math notranslate nohighlight">\(\mu(x)\)</span> tal que</p>
+<div class="math notranslate nohighlight" id="equation-eq-mu">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-mu" title="Permalink to this equation">#</a></span>\[
+\mu(x)\,(y'(x)\,+\,p(x)\,y(x))\,=\,(\mu(x)\,y(x))',
+\]</div>
+<p>entonces, multiplicando toda la EDO lineal del principio por <span class="math notranslate nohighlight">\(\mu(x)\)</span> tendríamos:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu(x)\left(y'\,+\,p(x)\,y\right) = \mu(x) q(x) \Rightarrow (\mu(x)\,y(x))' = \mu(x) q(x),
+\]</div>
+<p>de donde, integrando,</p>
+<div class="math notranslate nohighlight">
+\[
+\mu(x)y(x)=\int\mu(x)q(x)\,dx \Rightarrow y(x) = \frac{\int\mu(x)q(x)\,dx}{\mu(x)},
+\]</div>
+<p>y ya tendríamos el problema resuelto.</p>
+<p>Entonces, el problema se reduce a calcular una función <span class="math notranslate nohighlight">\(\mu\)</span> que verifique <a class="reference internal" href="#equation-eq-mu">(4.1)</a>.</p>
+<p>No vamos a detallarlo, pero no es difícil comprobar que esto se cumple si elegimos</p>
+<div class="math notranslate nohighlight">
+\[
+\mu(x) = \exp\left({\int p(x)\, dx}\right).
+\]</div>
+<p>La función <span class="math notranslate nohighlight">\(\mu\)</span> recibe el nombre de <strong>factor integrante</strong>.</p>
+<div class="proof example admonition" id="ex_EDO_lineal">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>La EDO <span class="math notranslate nohighlight">\(y'=5y\)</span>, que ya resolvimos en la sección anterior, también se puede considerar una EDO lineal de primer orden.</p>
+<p>En este caso, <span class="math notranslate nohighlight">\(p(x)=-5\)</span> y <span class="math notranslate nohighlight">\(q(x)=0\)</span> (¡OJO! para hacer esta identificación, el coeficiente de <span class="math notranslate nohighlight">\(y'\)</span> debe ser igual a <span class="math notranslate nohighlight">\(1\)</span>). Podemos, por tanto, resolver esta EDO por el método que acabamos de describir.</p>
+<p>Como <span class="math notranslate nohighlight">\(p(x)=-5\)</span>, el factor integrante será</p>
+<div class="math notranslate nohighlight">
+\[
+\mu(x)=e^{-5x}.
+\]</div>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y'-5y = 0 \Rightarrow e^{-5x}y' - e^{-5x}y = 0 \Rightarrow \left( e^{-5x}y \right)' = 0 \\
+\Rightarrow e^{-5x} y = C.
+\end{split}\]</div>
+<p>Entonces,</p>
+<div class="math notranslate nohighlight">
+\[
+y(x)=C(e^{-5x})^{-1}=Ce^{5x}\,.
+\]</div>
+<p>Por supuesto, hemos obtenido la misma solución que antes.</p>
+</section>
+</div><div class="proof example admonition" id="ex_EDO_separable_2">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Consideramos el problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{\begin{array}{rcl}
+y'+y&amp;=&amp;\sin(x)\,,\\[1ex]
+y(0)&amp;=&amp;2\,.
+\end{array}\right.
+\end{split}\]</div>
+<p>La EDO es lineal de primer orden, con <span class="math notranslate nohighlight">\(p(x)=1\)</span> y <span class="math notranslate nohighlight">\(q(x)=\sin(x)\)</span>.</p>
+<p>Para resolver la EDO, calculamos en primer lugar el factor integrante:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu(x)=e^{\int 1\,dx}=e^{x}\,.
+\]</div>
+<p>Entonces, multiplicando toda la EDO por <span class="math notranslate nohighlight">\(\mu(x)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+y'+y=\sin(x) \Rightarrow e^{x}y'+e^{x}y = e^{x}\sin(x) \Rightarrow \left( e^{x}y \right)' = e^{x}\sin(x)
+\Rightarrow e^{x} y = \int e^{x}\sin(x)dx.
+\]</div>
+<p>Hacemos esta integral utilizando la integración por partes para obtener</p>
+<div class="math notranslate nohighlight">
+\[
+e^{x} y= \frac{e^x}{2}\left(\sin(x)-\cos(x)\right)+C \Rightarrow y = \dfrac{\sin(x)-\cos(x)}{2}+Ce^{-x} .
+\]</div>
+<p>Acabamos de obtener la solución general de la EDO lineal de primer orden. Queda determinar la solución particular del P.V.I., es decir, el valor de la constante <span class="math notranslate nohighlight">\(C\)</span> tal que <span class="math notranslate nohighlight">\(y(0)=2\)</span>. Imponiendo esta condición inicial, tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+2=\dfrac{\sin(0)-\cos(0)}{2}+Ce^0=-\dfrac{1}{2}+C\Rightarrow C=\dfrac{5}{2}\,.
+\]</div>
+<p>Por tanto, la solución del P.V.I. propuesto es</p>
+<div class="math notranslate nohighlight">
+\[
+y(x)=\frac{1}{2}\left( \sin(x)-\cos(x)+5e^{-x}\right).
+\]</div>
+</section>
+</div><p>Veamos a continuación cómo resolver este último problema aprovechando la potencia de <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Escribimos la EDO </span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Resolvemos su solución general (realmente este paso no sería necesario, pero así completamos el ejercicio)</span>
+<span class="n">s_general</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">)</span>   
+<span class="n">display</span> <span class="p">(</span><span class="n">s_general</span><span class="p">)</span>
+
+<span class="c1"># Calculamos la solución particular que nos preguntan</span>
+<span class="n">s_particular</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mf">2.0</span><span class="p">})</span> 
+<span class="n">display</span> <span class="p">(</span><span class="n">s_particular</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = C_{1} e^{- x} + \frac{\sin{\left(x \right)}}{2} - \frac{\cos{\left(x \right)}}{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = \frac{\sin{\left(x \right)}}{2} - \frac{\cos{\left(x \right)}}{2} + 2.5 e^{- x}\]</div>
+</div>
+</div>
+</section>
+<section id="referencias">
+<h2><span class="section-number">4.7.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<p>Para saber más, puedes consultar, por ejemplo, los siguientes enlaces:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://totumat.com/2020/09/16/ecuaciones-diferenciales-ordinarias-de-variables-separables/">https://totumat.com/2020/09/16/ecuaciones-diferenciales-ordinarias-de-variables-separables/</a></p></li>
+<li><p><a class="reference external" href="https://www.ecuacionesdiferenciales.jcbmat.com/id225.htm">https://www.ecuacionesdiferenciales.jcbmat.com/id225.htm</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/search/label/EDOs">https://existelimite.blogspot.com/search/label/EDOs</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -552,7 +1343,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
   
       &copy; Copyright 2022.<br/>
     <div class="extra_footer">

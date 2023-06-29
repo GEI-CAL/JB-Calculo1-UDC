@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.7. Ecuaciones Diferenciales Ordinarias (EDOs)" href="07.EcuacionesDiferenciales.html" />
+    <link rel="next" title="4.7. Ecuaciones diferenciales" href="07.EcuacionesDiferenciales.html" />
     <link rel="prev" title="4.5. Integración impropia" href="05.IntegracionImpropia.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -339,6 +339,33 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/README.html">
+   6. Ejercicios y exámenes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_22.html">
+     6.1. Examen Enero 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_22.html">
+     6.2. Examen Julio 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_23.html">
+     6.3. Examen Enero 2023
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -398,7 +425,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/04/06.AplicacionesIntegral.ipynb"
+        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/04/06.AplicacionesIntegral.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -532,12 +559,12 @@ title="Print to PDF"
      4.6.2.2. Cuerpos de revolución: método de los discos
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metodo-de-capas">
-     4.6.2.3. Método de capas
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#para-seguir-practicando">
+   4.6.3. Para seguir practicando
+  </a>
  </li>
 </ul>
 
@@ -590,12 +617,12 @@ title="Print to PDF"
      4.6.2.2. Cuerpos de revolución: método de los discos
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metodo-de-capas">
-     4.6.2.3. Método de capas
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#para-seguir-practicando">
+   4.6.3. Para seguir practicando
+  </a>
  </li>
 </ul>
 
@@ -734,17 +761,20 @@ El area de la sup comprendida entre las dos graficas es:  1/2
 \[
 V=\int_a^b A(x) dx.
 \]</div>
-<p>Puedes verlo con más detalle aquí: <a class="reference external" href="https://es.wikipedia.org/wiki/Principio_de_Cavalieri">https://es.wikipedia.org/wiki/Principio_de_Cavalieri</a></p>
+<ul class="simple">
+<li><p>Puedes verlo con más detalle aquí: <a class="reference external" href="https://es.wikipedia.org/wiki/Principio_de_Cavalieri">https://es.wikipedia.org/wiki/Principio_de_Cavalieri</a></p></li>
+<li><p>En esta aplicación de Geogebra, realizada por Marco Rainaldi, puedes visualizar cortes tridimensionales en muchos ejemplos interesantes: <a class="reference external" href="https://www.geogebra.org/m/nbknkjtp">https://www.geogebra.org/m/nbknkjtp</a>.</p></li>
+</ul>
 </section>
 <section id="cuerpos-de-revolucion-metodo-de-los-discos">
 <h3><span class="section-number">4.6.2.2. </span>Cuerpos de revolución: método de los discos<a class="headerlink" href="#cuerpos-de-revolucion-metodo-de-los-discos" title="Permalink to this headline">#</a></h3>
-<p>Dada una función integrable <span class="math notranslate nohighlight">\(f:[a,b]\to R\)</span>  el volumen del sólido de revolución generado al rotar alrededor del eje <span class="math notranslate nohighlight">\(OX\)</span> la superficie
-comprendida entre la gráfica de <span class="math notranslate nohighlight">\(f\)</span>, el eje <span class="math notranslate nohighlight">\(OX\)</span>, entre <span class="math notranslate nohighlight">\(x=a,x=b\)</span> viene dada por</p>
+<p>El método de los discos es un caso particular del método de Cavalieri… para figuras de revolución. En este caso, los cortes serán círculos de radio <span class="math notranslate nohighlight">\(|f(x)|\)</span> y, por tanto, con área, <span class="math notranslate nohighlight">\(A(x) = \pi f(x)^2\)</span>.</p>
+<p>Entonces, dada una función integrable <span class="math notranslate nohighlight">\(f:[a,b]\to R\)</span>  el volumen del sólido de revolución generado al rotar alrededor del eje <span class="math notranslate nohighlight">\(OX\)</span> la superficie comprendida entre la gráfica de <span class="math notranslate nohighlight">\(f\)</span>, el eje <span class="math notranslate nohighlight">\(OX\)</span>, entre <span class="math notranslate nohighlight">\(x=a,x=b\)</span> viene dada por</p>
 <div class="math notranslate nohighlight">
 \[
-V=\pi \int_a^b |f(x)|^2 dx
+V=\pi \int_a^b |f(x)|^2 dx.
 \]</div>
-<p>Esta fórmula es una aplicación directa del principio de Cavalieri, ya que en este caso las secciones de un sólido de revolución son círculos de radio <span class="math notranslate nohighlight">\(|f(x)|\)</span>.</p>
+<p>Puedes ilustrar el proceso en la siguiente aplicación de Geogebra, realizada por José Luis Vergara Ibarra: <a class="reference external" href="https://www.geogebra.org/m/jxkmyeax">https://www.geogebra.org/m/jxkmyeax</a></p>
 <p><b>Ejemplo:</b></p>
 <p>Calcular el volumen de una esfera de radio r.</p>
 <div class="math notranslate nohighlight">
@@ -837,46 +867,17 @@ V=\pi \int_0^4 [\sqrt{y}]^2 dy=\pi\left( \dfrac{y^2}{2} \right]_{0}^{4}=8\pi
 </div>
 </div>
 </div>
-<p><b>Ejemplo:</b></p>
+<p><b>Ejercicio:</b></p>
 <p>Calcular el volumen del sólido generado al rotar alrededor del eje <span class="math notranslate nohighlight">\(OY\)</span> la región comprendida entre la parábola <span class="math notranslate nohighlight">\(y^2=8x\)</span> y la recta <span class="math notranslate nohighlight">\(x=2\)</span></p>
 </section>
-<section id="metodo-de-capas">
-<h3><span class="section-number">4.6.2.3. </span>Método de capas<a class="headerlink" href="#metodo-de-capas" title="Permalink to this headline">#</a></h3>
-<p>Dadas una función integrable <span class="math notranslate nohighlight">\(f:[a,b]\to R\)</span>, con <span class="math notranslate nohighlight">\(f(x)\geq 0\)</span> para todo <span class="math notranslate nohighlight">\(x\in [a,b]\)</span>  el volumen del sólido de revolución generado al rotar alrededor del eje OY la superficie
-comprendida entre la gráfica de <span class="math notranslate nohighlight">\(f\)</span> y la gráfica de <span class="math notranslate nohighlight">\(g\)</span>, entre <span class="math notranslate nohighlight">\(x=a,x=b\)</span> viene dada por</p>
-<div class="math notranslate nohighlight">
-\[
-V=2\pi \int_a^b xf(x) dx
-\]</div>
-<p><b>Ejemplo:</b></p>
-<p>Calcular el mismo volumen del ejemplo anterior, sólido generado al rotar alrededor del eje <span class="math notranslate nohighlight">\(OY\)</span> la región comprendida entre la parábola <span class="math notranslate nohighlight">\(y=x^2\)</span> entre <span class="math notranslate nohighlight">\(y=0\)</span> y <span class="math notranslate nohighlight">\(y=4\)</span>, empleando ahora el método de capas</p>
-<div class="math notranslate nohighlight">
-\[
-V=2\pi \int_0^2 x x^2 dy=2\pi\left( \dfrac{x^4}{4} \right]_{0}^{2}=8\pi
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">y</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">V</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El volumen del solido de revolucion es: &#39;</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El volumen del solido de revolucion es:  8*pi
-</pre></div>
-</div>
-</div>
-</div>
-<p>También es posible emplear el método de capas para calular el volumen de un sólido de revolución generado al rotar una superficie alrededor del eje <span class="math notranslate nohighlight">\(OX\)</span>. Dadas un función integrable <span class="math notranslate nohighlight">\(f:[c,d]\to R\)</span>, con <span class="math notranslate nohighlight">\(f(y)\geq 0\)</span> para todo <span class="math notranslate nohighlight">\(y\in [c,d]\)</span>  el volumen del sólido de revolución generado al rotar alrededor del eje OX la superficie
-comprendida entre la gráfica de <span class="math notranslate nohighlight">\(f\)</span> y la gráfica de <span class="math notranslate nohighlight">\(g\)</span>, entre <span class="math notranslate nohighlight">\(y=c,y=d\)</span> viene dada por</p>
-<div class="math notranslate nohighlight">
-\[
-V=2\pi \int_c^d yf(y) dy
-\]</div>
 </section>
+<section id="para-seguir-practicando">
+<h2><span class="section-number">4.6.3. </span>Para seguir practicando<a class="headerlink" href="#para-seguir-practicando" title="Permalink to this headline">#</a></h2>
+<p>Puedes encontrar más ejercicios aquí:</p>
+<ul class="simple">
+<li><p>Página (en el portal de Geogebra) de Daniel Partal García, profesor en el Colegio Marista de La Inmaculada (Granada), con un montón de ejercicios planteados y resueltos: <a class="reference external" href="https://www.geogebra.org/m/x8zyquyk#material/sqjs77gg">https://www.geogebra.org/m/x8zyquyk#material/sqjs77gg</a></p></li>
+<li><p>El blog de siempre: <a class="reference external" href="https://existelimite.blogspot.com/search/label/Aplicaciones%20de%20la%20integral">https://existelimite.blogspot.com/search/label/Aplicaciones de la integral</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -917,7 +918,7 @@ V=2\pi \int_c^d yf(y) dy
     <a class='right-next' id="next-link" href="07.EcuacionesDiferenciales.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.7. </span>Ecuaciones Diferenciales Ordinarias (EDOs)</p>
+        <p class="prev-next-title"><span class="section-number">4.7. </span>Ecuaciones diferenciales</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -928,7 +929,7 @@ V=2\pi \int_c^d yf(y) dy
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
   
       &copy; Copyright 2022.<br/>
     <div class="extra_footer">
