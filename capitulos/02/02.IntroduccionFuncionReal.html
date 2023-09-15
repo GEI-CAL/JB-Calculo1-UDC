@@ -574,7 +574,10 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="definiciones-basicas">
 <h1><span class="section-number">2.2. </span>Definiciones básicas<a class="headerlink" href="#definiciones-basicas" title="Permalink to this headline">#</a></h1>
-<p><strong>Definición:</strong> Sea <span class="math notranslate nohighlight">\(\mathrm{A}\subset\mathbb{R}\)</span>. Definimos <strong>función real de variable real</strong>
+<div class="proof definition admonition" id="def_funcion">
+<p class="admonition-title"><span>Definition </span> (Función real de variable real )</p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(\mathrm{A}\subset\mathbb{R}\)</span>. Definimos función real de variable real
 a una aplicación que lleva cada punto de <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> en un único punto de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -583,7 +586,11 @@ f&amp;:&amp;\mathrm{A}\subset\mathbb{R}&amp;\rightarrow&amp;\mathbb{R} \\
 &amp;&amp;x\in\mathrm{A}&amp;\rightarrow&amp;f(x).
 \end{array}
 \end{split}\]</div>
-<p><strong>Definición:</strong> Sea una función <span class="math notranslate nohighlight">\(f:\mathrm{A}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Entonces:</p>
+</section>
+</div><div class="proof definition admonition" id="def_func_varias">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sea una función <span class="math notranslate nohighlight">\(f:\mathrm{A}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Entonces:</p>
 <ol class="simple">
 <li><p>El <strong>dominio de <span class="math notranslate nohighlight">\(f\)</span></strong> es el conjunto <span class="math notranslate nohighlight">\(\mathrm{A}\)</span>.</p></li>
 <li><p>La <strong>imagen de <span class="math notranslate nohighlight">\(f\)</span></strong> es el conjunto
@@ -604,36 +611,45 @@ f&amp;:&amp;\mathrm{A}\subset\mathbb{R}&amp;\rightarrow&amp;\mathbb{R} \\
 \forall x_1, x_2\in\mathrm{B} / x_1&lt;x_2\Rightarrow f(x_1)&gt; f(x_2)\)</span>.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/cap3_crec_decrec.png"><img alt="../../_images/cap3_crec_decrec.png" src="../../_images/cap3_crec_decrec.png" style="width: 600px;" /></a>
-<section id="simetrias-par-impar">
+</section>
+</div><section id="simetrias-par-impar">
 <h2><span class="section-number">2.2.1. </span>Simetrías par/impar<a class="headerlink" href="#simetrias-par-impar" title="Permalink to this headline">#</a></h2>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <span class="math notranslate nohighlight">\(f\)</span> es</p>
+<div class="proof definition admonition" id="def_simetrias">
+<p class="admonition-title"><span>Definition </span> (Simetrías)</p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <span class="math notranslate nohighlight">\(f\)</span> es</p>
 <ul class="simple">
 <li><p><strong>Par</strong> si <span class="math notranslate nohighlight">\(f(x)=f(-x)\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>.</p></li>
 <li><p><strong>Impar</strong> si <span class="math notranslate nohighlight">\(f(x)=-f(-x)\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>.</p></li>
 </ul>
-<p>El nombre proviene de los monomios fundamentales. Los monomios con exponente par (<span class="math notranslate nohighlight">\(x^2\)</span>, <span class="math notranslate nohighlight">\(x^4\)</span>, <span class="math notranslate nohighlight">\(x^6\)</span>,…) tienen simetría par y los monomios con exponente impar (<span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(x^3\)</span>, <span class="math notranslate nohighlight">\(x^5\)</span>,…) tienen simetría impar.</p>
+</section>
+</div><p>El nombre proviene de los monomios fundamentales. Los monomios con exponente par (<span class="math notranslate nohighlight">\(x^2\)</span>, <span class="math notranslate nohighlight">\(x^4\)</span>, <span class="math notranslate nohighlight">\(x^6\)</span>,…) tienen simetría par y los monomios con exponente impar (<span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(x^3\)</span>, <span class="math notranslate nohighlight">\(x^5\)</span>,…) tienen simetría impar.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_par_impar.png"><img alt="../../_images/cap3_par_impar.png" src="../../_images/cap3_par_impar.png" style="width: 400px;" /></a>
 </section>
 <section id="funcion-periodica">
 <h2><span class="section-number">2.2.2. </span>Función periódica<a class="headerlink" href="#funcion-periodica" title="Permalink to this headline">#</a></h2>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <span class="math notranslate nohighlight">\(f\)</span> es <strong>periódica</strong>, con período <span class="math notranslate nohighlight">\(T\)</span> si</p>
+<div class="proof definition admonition" id="def_funcion">
+<p class="admonition-title"><span>Definition </span> (Función periódica )</p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <span class="math notranslate nohighlight">\(f\)</span> es periódica, con período <span class="math notranslate nohighlight">\(T\)</span> si</p>
 <div class="math notranslate nohighlight">
 \[
 f(x)=f(x+T),\qquad\forall x\in\mathbb{R}.
 \]</div>
-<p>El ejemplo más clásico de funciones periódicas son las funciones trigonométricas.
+</section>
+</div><p>El ejemplo más clásico de funciones periódicas son las funciones trigonométricas.
 Por ejemplo, la función seno es periódica con un período de <span class="math notranslate nohighlight">\(2\pi\)</span>, como mostraremos en la siguiente sección.</p>
 <p>Si sabemos que una función tiene un período <span class="math notranslate nohighlight">\(T\)</span> nos será suficiente con
 representarla en <span class="math notranslate nohighlight">\([0,T]\)</span>. Después se repetirá.</p>
 </section>
 <section id="composicion-de-funciones">
 <h2><span class="section-number">2.2.3. </span>Composición de funciones<a class="headerlink" href="#composicion-de-funciones" title="Permalink to this headline">#</a></h2>
-<p><strong>Definición:</strong>
-Sean <span class="math notranslate nohighlight">\(f:\mathrm{A}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>,
+<div class="proof definition admonition" id="def_composicion">
+<p class="admonition-title"><span>Definition </span> (Composición de funciones )</p>
+<section class="definition-content" id="proof-content">
+<p>Sean <span class="math notranslate nohighlight">\(f:\mathrm{A}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>,
 <span class="math notranslate nohighlight">\(g:\mathrm{B}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>, con
-<span class="math notranslate nohighlight">\(f(\mathrm{A})\subset\mathrm{B}\)</span>. Definimos la <strong>función compuesta</strong> <span class="math notranslate nohighlight">\(g\circ f\)</span> (se lee <em>f
+<span class="math notranslate nohighlight">\(f(\mathrm{A})\subset\mathrm{B}\)</span>. Definimos la función compuesta <span class="math notranslate nohighlight">\(g\circ f\)</span> (se lee <em>f
 compuesta con g</em>) a la función</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -642,7 +658,8 @@ g\circ f:\;  &amp; \mathrm{A}\subset \mathbb{R} &amp; \rightarrow &amp; \; \math
  &amp; x\in\mathrm{A} &amp; \rightarrow &amp; \; (g\circ f)(x):=g\left(f(x)\right).
 \end{aligned}
 \end{split}\]</div>
-<p><strong>Ejercicios</strong></p>
+</section>
+</div><p>Para practicas con la anterior definición, te proponemos los siguientes <strong>ejercicios</strong>:</p>
 <ol>
 <li><p>Componer, de las dos formas posibles, las funciones <span class="math notranslate nohighlight">\(f(x)=e^{x^2-1}\)</span> y <span class="math notranslate nohighlight">\(g(x)=\sin(2x)+\cos(x)\)</span>.</p>
 <p><strong>Solución:</strong>
@@ -660,12 +677,15 @@ g\circ f:\;  &amp; \mathrm{A}\subset \mathbb{R} &amp; \rightarrow &amp; \; \math
 </section>
 <section id="funcion-inversa">
 <h2><span class="section-number">2.2.4. </span>Función inversa<a class="headerlink" href="#funcion-inversa" title="Permalink to this headline">#</a></h2>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:\mathrm{A}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> una función inyectiva (es decir, si <span class="math notranslate nohighlight">\(x\not= y\)</span>,
+<div class="proof definition admonition" id="def_inversa">
+<p class="admonition-title"><span>Definition </span> (Función inversa )</p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:\mathrm{A}\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> una función inyectiva (es decir, si <span class="math notranslate nohighlight">\(x\not= y\)</span>,
 <span class="math notranslate nohighlight">\(f(x)\not= f(y)\)</span>). Entonces existe una única función <span class="math notranslate nohighlight">\(h:\mathrm{im}\, f\rightarrow\mathbb{R}\)</span> tal que
 <span class="math notranslate nohighlight">\(h\left(f(x)\right)=x\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathrm{A}\)</span>.</p>
 <p>Esta función se denomina <strong>inversa de <span class="math notranslate nohighlight">\(f\)</span></strong> y suele denotarse como <span class="math notranslate nohighlight">\(f^{-1}\)</span>.</p>
-<p>Es decir, según la definición de inversa, tenemos que <span class="math notranslate nohighlight">\(f^{-1}\circ f=\mathrm{Id}\)</span>.
+</section>
+</div><p>Es decir, según la definición de inversa, tenemos que <span class="math notranslate nohighlight">\(f^{-1}\circ f=\mathrm{Id}\)</span>.
 Además, en este caso se verifica que la composición es conmutativa, es decir, que <span class="math notranslate nohighlight">\(f\circ f^{-1}=\mathrm{Id}\)</span> (la función <span class="math notranslate nohighlight">\(\mathrm{Id}\)</span> es la función identidad, es
 decir, <span class="math notranslate nohighlight">\(\mathrm{Id}(x)=x\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>).</p>
 <a class="reference internal image-reference" href="../../_images/cap3_funcion_inversa.png"><img alt="../../_images/cap3_funcion_inversa.png" src="../../_images/cap3_funcion_inversa.png" style="width: 200px;" /></a>

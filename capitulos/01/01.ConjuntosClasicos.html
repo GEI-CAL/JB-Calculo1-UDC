@@ -605,8 +605,9 @@ title="Print to PDF"
 \[
   \mathbb{N}=\left\{1,2,3,4,...\right\}.
 \]</div>
-<p>Hay distintas opiniones acerca de si se debe incluir el <span class="math notranslate nohighlight">\(0\)</span> en este conjunto o no. De todos modos, esto es
-indiferente para nuestro objetivo.</p>
+<p>Hay distintas opiniones acerca de si se debe incluir el <span class="math notranslate nohighlight">\(0\)</span> en este conjunto o no, aunque esto es
+indiferente para nuestro objetivo.
+Nosotros, como ya hemos escrito, consideramos que <span class="math notranslate nohighlight">\(0\)</span> no está en <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>.</p>
 </section>
 <section id="numeros-enteros-mathbb-z">
 <h2><span class="section-number">1.1.2. </span>Números enteros, <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span><a class="headerlink" href="#numeros-enteros-mathbb-z" title="Permalink to this headline">#</a></h2>
@@ -617,14 +618,15 @@ sencillas (como la resta) el conjunto fue ampliado y surgieron los
 \[
   \mathbb{Z}=\left\{...,-3,-2,-1,0,1,2,3,...\right\}.
 \]</div>
-<p>Es evidente que <span class="math notranslate nohighlight">\(\mathbb{N}\subset\mathbb{Z}\)</span>.</p>
+<p>Dadas sus respectivas definiciones, es evidente que <span class="math notranslate nohighlight">\(\mathbb{N}\subset\mathbb{Z}\)</span>.</p>
 </section>
 <section id="numeros-racionales-mathbb-q">
 <h2><span class="section-number">1.1.3. </span>Números racionales, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span><a class="headerlink" href="#numeros-racionales-mathbb-q" title="Permalink to this headline">#</a></h2>
-<p>Al estudiarse la división fue evidente que con los números enteros no era
+<p>Al definirse y estudiarse la división, se vio claramente que con los números enteros no era
 suficiente, así que nació el conjunto de <em>números racionales</em>,
 <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>. Este conjunto está formado por las fracciones, <span class="math notranslate nohighlight">\(\frac{p}{q}\)</span>, donde <span class="math notranslate nohighlight">\(p\)</span>
-es entero y <span class="math notranslate nohighlight">\(q\)</span> natural (evitamos así la división entre <span class="math notranslate nohighlight">\(0\)</span>).</p>
+es entero y <span class="math notranslate nohighlight">\(q\)</span> natural (como hemos definido <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> sin incluir el <span class="math notranslate nohighlight">\(0\)</span>, evitamos así
+la siempre incómoda división entre este número).</p>
 <p>Una representación aproximada (y, por lo tanto, siempre menos precisa) de
 representar los racionales es en
 formato decimal: <span class="math notranslate nohighlight">\(\alpha_0\, .a_1 a_2... a_n...\)</span>, donde <span class="math notranslate nohighlight">\(\alpha_0\in\mathbb{Z}\)</span> y
@@ -637,8 +639,13 @@ formato decimal: <span class="math notranslate nohighlight">\(\alpha_0\, .a_1 a_
 pese a que las evidencias mostraban lo contrario. Finalmente, los griegos tuvieron que
 rendirse a las pruebas que mostraban que, por ejemplo, la longitud de la hipotenusa de un
 triángulo rectángulo con las dos aristas de longitud unidad, no puede ser representada
-como fracción. Es decir, que <span class="math notranslate nohighlight">\(\sqrt{2}\not\in\mathbb{Q}\)</span>. Es
-un ejemplo de <strong>número irracional</strong>, como también lo son <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(\sqrt{3}\)</span>,
+como fracción. Es decir, que <span class="math notranslate nohighlight">\(\sqrt{2}\not\in\mathbb{Q}\)</span>.</p>
+<div class="proof remark admonition" id="remark_sqrt2">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<p>Si tienes curiosidad por ver una demostración de que <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> no es un número racional, puedes ver la correspondiente publicación en el blog Gaussianos: <a class="reference external" href="https://www.gaussianos.com/dos-demostraciones-de-la-irracionalidad-de-raiz-de-2/">https://www.gaussianos.com/dos-demostraciones-de-la-irracionalidad-de-raiz-de-2/</a></p>
+</section>
+</div><p>Es un ejemplo de <strong>número irracional</strong>, como también lo son <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(\sqrt{3}\)</span>,
 <em>etc.</em>. Aparecen los <strong>números reales</strong>, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, que agrupan tanto a los racionales como
 a los irracionales.</p>
 <a class="reference internal image-reference" href="../../_images/cap1_sqrt2_no_racional.png"><img alt="../../_images/cap1_sqrt2_no_racional.png" src="../../_images/cap1_sqrt2_no_racional.png" style="width: 150px;" /></a>
@@ -658,26 +665,34 @@ aquí:</p>
 <p>Con esto ya tenemos la justificación teórica que necesitamos para introducir la forma
 más común de representar los números reales: en una recta infinita. Dado un punto de
 la recta, <span class="math notranslate nohighlight">\(a\)</span>, que podemos identificar con un número real, a su derecha estarán los
-números reales mayores que <span class="math notranslate nohighlight">\(a\)</span> y a su izquierda los menores. Y la recta no presenta
-agujeros gracias a la propiedad de densidad.</p>
+números reales mayores que <span class="math notranslate nohighlight">\(a\)</span> y a su izquierda los menores. Gracias a la propiedad de densidad, la recta no tiene
+<em>agujeros</em> (es decir, es continua).</p>
 <a class="reference internal image-reference" href="../../_images/cap1_recta_real.png"><img alt="../../_images/cap1_recta_real.png" src="../../_images/cap1_recta_real.png" style="width: 300px;" /></a>
-<p>Veamos algunas definiciones importantes que tienen que ver con la acotación de subconjuntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> un subconjunto no vacío de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{A}\subset\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{A}\not=\emptyset\)</span>).</p>
+<div class="proof remark admonition" id="remark_aleph">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<p>Ahora que todavía estamos entrando en calor, es posible que te apetezca una explicación más didáctica de cómo aparecieron los números irracionales y por qué el conjunto de números irracionales es más grande que el de números racionales… pese a ser ambos conjuntos infinitos.
+Si es así, échale un vistazo al siguiente vídeo de TED-ED: <a class="reference external" href="https://www.youtube.com/watch?v=UPA3bwVVzGI"><em>How big is infinity?</em></a></p>
+</section>
+</div><p>Veamos algunas definiciones importantes que tienen que ver con la acotación de subconjuntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<div class="proof definition admonition" id="def_cotas">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> un subconjunto no vacío de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{A}\subset\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{A}\not=\emptyset\)</span>).</p>
 <ol>
 <li><p>Decimos que <span class="math notranslate nohighlight">\(M\in\mathbb{R}\)</span> es <strong>cota superior</strong> de <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> si</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-      x\leq M,\qquad\forall x\in\mathrm{A}.
-    \end{equation*}\]</div>
+        x\leq M,\qquad\forall x\in\mathrm{A}.
+      \end{equation*}\]</div>
 <p>Si el conjunto <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> admite alguna cota superior decimos que está <strong>acotado
 superiormente</strong>.</p>
 </li>
 <li><p>Decimos que <span class="math notranslate nohighlight">\(m\in\mathbb{R}\)</span> es <strong>cota inferior</strong> de <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> si</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-       m\leq x,\qquad\forall x\in\mathrm{A}.
-    \end{equation*}\]</div>
+        m\leq x,\qquad\forall x\in\mathrm{A}.
+      \end{equation*}\]</div>
 <p>Si el conjunto <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> admite alguna cota inferior decimos que está <strong>acotado
 inferiormente</strong>.</p>
 </li>
@@ -685,6 +700,7 @@ inferiormente</strong>.</p>
 <strong>acotado</strong>.</p></li>
 </ol>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
