@@ -694,6 +694,7 @@ title="Print to PDF"
  &#39;__getattribute__&#39;,
  &#39;__getformat__&#39;,
  &#39;__getnewargs__&#39;,
+ &#39;__getstate__&#39;,
  &#39;__gt__&#39;,
  &#39;__hash__&#39;,
  &#39;__init__&#39;,
@@ -721,7 +722,6 @@ title="Print to PDF"
  &#39;__rsub__&#39;,
  &#39;__rtruediv__&#39;,
  &#39;__setattr__&#39;,
- &#39;__setformat__&#39;,
  &#39;__sizeof__&#39;,
  &#39;__str__&#39;,
  &#39;__sub__&#39;,
@@ -761,7 +761,7 @@ True
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mf">3.4</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">is_integer</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="fm">__int__</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -802,7 +802,7 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -822,7 +822,7 @@ int32
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># Implicitamente se hace una conversión de tipo de int64 a float64</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span> <span class="c1"># ERROR: ¡Los vectores no tienen el mismo tamaño!</span>
 </pre></div>
@@ -835,10 +835,10 @@ int32
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">dfd7306e4fa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># Implicitamente se hace una conversión de tipo de int64 a float64</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span> <span class="c1"># ERROR: ¡Los vectores no tienen el mismo tamaño!</span>
+<span class="ne">c</span>:\Users\Luis Hervella\OneDrive - Universidade da Coruña\Coordinación Cálculo\JBCalculoGEI\capitulos\05\03.IntroduccionNumpy.ipynb Cell 18 line 4
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Luis%20Hervella/OneDrive%20-%20Universidade</span><span class="si">%20d</span><span class="s1">a%20Coru%C3%B1a/Coordinaci%C3%B3n%20C%C3%A1lculo/JBCalculoGEI/capitulos/05/03.IntroduccionNumpy.ipynb#X23sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Luis%20Hervella/OneDrive%20-%20Universidade</span><span class="si">%20d</span><span class="s1">a%20Coru%C3%B1a/Coordinaci%C3%B3n%20C%C3%A1lculo/JBCalculoGEI/capitulos/05/03.IntroduccionNumpy.ipynb#X23sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># Implicitamente se hace una conversión de tipo de int64 a float64</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Luis%20Hervella/OneDrive%20-%20Universidade</span><span class="si">%20d</span><span class="s1">a%20Coru%C3%B1a/Coordinaci%C3%B3n%20C%C3%A1lculo/JBCalculoGEI/capitulos/05/03.IntroduccionNumpy.ipynb#X23sZmlsZQ%3D%3D?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span> <span class="c1"># ERROR: ¡Los vectores no tienen el mismo tamaño!</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (10,) (5,) 
 </pre></div>
@@ -861,7 +861,7 @@ int32
 <p><code class="docutils literal notranslate"><span class="pre">shape</span></code> nos informa sobre el tamaño del vector en <em>cada</em> dirección. En el caso de los vectores, solamente hay una única dirección, mentres que en conjuntos de datos con múltiples índices (matrices, o tensores <span class="math notranslate nohighlight">\(n\)</span>-dimensionales), <code class="docutils literal notranslate"><span class="pre">shape</span></code> nos informaría del tamaño de estas estructuras de datos en cada dirección. Por ejemplo, para crear una matriz de ceros de tipo entero de tamaño <span class="math notranslate nohighlight">\(2\times 3\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
