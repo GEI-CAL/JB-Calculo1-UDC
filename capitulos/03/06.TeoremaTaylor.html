@@ -550,18 +550,28 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-del-polinomio-de-taylor-en-sympy">
+   3.6.3. Cálculo del Polinomio de Taylor en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#completamos-el-ejemplo-practico">
-   3.6.3. Completamos el ejemplo práctico
+   3.6.4. Completamos el ejemplo práctico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-propuesto">
-   3.6.4. Ejercicio propuesto
+   3.6.5. Ejercicio propuesto
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   3.6.5. Ejercicios para practicar un poco más
+   3.6.6. Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -601,18 +611,28 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-del-polinomio-de-taylor-en-sympy">
+   3.6.3. Cálculo del Polinomio de Taylor en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#completamos-el-ejemplo-practico">
-   3.6.3. Completamos el ejemplo práctico
+   3.6.4. Completamos el ejemplo práctico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-propuesto">
-   3.6.4. Ejercicio propuesto
+   3.6.5. Ejercicio propuesto
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   3.6.5. Ejercicios para practicar un poco más
+   3.6.6. Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -626,7 +646,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-taylor">
-<h1><span class="section-number">3.6. </span>Teorema de Taylor<a class="headerlink" href="#teorema-de-taylor" title="Permalink to this headline">#</a></h1>
+<span id="sec-taylor"></span><h1><span class="section-number">3.6. </span>Teorema de Taylor<a class="headerlink" href="#teorema-de-taylor" title="Permalink to this headline">#</a></h1>
 <p>El teorema de Taylor lo usaremos para aproximar en un punto una función compleja (en el sentido de que es difícil calcular su valor exacto en ese punto) mediante un polinomio de grado <span class="math notranslate nohighlight">\(n\)</span> (fácilmente evaluable), para lo que necesitaremos que la función de partida sea derivable <span class="math notranslate nohighlight">\(n+1\)</span> veces.</p>
 <section id="ejemplo-practico">
 <h2><span class="section-number">3.6.1. </span>Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permalink to this headline">#</a></h2>
@@ -701,7 +721,7 @@ title="Print to PDF"
 La recta tangente a f(x) = log(x)  en x=1 es: P1(x) = x - 1 
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x198704ed6a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1c19fc4ec10&gt;
 </pre></div>
 </div>
 <img alt="../../_images/06.TeoremaTaylor_2_2.png" src="../../_images/06.TeoremaTaylor_2_2.png" />
@@ -812,49 +832,91 @@ R_{n,f,x_0}(x):=\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1}.
 <p>Para evitar confusiones debidas a la notación, podemos denotar <span class="math notranslate nohighlight">\(g(s):=f^{(n+1)}(s)\)</span> y así el tan temido problema de acotar el error de Taylor queda reducido a un problema estándar de calcular máximo y mínimo absoluto de una función <span class="math notranslate nohighlight">\(g\)</span> en un intervalo <span class="math notranslate nohighlight">\([x,x_{0}]\)</span>.</p>
 </section>
 </section>
-<section id="completamos-el-ejemplo-practico">
-<h2><span class="section-number">3.6.3. </span>Completamos el ejemplo práctico<a class="headerlink" href="#completamos-el-ejemplo-practico" title="Permalink to this headline">#</a></h2>
-<p>Vamos a mejorar la aproximación de <span class="math notranslate nohighlight">\(\ln(1.3)\)</span> que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. También acotaremos el error cometido. A continuación usamos la función <code class="docutils literal notranslate"><span class="pre">series</span></code> de <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> para obtener el polinomio de Taylor de orden <span class="math notranslate nohighlight">\(n\)</span> centrado en <span class="math notranslate nohighlight">\(x_0\)</span> para una función dada.</p>
+<section id="calculo-del-polinomio-de-taylor-en-sympy">
+<h2><span class="section-number">3.6.3. </span>Cálculo del Polinomio de Taylor en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#calculo-del-polinomio-de-taylor-en-sympy" title="Permalink to this headline">#</a></h2>
+<p>Vamos a mostrar a continuación una función <code class="docutils literal notranslate"><span class="pre">Python</span></code> que calcule de forma simbólica el polinomio de Taylor de una función dada. Como argumentos de entrada recibirá la función, <span class="math notranslate nohighlight">\(f\)</span>, el centro de Taylor, <span class="math notranslate nohighlight">\(x_{0}\)</span>, y el orden del polinomio, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>La función devolverá el polinomio de Taylor y la función que proporciona el resto de Taylor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># punto en el que centramos el polinomio de Taylor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,t&#39;</span><span class="p">)</span>
+
+<span class="c1"># p: polinomio de Taylor</span>
+<span class="c1"># R: resto en valor absoluto</span>
+<span class="k">def</span> <span class="nf">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">+=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="n">i</span>
+    <span class="n">R</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">,</span><span class="n">R</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="completamos-el-ejemplo-practico">
+<h2><span class="section-number">3.6.4. </span>Completamos el ejemplo práctico<a class="headerlink" href="#completamos-el-ejemplo-practico" title="Permalink to this headline">#</a></h2>
+<p>Vamos a utilizar la función anterior, <code class="docutils literal notranslate"><span class="pre">taylor</span></code>, para mejorar la aproximación de <span class="math notranslate nohighlight">\(\ln(1.3)\)</span> que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. También acotaremos el error cometido.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># punto en el que centramos el polinomio de Taylor</span>
 <span class="n">x0</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1"># función que queremos aproximar</span>
-<span class="n">fx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># calculamos el Polinomio de Taylor de grado n centrado en x0</span>
+<span class="c1"># calculamos el Polinomio de Taylor de orden 1 centrado en x0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># grado del polinomio</span>
-<span class="n">P1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">P1</span><span class="p">)</span> 
-<span class="c1"># la O() representa los términos de orden superior que aparecerían en un polinomio de orden superior, por lo que la eliminamos</span>
-<span class="n">P1</span><span class="o">=</span><span class="n">P1</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
-<span class="c1"># que coincide con la recta tangente calculada anteriormente (rt)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">P1</span><span class="o">==</span><span class="n">rt</span><span class="p">)</span>
+<span class="n">P1</span><span class="p">,</span><span class="n">R1</span><span class="o">=</span><span class="n">taylor</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Polinomio de Taylor de orden 1: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">P1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Resto de Taylor de orden 1: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">R1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># calculamos el polinomio de Taylor de orden 2</span>
-<span class="n">P2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">P2</span><span class="o">=</span><span class="n">P2</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El polinomio de Taylor de orden 2 es:&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">P2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">P2</span><span class="p">,</span><span class="n">R2</span><span class="o">=</span><span class="n">taylor</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Polinomio de Taylor de orden 2: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">P2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Resto de Taylor de orden 2: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">R2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polinomio de Taylor de orden 1: 
+ 1.0*x - 1.0 
+ Resto de Taylor de orden 1: 
+ -(x - 1.0)**2/(2*t**2) 
 
+Polinomio de Taylor de orden 2: 
+ 1.0*x - 0.5*(x - 1.0)**2 - 1.0 
+ Resto de Taylor de orden 2: 
+ (x - 1.0)**3/(3*t**3) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dibujamos el resultado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertimos P1 y P2 en funciones `lambdify` para poder dibujarlas</span>
+<span class="n">P1_lamb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P1</span><span class="p">)</span>
+<span class="n">P2_lamb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P2</span><span class="p">)</span>
 
 <span class="c1"># Creamos gráficos de funciones</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
 <span class="c1"># evaluamos P2 en los puntos de x1</span>
-<span class="n">p2x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">)):</span>
-    <span class="n">p2x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">P2</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">x1</span><span class="p">[</span><span class="n">k</span><span class="p">]})</span>
-    
+<span class="n">P1x</span> <span class="o">=</span> <span class="n">P1_lamb</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">P2x</span> <span class="o">=</span> <span class="n">P2_lamb</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">p2x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_2(x)=x-1 - \dfrac{(x-1)^2}</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P1x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P2x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_2(x)=x-1 - \dfrac{(x-1)^2}</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -862,9 +924,9 @@ R_{n,f,x_0}(x):=\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1}.
 
 
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">p2x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_2(x)=x-1 - \dfrac{(x-1)^2}</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P1x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P2x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_2(x)=x-1 - \dfrac{(x-1)^2}</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.4</span><span class="p">)</span>
@@ -877,20 +939,10 @@ R_{n,f,x_0}(x):=\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle -1 + x + O\left(\left(x - 1\right)^{2}; x\rightarrow 1\right)\]</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1c19fa5b7d0&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El polinomio de Taylor de orden 2 es:
-</pre></div>
-</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle x - \frac{\left(x - 1\right)^{2}}{2} - 1\]</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x27895cbb6a0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/06.TeoremaTaylor_7_5.png" src="../../_images/06.TeoremaTaylor_7_5.png" />
+<img alt="../../_images/06.TeoremaTaylor_11_1.png" src="../../_images/06.TeoremaTaylor_11_1.png" />
 </div>
 </div>
 <p>Tenemos</p>
@@ -930,11 +982,11 @@ P_{2,f,1}(1.3)=1.3-1-\frac{(1.3-1)^2}{2}=0.3-\frac{0.09}{2} = \frac{51}{200}=0.2
 alcanza su máximo en valor absoluto en el extremo de la izquierda (es decir, en <span class="math notranslate nohighlight">\(s=1\)</span>).</p>
 </section>
 <section id="ejercicio-propuesto">
-<h2><span class="section-number">3.6.4. </span>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6.5. </span>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Permalink to this headline">#</a></h2>
 <p>Usando <code class="docutils literal notranslate"><span class="pre">Python</span></code> calcula el polinomio de Taylor de diferentes órdenes para <span class="math notranslate nohighlight">\(f(x)=\cos(x)\)</span> centrado en 0, y comprueba gráficamente como los de mayor orden aproximan mucho mejor la función dada.</p>
 </section>
 <section id="ejercicios-para-practicar-un-poco-mas">
-<h2><span class="section-number">3.6.5. </span>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6.6. </span>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/ejercicio-de-taylor.html">https://existelimite.blogspot.com/2012/12/ejercicio-de-taylor.html</a></p></li>
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2013/01/aproximar-una-raiz-cuarta-con-el.html">https://existelimite.blogspot.com/2013/01/aproximar-una-raiz-cuarta-con-el.html</a></p></li>

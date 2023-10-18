@@ -538,8 +538,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extremos-ejercicio-completo-con-sympy">
+   3.4.2. Extremos: Ejercicio completo con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#teoremas-de-rolle-y-lagrange">
-   3.4.2. Teoremas de Rolle y Lagrange
+   3.4.3. Teoremas de Rolle y Lagrange
   </a>
  </li>
 </ul>
@@ -567,8 +577,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extremos-ejercicio-completo-con-sympy">
+   3.4.2. Extremos: Ejercicio completo con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#teoremas-de-rolle-y-lagrange">
-   3.4.2. Teoremas de Rolle y Lagrange
+   3.4.3. Teoremas de Rolle y Lagrange
   </a>
  </li>
 </ul>
@@ -682,8 +702,64 @@ Pues utilizar el siguiente criterio:</p>
 Suelen disfrazarse con un texto más o menos imaginativo (<em>Cortamos una hoja cuadrada de cartón de forma que […]</em>). Aquí tenéis 10 ejemplos (de diferentes tipos), para que vayáis practicando:
 <a class="reference external" href="https://existelimite.blogspot.com/search/label/M%C3%A1ximos%20y%20m%C3%ADnimos">https://existelimite.blogspot.com/search/label/Máximos y mínimos</a>.</p>
 </section>
+<section id="extremos-ejercicio-completo-con-sympy">
+<h2><span class="section-number">3.4.2. </span>Extremos: Ejercicio completo con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#extremos-ejercicio-completo-con-sympy" title="Permalink to this headline">#</a></h2>
+<p>Veamos a continuación un ejercicio típico de cálculo de máximo y mínimo
+Dado un canal de sección trapezoidal de lado 2, calcular el ángulo <span class="math notranslate nohighlight">\(\alpha\)</span> (ver dibujo) que maximiza el área de la sección del canal.</p>
+<a class="reference internal image-reference" href="../../_images/cap3-canal.svg"><img alt="../../_images/cap3-canal.svg" src="../../_images/cap3-canal.svg" width="300" /></a>
+<ol class="simple">
+<li><p>A mano. Obtener la función que proporciona el área del canal en función del ángulo <span class="math notranslate nohighlight">\( \alpha \)</span></p></li>
+<li><p>Simbólicamente: con <strong>Sympy</strong>.</p></li>
+<li><p>Numéricamente mediante el método de Newton con error menor que <span class="math notranslate nohighlight">\( 10^{-4} \)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="c1"># 2. Resolvemos el problema utilizando Sympy</span>
+<span class="n">x</span><span class="p">,</span><span class="n">xn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,xn&#39;</span><span class="p">)</span>
+<span class="c1"># Funcion que describe el area de la seccion en funcion del angulo</span>
+<span class="n">f</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">d1f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d1fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d1f</span><span class="p">)</span>
+<span class="n">alphamax</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">d1f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La sección máxima se alcanza con ángulo: &#39;</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">alphamax</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La sección máxima se alcanza con ángulo:  1.0471975511965979
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Aproximamos el máximo con el método de Newton</span>
+<span class="n">maxit</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span>
+<span class="n">d2f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">d1f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d2fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d2f</span><span class="p">)</span>
+<span class="n">xn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">=</span><span class="n">d1fn</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span><span class="o">/</span><span class="n">d2fn</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span>
+    <span class="n">xn</span><span class="o">=</span><span class="n">xn</span><span class="o">-</span><span class="n">res</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">&lt;</span><span class="n">eps</span><span class="p">):</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Numero de iteraciones realizadas: &#39;</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aproximación del ángulo para la sección máxima con NR: &#39;</span><span class="p">,</span><span class="n">xn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numero de iteraciones realizadas:  4
+Aproximación del ángulo para la sección máxima con NR:  1.0471975511965559
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="teoremas-de-rolle-y-lagrange">
-<h2><span class="section-number">3.4.2. </span>Teoremas de Rolle y Lagrange<a class="headerlink" href="#teoremas-de-rolle-y-lagrange" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4.3. </span>Teoremas de Rolle y Lagrange<a class="headerlink" href="#teoremas-de-rolle-y-lagrange" title="Permalink to this headline">#</a></h2>
 <div class="proof theorem admonition" id="th_Rolle">
 <p class="admonition-title"><span>Theorem </span> (Teorema de Rolle)</p>
 <section class="theorem-content" id="proof-content">

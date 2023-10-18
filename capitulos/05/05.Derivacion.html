@@ -533,29 +533,56 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivar-en-sympy">
-   5.5.1. Derivar en
-   <strong>
-    Sympy
-   </strong>
+  <a class="reference internal nav-link" href="#derivacion-en-sympy">
+   5.5.1. Derivación en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uso-de-sp-lambdify">
-   5.5.2. Uso de
-   <strong>
-    sp.lambdify
-   </strong>
+  <a class="reference internal nav-link" href="#implementacion-en-numpy-del-metodo-numerico-de-newton-raphson">
+   5.5.2. Implementación en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Numpy
+    </span>
+   </code>
+   del método numérico de Newton-Raphson
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-1-polinomio-de-taylor">
-   5.5.3. Ejercicio 1: polinomio de Taylor
+  <a class="reference internal nav-link" href="#derivadas-sucesivas-con-sympy">
+   5.5.3. Derivadas sucesivas con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-2-maximos">
-   5.5.4. Ejercicio 2: máximos
+  <a class="reference internal nav-link" href="#uso-de-python-en-problemas-de-maximos-y-minimos">
+   5.5.4. Uso de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   en problemas de máximos y mínimos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-con-sympy-del-polinomio-de-taylor-y-del-resto">
+   5.5.5. Cálculo, con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+   , del polinomio de Taylor y del resto.
   </a>
  </li>
 </ul>
@@ -578,29 +605,56 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivar-en-sympy">
-   5.5.1. Derivar en
-   <strong>
-    Sympy
-   </strong>
+  <a class="reference internal nav-link" href="#derivacion-en-sympy">
+   5.5.1. Derivación en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uso-de-sp-lambdify">
-   5.5.2. Uso de
-   <strong>
-    sp.lambdify
-   </strong>
+  <a class="reference internal nav-link" href="#implementacion-en-numpy-del-metodo-numerico-de-newton-raphson">
+   5.5.2. Implementación en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Numpy
+    </span>
+   </code>
+   del método numérico de Newton-Raphson
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-1-polinomio-de-taylor">
-   5.5.3. Ejercicio 1: polinomio de Taylor
+  <a class="reference internal nav-link" href="#derivadas-sucesivas-con-sympy">
+   5.5.3. Derivadas sucesivas con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-2-maximos">
-   5.5.4. Ejercicio 2: máximos
+  <a class="reference internal nav-link" href="#uso-de-python-en-problemas-de-maximos-y-minimos">
+   5.5.4. Uso de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   en problemas de máximos y mínimos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-con-sympy-del-polinomio-de-taylor-y-del-resto">
+   5.5.5. Cálculo, con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+   , del polinomio de Taylor y del resto.
   </a>
  </li>
 </ul>
@@ -615,201 +669,112 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="derivacion-en-python">
 <h1><span class="section-number">5.5. </span>Derivación en <strong>Python</strong><a class="headerlink" href="#derivacion-en-python" title="Permalink to this headline">#</a></h1>
-<p>En esta sección aprenderemos a derivar con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> y aplicaremos este conocimiento sobre algunos ejemplos del Polinomio de Taylor.</p>
-<section id="derivar-en-sympy">
-<h2><span class="section-number">5.5.1. </span>Derivar en <strong>Sympy</strong><a class="headerlink" href="#derivar-en-sympy" title="Permalink to this headline">#</a></h2>
-<p>Para calcular simbólicamente la derivada primera de una función mediante Sympy se emplea la función <em>diff</em>. Por ejemplo</p>
+<p>Esta sección pretende ser un compendio (esperemos que claro y ordenado) de todo el <code class="docutils literal notranslate"><span class="pre">Python</span></code> que hemos ido usando en el Capítulo 3.</p>
+<p>Objetivos:</p>
+<ul class="simple">
+<li><p>Cálculo de derivadas con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>.</p></li>
+<li><p>Implementación en <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> del método numérico de Newton-Raphson.</p></li>
+<li><p>Derivadas sucesivas con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>.</p></li>
+<li><p>Uso de <code class="docutils literal notranslate"><span class="pre">Python</span></code> en problemas de máximos y mínimos.</p></li>
+<li><p>Cálculo, con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>, del polinomio de Taylor y del resto.</p></li>
+</ul>
+<section id="derivacion-en-sympy">
+<h2><span class="section-number">5.5.1. </span>Derivación en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#derivacion-en-sympy" title="Permalink to this headline">#</a></h2>
+<p>La realizaremos con el comando <code class="docutils literal notranslate"><span class="pre">sp.diff</span></code>, como mostramos en el siguiente ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">d1f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada primera es: &#39;</span><span class="p">,</span><span class="n">d1f</span><span class="p">)</span>
+<span class="n">f_exp</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d1f_exp</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Para la función: &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada primera es: &#39;</span><span class="p">,</span><span class="n">d1f_exp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La derivada primera es:  -exp(x)*sin(x) + exp(x)*cos(x)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Para calcular la derivada i-ésima</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">d2f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada segunda es: &#39;</span><span class="p">,</span><span class="n">d2f</span><span class="p">)</span>
-<span class="n">d3f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada tercera es: &#39;</span><span class="p">,</span><span class="n">d3f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La derivada segunda es:  -2*exp(x)*sin(x)
-La derivada tercera es:  -2*(sin(x) + cos(x))*exp(x)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Para la función:  exp(x)*cos(x)
+La derivada primera es:  -exp(x)*sin(x) + exp(x)*cos(x)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="uso-de-sp-lambdify">
-<h2><span class="section-number">5.5.2. </span>Uso de <strong>sp.lambdify</strong><a class="headerlink" href="#uso-de-sp-lambdify" title="Permalink to this headline">#</a></h2>
-<p>En el resto de esta práctica, así como en el resto del curso, necesitaremos que una función simbólica de <strong>Sympy</strong> actúe sobre variables que almacenen números en coma flotante o arrays de <strong>Numpy</strong>. En concreto, y aunque las utilidades de este comando son mucho más amplias, lo necesitaremos para representar las funciones obtenidas en <strong>Matplotlib</strong>.</p>
-<p>Esto se consigue utilizando la función <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code>.</p>
-<p>Mostramos a continuación, sobre un ejemplo, su uso. En él denotaremos <em>f</em> la función en Sympy y <em>fn</em> la función numérica generada a partir de ésta con <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code>.</p>
+<section id="implementacion-en-numpy-del-metodo-numerico-de-newton-raphson">
+<h2><span class="section-number">5.5.2. </span>Implementación en <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> del método numérico de Newton-Raphson<a class="headerlink" href="#implementacion-en-numpy-del-metodo-numerico-de-newton-raphson" title="Permalink to this headline">#</a></h2>
+<p>Mostramos a continuación una implementación directa, mediante un bucle, de este método:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="c1"># La funcion f es simbolica: no podemos evaluarla</span>
-<span class="c1"># en variables numericas que almacenen valores en coma flotante, </span>
-<span class="c1"># o en arrays de numpy</span>
-<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># La funcion fn es numerica, y podemos evaluarla en numeros en coma flotante o en arrays de Numpy</span>
-<span class="n">fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
-<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-5.29217867e-18 -2.07879576e-01  0.00000000e+00  4.81047738e+00
-  2.83391752e-15]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-1-polinomio-de-taylor">
-<h2><span class="section-number">5.5.3. </span>Ejercicio 1: polinomio de Taylor<a class="headerlink" href="#ejercicio-1-polinomio-de-taylor" title="Permalink to this headline">#</a></h2>
-<p>El objetivo de este ejercicio es programar la función <em>series</em> de Sympy, que sirve para calcular el polinomio de Taylor.</p>
-<p>El objetivo es escribir una función <code class="docutils literal notranslate"><span class="pre">Python</span></code> que calcule de forma simbólica el polinomio de Taylor de una función dada. Como argumentos de entrada debe recibir la función, <span class="math notranslate nohighlight">\(f\)</span>, el centro de Taylor, <span class="math notranslate nohighlight">\(x_{0}\)</span>, y el orden del polinomio, <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>La función debe devolver el polinomio de Taylor y la función que proporciona el resto de Taylor.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 
-<span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,t&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># define la variable simbólica x</span>
 
-<span class="c1"># p: polinomio de Taylor</span>
-<span class="c1"># R: resto en valor absoluto</span>
-<span class="k">def</span> <span class="nf">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">p</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">p</span><span class="o">+=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="n">i</span>
-    <span class="n">R</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">p</span><span class="p">,</span><span class="n">R</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ahora vamos a emplear la función anterior para calcular el polinomio de Taylor de grado 5 de la función</p>
-<div class="math notranslate nohighlight">
-\[f(x)=\sin(x)-\cos(x),\]</div>
-<p>centrado en <span class="math notranslate nohighlight">\(x_0=0\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">p</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="n">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Polinomio de Taylor: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1"> Resto de Taylor: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">R</span><span class="p">)</span>
+<span class="n">f_expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span>
+<span class="n">f_der_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_expr</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_expr</span><span class="p">)</span>
+<span class="n">f_der</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_der_expr</span><span class="p">)</span>
+
+<span class="n">N_max</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1.e-9</span>
+
+<span class="n">x_aprox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_max</span><span class="p">)</span>
+<span class="n">x_aprox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N_max</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">break</span>
+
+    <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">)</span> <span class="p">):</span> <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número de iteraciones realizadas: &#39;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aproximación de la raíz: &#39;</span><span class="p">,</span> <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polinomio de Taylor: 
- x**5/120 - x**4/24 - x**3/6 + x**2/2 + x - 1 
-
- Resto de Taylor: 
- x**6*(-sin(t)/720 + cos(t)/720)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de iteraciones realizadas:  7
+Aproximación de la raíz:  0.7709169970592481
 </pre></div>
 </div>
 </div>
 </div>
-<p>A continuación vamos a representar, empleando <strong>Matplotlib</strong>, la función <em>f</em> junto a su polinomio de Taylor, <em>p</em>.</p>
-<p>También aproximaremos el valor de <span class="math notranslate nohighlight">\(f(\pi)\)</span> mediante dicho polinomio de Taylor y representaremos (mediante un segmento en rojo) la diferencia entre el valor exacto y el aproximado mediante el polinomio de Taylor.</p>
-<p>Representación de la función, el polinomio de Taylor y el residuo</p>
+<p>En la Sección <a class="reference internal" href="../03/02.NewtonRaphson.html#sec-newtonraphson"><span class="std std-ref">Método de Newton-Raphson</span></a> puedes ver el gráfico de este caso con <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>.</p>
+</section>
+<section id="derivadas-sucesivas-con-sympy">
+<h2><span class="section-number">5.5.3. </span>Derivadas sucesivas con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#derivadas-sucesivas-con-sympy" title="Permalink to this headline">#</a></h2>
+<p>Para calcular derivadas sucesivas en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> tenemos que añadir un parámetro en <code class="docutils literal notranslate"><span class="pre">sp.diff</span></code> que indique el número de veces que queremos derivar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
-<span class="n">pn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;p(x)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],[</span><span class="n">fn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span><span class="n">pn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)],</span><span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expresión que queremos derivar: &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primera derivada: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segunda derivada: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tercera derivada: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># Nota: también se puede usar la siguiente escritura:</span>
+<span class="c1"># print(f_exp.diff(x,3))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/05.Derivacion_12_0.png" src="../../_images/05.Derivacion_12_0.png" />
-</div>
-</div>
-<p>Ahora vamos a calcular el valor absoluto del resto de Taylor:</p>
-<div class="math notranslate nohighlight">
-\[
-|R(x)|=|f(x)-p_n(x)|
-\]</div>
-<p>así como la estimación (cota superior), a partir de la fórmula del resto que nos proporciona el Teorema de Taylor:</p>
-<div class="math notranslate nohighlight">
-\[
-|R(x)|\leq \max_{t \in [0,x]} \dfrac{|f^{n+1}(t)|}{(n+1)!}|x-0|^{n+1}.
-\]</div>
-<p>Para calcular la cota superior del resto de Taylor, debemos acotar la función <span class="math notranslate nohighlight">\(g(t)=\dfrac{|f^{n+1}(t)|}{(n+1)!}|x-0|^{n+1}\)</span> para <span class="math notranslate nohighlight">\(x=\pi\)</span>, en el intervalo correspondiente.</p>
-<p>Vamos a realizar esta acotación haciendo algo de <em>trampa</em>: utilizaremos <strong>Scipy</strong>. Concretamente su función <code class="docutils literal notranslate"><span class="pre">optimize.fminbound</span></code>, que calcula el mínimo de una función real de variable real en un intervalo.</p>
-<p>También haremos esta acotación gráficamente: representaremos la gráfica de <span class="math notranslate nohighlight">\(g\)</span> (el valor absoluto del resto de Taylor) en función de <span class="math notranslate nohighlight">\(t\in[0,\pi]\)</span> y buscaremos su máximo.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-
-<span class="c1"># Convertir el resto de Taylor para x=pi en una funcion numerica</span>
-<span class="c1"># Como buscamos el maximo, multiplicamos por -1 (maximizar es minimizar el opuesto)</span>
-<span class="n">Rn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span> <span class="c1"># Opuesto del resto</span>
-<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="c1"># Solucion grafica</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">Rn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;g(t)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1"># Optimizamos el resto de Taylor</span>
-<span class="n">topt</span><span class="o">=</span><span class="n">optimize</span><span class="o">.</span><span class="n">fminbound</span><span class="p">(</span><span class="n">Rn</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El error es menor o igual que: &#39;</span><span class="p">,</span><span class="o">-</span><span class="n">Rn</span><span class="p">(</span><span class="n">topt</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El error real es: &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">-</span><span class="n">pn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/05.Derivacion_14_0.png" src="../../_images/05.Derivacion_14_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El error es menor o igual que:  1.8883467170460109
-El error real es:  0.5998660124549196
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expresión que queremos derivar:  x**2 + sin(x)
+Primera derivada:  2*x + cos(x)
+Segunda derivada:  2 - sin(x)
+Tercera derivada:  -cos(x)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="ejercicio-2-maximos">
-<h2><span class="section-number">5.5.4. </span>Ejercicio 2: máximos<a class="headerlink" href="#ejercicio-2-maximos" title="Permalink to this headline">#</a></h2>
+<section id="uso-de-python-en-problemas-de-maximos-y-minimos">
+<h2><span class="section-number">5.5.4. </span>Uso de <code class="docutils literal notranslate"><span class="pre">Python</span></code> en problemas de máximos y mínimos<a class="headerlink" href="#uso-de-python-en-problemas-de-maximos-y-minimos" title="Permalink to this headline">#</a></h2>
 <p>Dado un canal de sección trapezoidal de lado 2, calcular el ángulo <span class="math notranslate nohighlight">\(\alpha\)</span> (ver dibujo) que maximiza el área de la sección del canal.</p>
-<a class="reference internal image-reference" href="../../_images/cap5_canal.svg"><img alt="../../_images/cap5_canal.svg" src="../../_images/cap5_canal.svg" width="300" /></a>
+<a class="reference internal image-reference" href="../../_images/cap3-canal.svg"><img alt="../../_images/cap3-canal.svg" src="../../_images/cap3-canal.svg" width="300" /></a>
 <ol class="simple">
 <li><p>A mano. Obtener la función que proporciona el área del canal en función del ángulo <span class="math notranslate nohighlight">\( \alpha \)</span></p></li>
 <li><p>Simbólicamente: con <strong>Sympy</strong>.</p></li>
@@ -817,7 +782,8 @@ El error real es:  0.5998660124549196
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Resolvemos el problema utilizando Sympy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="c1"># 2. Resolvemos el problema utilizando Sympy</span>
 <span class="n">x</span><span class="p">,</span><span class="n">xn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,xn&#39;</span><span class="p">)</span>
 <span class="c1"># Funcion que describe el area de la seccion en funcion del angulo</span>
 <span class="n">f</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -839,7 +805,7 @@ El error real es:  0.5998660124549196
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Aproximamos el máximo con el método de Newton</span>
 <span class="n">maxit</span><span class="o">=</span><span class="mi">100</span>
 <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span>
-<span class="n">d2fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">d1f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d2f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">d1f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 <span class="n">d2fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d2f</span><span class="p">)</span>
 <span class="n">xn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="p">):</span>
@@ -847,16 +813,56 @@ El error real es:  0.5998660124549196
     <span class="n">xn</span><span class="o">=</span><span class="n">xn</span><span class="o">-</span><span class="n">res</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">&lt;</span><span class="n">eps</span><span class="p">):</span>
         <span class="k">break</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La sección máxima se alcanza con ángulo: &#39;</span><span class="p">,</span><span class="n">xn</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Numero de iteraciones realizadas: &#39;</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aproximación del ángulo para la sección máxima con NR: &#39;</span><span class="p">,</span><span class="n">xn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La sección máxima se alcanza con ángulo:  0.9650678568332388
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numero de iteraciones realizadas:  4
+Aproximación del ángulo para la sección máxima con NR:  1.0471975511965559
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="calculo-con-sympy-del-polinomio-de-taylor-y-del-resto">
+<h2><span class="section-number">5.5.5. </span>Cálculo, con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>, del polinomio de Taylor y del resto.<a class="headerlink" href="#calculo-con-sympy-del-polinomio-de-taylor-y-del-resto" title="Permalink to this headline">#</a></h2>
+<p>La siguiente función calcula, de forma simbólica, el polinomio de Taylor de una función dada.</p>
+<ul class="simple">
+<li><p>Argumentos de entrada:</p>
+<ul>
+<li><p>expresión f,</p></li>
+<li><p>punto x0, que será el centro de Taylor,</p></li>
+<li><p>orden del polinomio, n.</p></li>
+</ul>
+</li>
+<li><p>Salida:</p>
+<ul>
+<li><p>expresión del polinomio de Taylor, p,</p></li>
+<li><p>epresión del resto de Taylor, r.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,t&#39;</span><span class="p">)</span>
+
+<span class="c1"># p: polinomio de Taylor</span>
+<span class="c1"># R: resto en valor absoluto</span>
+<span class="k">def</span> <span class="nf">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">+=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="n">i</span>
+    <span class="n">R</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">,</span><span class="n">R</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la Sección <a class="reference internal" href="../03/06.TeoremaTaylor.html#sec-taylor"><span class="std std-ref">Teorema de Taylor</span></a> puedes ver cómo se aplica esta función a un problema concreto.</p>
 </section>
 </section>
 

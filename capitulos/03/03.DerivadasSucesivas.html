@@ -510,12 +510,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion">
+   3.3.1. Definición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivadas-sucesivas-en-sympy">
+   3.3.2. Derivadas sucesivas en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clase-de-una-funcion-ejemplo">
+   3.3.3. Clase de una función. Ejemplo
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -527,6 +566,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion">
+   3.3.1. Definición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivadas-sucesivas-en-sympy">
+   3.3.2. Derivadas sucesivas en
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clase-de-una-funcion-ejemplo">
+   3.3.3. Clase de una función. Ejemplo
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -536,6 +603,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="derivadas-sucesivas">
 <h1><span class="section-number">3.3. </span>Derivadas sucesivas<a class="headerlink" href="#derivadas-sucesivas" title="Permalink to this headline">#</a></h1>
+<section id="definicion">
+<h2><span class="section-number">3.3.1. </span>Definición<a class="headerlink" href="#definicion" title="Permalink to this headline">#</a></h2>
 <p>Vamos a suponer que tenemos una función <span class="math notranslate nohighlight">\(f:(a,b) \longrightarrow \mathbb R\)</span>, derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>. Podemos considerar, entonces, su función derivada en <span class="math notranslate nohighlight">\((a,b)\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -576,33 +645,37 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(f'''(x) = - \cos(x)\)</span>,</p></li>
 <li><p>etc.</p></li>
 </ul>
-<p>La orden en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> para calcular la derivada n-ésima de una expresión es la siguiente:</p>
+</section>
+<section id="derivadas-sucesivas-en-sympy">
+<h2><span class="section-number">3.3.2. </span>Derivadas sucesivas en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#derivadas-sucesivas-en-sympy" title="Permalink to this headline">#</a></h2>
+<p>Para calcular derivadas sucesivas en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> tenemos que añadir un parámetro en <code class="docutils literal notranslate"><span class="pre">sp.diff</span></code> que indique el número de veces que queremos derivar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">display</span><span class="p">(</span><span class="n">f_exp</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expresión que queremos derivar: &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primera derivada: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segunda derivada: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tercera derivada: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="c1"># Nota: también se puede usar la siguiente escritura:</span>
-<span class="c1"># display(f_exp.diff(x,3))</span>
+<span class="c1"># print(f_exp.diff(x,3))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle x^{2} + \sin{\left(x \right)}\]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 2 x + \cos{\left(x \right)}\]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 2 - \sin{\left(x \right)}\]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle - \cos{\left(x \right)}\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expresión que queremos derivar:  x**2 + sin(x)
+Primera derivada:  2*x + cos(x)
+Segunda derivada:  2 - sin(x)
+Tercera derivada:  -cos(x)
+</pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="clase-de-una-funcion-ejemplo">
+<h2><span class="section-number">3.3.3. </span>Clase de una función. Ejemplo<a class="headerlink" href="#clase-de-una-funcion-ejemplo" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="def_clase_funcion">
 <p class="admonition-title"><span>Definition </span> (Clase de una función)</p>
 <section class="definition-content" id="proof-content">
@@ -642,7 +715,7 @@ f(x)=\left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.DerivadasSucesivas_3_0.png" src="../../_images/03.DerivadasSucesivas_3_0.png" />
+<img alt="../../_images/03.DerivadasSucesivas_4_0.png" src="../../_images/03.DerivadasSucesivas_4_0.png" />
 </div>
 </div>
 <p>Ahora vamos a comprobar si <span class="math notranslate nohighlight">\(f\)</span> es una función continua. Es evidente que <span class="math notranslate nohighlight">\(f\)</span> es continua en todo punto <span class="math notranslate nohighlight">\(x\)</span> distinto del <span class="math notranslate nohighlight">\(0\)</span>, ya que para <span class="math notranslate nohighlight">\(x&lt;0\)</span> y para <span class="math notranslate nohighlight">\(x&gt;0\)</span> <span class="math notranslate nohighlight">\(f\)</span> es un polinomio. El <span class="math notranslate nohighlight">\(0\)</span> es un punto que debemos estudiar con más cuidado, ya que en él se produce un cambio en la definición de <span class="math notranslate nohighlight">\(f\)</span>. Calculamos sus límites laterales,</p>
@@ -706,7 +779,7 @@ x&amp;\quad\mbox{si }x\geq 0.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.DerivadasSucesivas_7_0.png" src="../../_images/03.DerivadasSucesivas_7_0.png" />
+<img alt="../../_images/03.DerivadasSucesivas_8_0.png" src="../../_images/03.DerivadasSucesivas_8_0.png" />
 </div>
 </div>
 <p>Ahora intentamos calcular la derivada segunda de <span class="math notranslate nohighlight">\(f\)</span>. Comenzamos con el punto problemático, <span class="math notranslate nohighlight">\(x=0\)</span>, calculando sus derivadas laterales.</p>
@@ -741,6 +814,7 @@ Existe f&#39;&#39;(0)? False
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

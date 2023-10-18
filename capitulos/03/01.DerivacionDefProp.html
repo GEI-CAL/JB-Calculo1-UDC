@@ -548,30 +548,38 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivacion-en-sympy">
+   3.1.4. Derivación en
+   <strong>
+    Sympy
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#derivacion-de-algunos-casos-especiales">
-   3.1.4. Derivación de algunos casos especiales.
+   3.1.5. Derivación de algunos casos especiales.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivacion-de-la-funcion-inversa">
-     3.1.4.1. Derivación de la función inversa.
+     3.1.5.1. Derivación de la función inversa.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivacion-implicita">
-     3.1.4.2. Derivación implícita
+     3.1.5.2. Derivación implícita
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivacion-logaritmica">
-     3.1.4.3. Derivación logarítmica
+     3.1.5.3. Derivación logarítmica
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regla-de-lhopital">
-   3.1.5. Regla de l’Hôpital
+   3.1.6. Regla de l’Hôpital
   </a>
  </li>
 </ul>
@@ -609,30 +617,38 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivacion-en-sympy">
+   3.1.4. Derivación en
+   <strong>
+    Sympy
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#derivacion-de-algunos-casos-especiales">
-   3.1.4. Derivación de algunos casos especiales.
+   3.1.5. Derivación de algunos casos especiales.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivacion-de-la-funcion-inversa">
-     3.1.4.1. Derivación de la función inversa.
+     3.1.5.1. Derivación de la función inversa.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivacion-implicita">
-     3.1.4.2. Derivación implícita
+     3.1.5.2. Derivación implícita
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivacion-logaritmica">
-     3.1.4.3. Derivación logarítmica
+     3.1.5.3. Derivación logarítmica
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regla-de-lhopital">
-   3.1.5. Regla de l’Hôpital
+   3.1.6. Regla de l’Hôpital
   </a>
  </li>
 </ul>
@@ -921,10 +937,32 @@ nos permite obtener el resultado anunciado.</p>
 </li>
 </ol>
 </section>
+<section id="derivacion-en-sympy">
+<h2><span class="section-number">3.1.4. </span>Derivación en <strong>Sympy</strong><a class="headerlink" href="#derivacion-en-sympy" title="Permalink to this headline">#</a></h2>
+<p>Para calcular simbólicamente la derivada primera de una función mediante Sympy se emplea la función <em>diff</em>. Por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f_exp</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d1f_exp</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Para la función: &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada primera es: &#39;</span><span class="p">,</span><span class="n">d1f_exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Para la función:  exp(x)*cos(x)
+La derivada primera es:  -exp(x)*sin(x) + exp(x)*cos(x)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="derivacion-de-algunos-casos-especiales">
-<h2><span class="section-number">3.1.4. </span>Derivación de algunos casos especiales.<a class="headerlink" href="#derivacion-de-algunos-casos-especiales" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1.5. </span>Derivación de algunos casos especiales.<a class="headerlink" href="#derivacion-de-algunos-casos-especiales" title="Permalink to this headline">#</a></h2>
 <section id="derivacion-de-la-funcion-inversa">
-<h3><span class="section-number">3.1.4.1. </span>Derivación de la función inversa.<a class="headerlink" href="#derivacion-de-la-funcion-inversa" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.5.1. </span>Derivación de la función inversa.<a class="headerlink" href="#derivacion-de-la-funcion-inversa" title="Permalink to this headline">#</a></h3>
 <p>Sea <span class="math notranslate nohighlight">\(f:(a,b)\to\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. Supongamos que <span class="math notranslate nohighlight">\(f\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y que <span class="math notranslate nohighlight">\(f(x_0)\not=0\)</span>.
 Entonces <span class="math notranslate nohighlight">\(f^{-1}\)</span>, si existe, es derivable y</p>
 <div class="math notranslate nohighlight">
@@ -955,7 +993,7 @@ x}}=-\frac{1}{\sqrt{1-y^2}},
 <p>donde, en la última igualdad, hemos utilizado la definición inicial de la función: <span class="math notranslate nohighlight">\(y= f(x)=\cos x\)</span>.</p>
 </section>
 <section id="derivacion-implicita">
-<h3><span class="section-number">3.1.4.2. </span>Derivación implícita<a class="headerlink" href="#derivacion-implicita" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.5.2. </span>Derivación implícita<a class="headerlink" href="#derivacion-implicita" title="Permalink to this headline">#</a></h3>
 <p>Una ecuación implícita es una ecuación de la forma</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1005,7 +1043,7 @@ Generalmente no es posible obtener el valor de <span class="math notranslate noh
 </ul>
 </section>
 <section id="derivacion-logaritmica">
-<h3><span class="section-number">3.1.4.3. </span>Derivación logarítmica<a class="headerlink" href="#derivacion-logaritmica" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.5.3. </span>Derivación logarítmica<a class="headerlink" href="#derivacion-logaritmica" title="Permalink to this headline">#</a></h3>
 <p>Supongamos que tenemos una expresión del tipo</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1043,7 +1081,7 @@ y=\sin(x)\ln\left(x^3-5\right) \\
 </section>
 </section>
 <section id="regla-de-lhopital">
-<h2><span class="section-number">3.1.5. </span>Regla de l’Hôpital<a class="headerlink" href="#regla-de-lhopital" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1.6. </span>Regla de l’Hôpital<a class="headerlink" href="#regla-de-lhopital" title="Permalink to this headline">#</a></h2>
 <a class="reference internal image-reference" href="../../_images/cap3_lHopital_meme.jpg"><img alt="../../_images/cap3_lHopital_meme.jpg" src="../../_images/cap3_lHopital_meme.jpg" style="width: 400px;" /></a>
 <p>(Imagen tomada de la cuenta de Twitter &#64;MathMatize, concretamente de  <a class="reference external" href="https://twitter.com/MathMatize/status/1678166772359348225">https://twitter.com/MathMatize/status/1678166772359348225</a>)</p>
 <p>Nos queda todavía un punto que debemos resolver:

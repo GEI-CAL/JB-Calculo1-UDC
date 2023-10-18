@@ -542,6 +542,14 @@ title="Print to PDF"
    5.4.2. Gráficas de funcións de una variable
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sp-lambdify">
+   5.4.3. Uso de
+   <strong>
+    sp.lambdify
+   </strong>
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -571,6 +579,14 @@ title="Print to PDF"
    5.4.2. Gráficas de funcións de una variable
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sp-lambdify">
+   5.4.3. Uso de
+   <strong>
+    sp.lambdify
+   </strong>
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -597,7 +613,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.3.2&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.6.3&#39;
 </pre></div>
 </div>
 </div>
@@ -737,7 +753,42 @@ f(x) = \sin(x),\qquad g(x)=\cos(x),\qquad x\in[0,4\pi].
 <img alt="../../_images/04.RepresentacionGraficaMatplotlib_12_0.png" src="../../_images/04.RepresentacionGraficaMatplotlib_12_0.png" />
 </div>
 </div>
-<p>Os dejamos que juguéis un rato con <strong>Matplotlib</strong>…</p>
+</section>
+<section id="uso-de-sp-lambdify">
+<h2><span class="section-number">5.4.3. </span>Uso de <strong>sp.lambdify</strong><a class="headerlink" href="#uso-de-sp-lambdify" title="Permalink to this headline">#</a></h2>
+<p>En el resto de esta práctica, así como en el resto del curso, necesitaremos que una función simbólica de <strong>Sympy</strong> actúe sobre variables que almacenen números en coma flotante o arrays de <strong>Numpy</strong>. En concreto, y aunque las utilidades de este comando son mucho más amplias, lo necesitaremos para representar las funciones obtenidas en <strong>Matplotlib</strong>.</p>
+<p>Esto se consigue utilizando la función <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code>.</p>
+<p>Mostramos a continuación, sobre un ejemplo, su uso. En él denotaremos <em>f</em> la función en Sympy y <em>fn</em> la función numérica generada a partir de ésta con <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="c1"># La funcion f es simbolica: no podemos evaluarla</span>
+<span class="c1"># en variables numericas que almacenen valores en coma flotante, </span>
+<span class="c1"># o en arrays de numpy</span>
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># La funcion fn es numerica, y podemos evaluarla en numeros en coma flotante o en arrays de Numpy</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Ahora, para representarla con matplotlib, la evaluamos en un array de puntos</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+<span class="c1"># print(fn(x))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sen(x)*exp(x)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># Definimos los límites de los ejes x e y</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">8.</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04.RepresentacionGraficaMatplotlib_14_0.png" src="../../_images/04.RepresentacionGraficaMatplotlib_14_0.png" />
+</div>
+</div>
+<p>Os dejamos que juguéis un poquito con <code class="docutils literal notranslate"><span class="pre">Matplolib</span></code>…</p>
 </section>
 </section>
 
