@@ -618,8 +618,8 @@ raíz de la recta tangente. Desarrollando esta idea y dejando iterar el método 
 <li><p><span class="math notranslate nohighlight">\(x_{2} =\)</span> la raíz de la recta tangente a <span class="math notranslate nohighlight">\(f\)</span> en el punto <span class="math notranslate nohighlight">\(\left(x_{1}, f\left(x_{1}\right)\right)\)</span>,</p></li>
 <li><p>…</p></li>
 </ul>
-<p>Gráficamente (puedes jugar con el gráfico, moviendo <span class="math notranslate nohighlight">\(x_{0}\)</span>, aquí: <a class="reference external" href="https://www.desmos.com/calculator/ekj7kblys7?lang=es">https://www.desmos.com/calculator/ekj7kblys7?lang=es</a>):</p>
-<a class="reference internal image-reference" href="../../_images/cap_der_newton.png"><img alt="../../_images/cap_der_newton.png" src="../../_images/cap_der_newton.png" style="width: 500px;" /></a>
+<p>Gráficamente (<a class="reference external" href="https://www.desmos.com/calculator/ekj7kblys7?lang=es">puedes jugar con el gráfico, moviendo <span class="math notranslate nohighlight">\(x_{0}\)</span>, en esta gráfica de Desmos</a> ):</p>
+<a class="reference internal image-reference" href="../../_images/cap3-der-newton.png"><img alt="../../_images/cap3-der-newton.png" src="../../_images/cap3-der-newton.png" style="width: 500px;" /></a>
 <p>Desarrollamos esta idea a continuación:</p>
 <ol>
 <li><p>Para arrancar el método, tomamos un punto <span class="math notranslate nohighlight">\(x_{0}\in(a,b)\)</span>.</p></li>
@@ -654,17 +654,18 @@ Entonces, el punto de corte de esta recta con el eje de abscisas (<span class="m
 <span class="n">f_expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span>
 <span class="n">f_der_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_expr</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_expr</span><span class="p">)</span>
-<span class="n">f_der</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_der_expr</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_expr</span><span class="p">)</span>
+<span class="n">f_der</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_der_expr</span><span class="p">)</span>
 
 <span class="n">N_max</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">tol</span> <span class="o">=</span> <span class="mf">1.e-9</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">2.</span>
 
 <span class="n">x_aprox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_max</span><span class="p">)</span>
-<span class="n">x_aprox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x_aprox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N_max</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">break</span>
+    <span class="k">if</span> <span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1.e-14</span><span class="p">:</span> <span class="k">break</span>
 
     <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
@@ -734,10 +735,10 @@ Aproximación de la raíz:  0.7709169970592481
 <h2><span class="section-number">3.2.2. </span>Links para ampliar<a class="headerlink" href="#links-para-ampliar" title="Permalink to this headline">#</a></h2>
 <p>En el caso de que no nos hayáis entendido, o queráis ampliar vuestro conocimiento, podéis mirar los siguientes links:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton">https://es.wikipedia.org/wiki/Método_de_Newton</a></p></li>
-<li><p><a class="reference external" href="https://www.unioviedo.es/compnum/laboratorios_py/Ec_no_lin/Ec_no_lin.html#raiz">https://www.unioviedo.es/compnum/laboratorios_py/Ec_no_lin/Ec_no_lin.html#raiz</a></p></li>
-<li><p><a class="reference external" href="https://estadistica-dma.ulpgc.es/FCC/05-3-Raices-de-Ecuaciones-2.html">https://estadistica-dma.ulpgc.es/FCC/05-3-Raices-de-Ecuaciones-2.html</a></p></li>
-<li><p><a class="reference external" href="https://www.geogebra.org/m/XCrwWHzy">https://www.geogebra.org/m/XCrwWHzy</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_method">Entrada en la Wikipedia (inglés).</a></p></li>
+<li><p><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter19.04-Newton-Raphson-Method.html">Página sobre Newton-Raphson en <em>Python Numerical Methods</em>, Berkeley (inglés).</a></p></li>
+<li><p><a class="reference external" href="https://estadistica-dma.ulpgc.es/FCC/05-3-Raices-de-Ecuaciones-2.html">Página del Departamento de Estadística de la Universidad de Las Palmas de Gran Canaria.</a></p></li>
+<li><p><a class="reference external" href="https://www.geogebra.org/m/XCrwWHzy">Applet de Geogebra escrito por Ignacio Larrosa.</a></p></li>
 </ul>
 </section>
 <section id="ejercicio-para-que-hagais">
