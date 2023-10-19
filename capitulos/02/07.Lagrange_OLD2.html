@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.7. Polinomio de interpolación de Lagrange &#8212; Calculo en una variable</title>
+    <title>Polinomio de interpolación de Lagrange &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.8. Boletín 1: Funciones reales de una variable real" href="08.Boletin1.html" />
-    <link rel="prev" title="2.6. Método de dicotomía" href="06.Dicotomia.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01/README.html">
    1. Conjuntos de números
@@ -141,16 +139,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="README.html">
    2. Funciones reales de variable real
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="01.Boletin0.html">
      2.1. Boletín 0
@@ -181,8 +179,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.6. Método de dicotomía
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.Lagrange.html">
      2.7. Polinomio de interpolación de Lagrange
     </a>
    </li>
@@ -430,7 +428,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/02/07.Lagrange.ipynb"
+        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/02/07.Lagrange_OLD2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -473,7 +471,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/capitulos/02/07.Lagrange.ipynb"
+        <a href="../../_sources/capitulos/02/07.Lagrange_OLD2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -534,32 +532,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#soporte-teorico">
-   2.7.1. Soporte teórico
+   Soporte teórico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#construccion-por-polinomios-fundamentales">
-   2.7.2. Construcción por polinomios fundamentales
+  <a class="reference internal nav-link" href="#construccion-por-polinomios-fundamentales-lagrange">
+   Construcción por polinomios fundamentales (Lagrange)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#construccion-mediante-diferencias-divididas">
-   2.7.3. Construcción mediante diferencias divididas
+  <a class="reference internal nav-link" href="#construccion-mediante-diferencias-divididas-newton">
+   Construcción mediante diferencias divididas (Newton)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#links-para-ampliar">
-   2.7.4. Links para ampliar
+   Links para ampliar
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-que-hagais">
-   2.7.5. Ejercicios para que hagáis
+   Ejercicios para que hagáis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   2.7.6. Ejercicios para practicar un poco más
+   Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -583,32 +581,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#soporte-teorico">
-   2.7.1. Soporte teórico
+   Soporte teórico
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#construccion-por-polinomios-fundamentales">
-   2.7.2. Construcción por polinomios fundamentales
+  <a class="reference internal nav-link" href="#construccion-por-polinomios-fundamentales-lagrange">
+   Construcción por polinomios fundamentales (Lagrange)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#construccion-mediante-diferencias-divididas">
-   2.7.3. Construcción mediante diferencias divididas
+  <a class="reference internal nav-link" href="#construccion-mediante-diferencias-divididas-newton">
+   Construcción mediante diferencias divididas (Newton)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#links-para-ampliar">
-   2.7.4. Links para ampliar
+   Links para ampliar
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-que-hagais">
-   2.7.5. Ejercicios para que hagáis
+   Ejercicios para que hagáis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   2.7.6. Ejercicios para practicar un poco más
+   Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -622,10 +620,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="polinomio-de-interpolacion-de-lagrange">
-<h1><span class="section-number">2.7. </span>Polinomio de interpolación de Lagrange<a class="headerlink" href="#polinomio-de-interpolacion-de-lagrange" title="Permalink to this headline">#</a></h1>
+<h1>Polinomio de interpolación de Lagrange<a class="headerlink" href="#polinomio-de-interpolacion-de-lagrange" title="Permalink to this headline">#</a></h1>
 <section id="soporte-teorico">
-<h2><span class="section-number">2.7.1. </span>Soporte teórico<a class="headerlink" href="#soporte-teorico" title="Permalink to this headline">#</a></h2>
-<p>En general, cuando queremos resolver un problema, tendremos una serie de datos puntuales (por ejemplo, el número de infectados por COVID día a día). Para trabajar matemáticamente con esos datos necesitamos definir una función a partir de ellos y, después, trabajar con esa función (por ejemplo, derivarla, para conocer la tendencia de la curva, o integrarla, para conocer el número de personas afectadas, <em>etc.</em>). Por lo tanto, conseguir crear una función que aproxime un conjunto de datos es una parte fundamental del trabajo práctico de un matemático. Hay varias formas de hacer esto. Ahora vamos a ver la más sencilla de todas: <strong>el polinomio de interpolación de Lagrage</strong>.</p>
+<h2>Soporte teórico<a class="headerlink" href="#soporte-teorico" title="Permalink to this headline">#</a></h2>
+<p>En general, cuando queremos resolver un problema, tendremos una serie de datos puntuales (por ejemplo, el número de infectados por COVID día a día). Para trabajar matemáticamente con esos datos necesitamos definir una función a partir de ellos y, después, trabajar con esa función (por ejemplo, derivarla, para conocer la tendencia de la curva, o integrarla, para conocer el número de personas afectadas, <em>etc.</em>). Por lo tanto, conseguir crear una función que aproxime un conjunto de datos es una parte fundamental del trabajo práctico de un matemático. Hay varias formas de hacer esto. Ahora vamos a ver la más sencilla de todas: <strong>el polinomio de interpolación de Lagrange</strong>.</p>
 <p>En este caso, si tenemos <span class="math notranslate nohighlight">\(n+1\)</span> puntos construiremos un polinomio de orden <span class="math notranslate nohighlight">\(n\)</span> que pase por esos puntos. Pensemos que es algo que ya hemos hecho en el instituto… pero restringido a un caso concreto: si nos dan 2 puntos sabemos (ejem…) construir una recta (es decir, un polinomio de orden 1) que pase por esos 2 puntos. Ahora vamos a aprender a hacer esto para más puntos.</p>
 <p>Primero necesitamos un teorema que nos garantice la existencia de ese polinomio:</p>
 <p><strong>Teorema (de interpolación de Lagrange):</strong>
@@ -652,47 +650,46 @@ función <span class="math notranslate nohighlight">\(f\)</span> en los puntos <
 
 <span class="c1"># Figura izquierda</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">x_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">y_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-
-<span class="n">xx</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">P_vec</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">xx</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">xx</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">P_expr</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Polinomio de interpolación de Lagrange para puntos&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coef</span><span class="p">,</span> <span class="n">y_coef</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">P_vec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">P_expr</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 
 <span class="c1"># Figura derecha</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">x_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">y_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">xx</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
-<span class="n">P_vec</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">xx</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">21</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">xx</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">xx</span><span class="o">+</span><span class="mi">6</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">xx</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">xx</span><span class="o">*</span><span class="p">(</span><span class="n">xx</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">x_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">y_coef</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">P_expr</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">21</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">6</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Polinomio de interpolación de Lagrange para una función&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coef</span><span class="p">,</span> <span class="n">y_coef</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$cos(x)$&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">P_vec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$cos(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">P_expr</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1f6267e7850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2a45a3a2810&gt;
 </pre></div>
 </div>
-<img alt="../../_images/07.Lagrange_1_1.png" src="../../_images/07.Lagrange_1_1.png" />
+<img alt="../../_images/07.Lagrange_OLD2_1_1.png" src="../../_images/07.Lagrange_OLD2_1_1.png" />
 </div>
 </div>
 <p>Una vez que ya sabemos que ese polinomio existe viene la segunda parte: ¿cómo lo calculamos?</p>
 <p>Hay 2 maneras de hacer esto:</p>
 </section>
-<section id="construccion-por-polinomios-fundamentales">
-<h2><span class="section-number">2.7.2. </span>Construcción por polinomios fundamentales<a class="headerlink" href="#construccion-por-polinomios-fundamentales" title="Permalink to this headline">#</a></h2>
+<section id="construccion-por-polinomios-fundamentales-lagrange">
+<h2>Construcción por polinomios fundamentales (Lagrange)<a class="headerlink" href="#construccion-por-polinomios-fundamentales-lagrange" title="Permalink to this headline">#</a></h2>
 <p><strong>Definición:</strong>
 Para cada <span class="math notranslate nohighlight">\(i=0,1,\ldots,n\,\)</span>,
 existe un único polinomio <span class="math notranslate nohighlight">\(l_i\)</span> de grado <span class="math notranslate nohighlight">\(\leq n\)</span> tal que</p>
@@ -727,59 +724,52 @@ y_0\,\ell_0(x)+y_1\,\ell_1(x)+\ldots+y_n\,\ell_n(x).
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
-<span class="c1"># Variable simbólica sympy</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># Datos de la tabla guardados en vectores numpy</span>
-<span class="n">x_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">y_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_coef</span><span class="p">)</span>
+<span class="n">x_coef</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="c1"># Creamos un polinomio con el producto completo de monomios asociados a cada punto de la tabla</span>
-<span class="n">numerator</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">numerator</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-
-<span class="c1"># Definimos las expresiones de los polinomios fundamentales y los guardamos en una lista</span>
-<span class="n">P_expr</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="c1"># lista de polinomios</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">numerator</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
-    <span class="n">P_expr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">expr</span><span class="o">/</span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">x_coef</span><span class="p">[</span><span class="n">j</span><span class="p">]})</span>
+<span class="c1"># Definimos las expresiones de los polinomios fundamentales</span>
+<span class="n">P0_expr</span> <span class="o">=</span> <span class="p">(</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> 
+          <span class="o">/</span> <span class="p">((</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="p">)</span>
+<span class="n">P1_expr</span> <span class="o">=</span> <span class="p">(</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> 
+          <span class="o">/</span> <span class="p">((</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="p">)</span>
+<span class="n">P2_expr</span> <span class="o">=</span> <span class="p">(</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> 
+          <span class="o">/</span> <span class="p">((</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="p">)</span>
+<span class="n">P3_expr</span> <span class="o">=</span> <span class="p">(</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> 
+          <span class="o">/</span> <span class="p">((</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">x_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="p">)</span>
 
 <span class="c1"># Definimos la expresión del polinomio de Lagrange</span>
-<span class="n">P_lagrange</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                      
-    <span class="n">P_lagrange</span> <span class="o">+=</span> <span class="n">y_coef</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">P_expr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
+<span class="n">P_expr</span> <span class="o">=</span> <span class="p">(</span> <span class="n">y_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">P0_expr</span> <span class="o">+</span> <span class="n">y_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">P1_expr</span> 
+          <span class="o">+</span> <span class="n">y_coef</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">P2_expr</span> <span class="o">+</span> <span class="n">y_coef</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">P3_expr</span> <span class="p">)</span>
 
 <span class="c1"># Creamos funciones `lambdify` para dibujarlas</span>
-<span class="n">P0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P_expr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">P1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P_expr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">P2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P_expr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">P3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P_expr</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">P0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P0_expr</span><span class="p">)</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P1_expr</span><span class="p">)</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P2_expr</span><span class="p">)</span>
+<span class="n">P3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P3_expr</span><span class="p">)</span>
 
-<span class="n">P</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P_lagrange</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P_expr</span><span class="p">)</span>
 
 <span class="c1"># xx: array que usaremos para dar valores a las funciones lambdify</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">x_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">0.5</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">x_coef</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span>
-<span class="n">xx</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">xx</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
-<span class="c1"># vectores numpy donde se guardan los valores de los polinomios</span>
 <span class="n">P0_vec</span> <span class="o">=</span> <span class="n">P0</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
 <span class="n">P1_vec</span> <span class="o">=</span> <span class="n">P1</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
 <span class="n">P2_vec</span> <span class="o">=</span> <span class="n">P2</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
 <span class="n">P3_vec</span> <span class="o">=</span> <span class="n">P3</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+
 <span class="n">P_vec</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
 
 <span class="c1"># Figura izquierda</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Polinomios fundamentales de Lagrange&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-<span class="n">y_ceros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># Para dibujar (xi,0)</span>
+<span class="n">y_ceros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># Para dibujar (xi,0)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coef</span><span class="p">,</span> <span class="n">y_ceros</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">y_unos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># Para dibujar (xi,1)</span>
+<span class="n">y_unos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Para dibujar (xi,1)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coef</span><span class="p">,</span> <span class="n">y_unos</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-                  
+
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">P0_vec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P0&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">P1_vec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P1&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">P2_vec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;P2&#39;</span><span class="p">)</span>
@@ -798,15 +788,15 @@ y_0\,\ell_0(x)+y_1\,\ell_1(x)+\ldots+y_n\,\ell_n(x).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1f629aff650&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2a456b2e990&gt;
 </pre></div>
 </div>
-<img alt="../../_images/07.Lagrange_4_1.png" src="../../_images/07.Lagrange_4_1.png" />
+<img alt="../../_images/07.Lagrange_OLD2_4_1.png" src="../../_images/07.Lagrange_OLD2_4_1.png" />
 </div>
 </div>
 </section>
-<section id="construccion-mediante-diferencias-divididas">
-<h2><span class="section-number">2.7.3. </span>Construcción mediante diferencias divididas<a class="headerlink" href="#construccion-mediante-diferencias-divididas" title="Permalink to this headline">#</a></h2>
+<section id="construccion-mediante-diferencias-divididas-newton">
+<h2>Construcción mediante diferencias divididas (Newton)<a class="headerlink" href="#construccion-mediante-diferencias-divididas-newton" title="Permalink to this headline">#</a></h2>
 <p>La construcción del Polinomio de Lagrange mediante los polinomios fundamentales, que acabamos de explicar, es sencilla de entender pero difícil de implementar en la práctica. Además, si aparece un nuevo dato debemos recomenzar la construcción desde 0.</p>
 <p>En general, a efectos prácticos y, sobre todo, de programación, es preferible construir el polinomio de Lagrange utilizando la tabla de diferencias divididas, como explicaremos a continuación.</p>
 <p>Antes de nada, debemos recordar que el polinomio de Lagrange es único y, por tanto, el resultado debe ser el mismo utilizando un método u otro.</p>
@@ -859,8 +849,8 @@ Después de construir la tabla, se puede añadir un dato adicional aprovechando 
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
-<span class="n">x_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">y_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="n">x_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_coef</span><span class="p">)</span>
 
@@ -877,7 +867,7 @@ Después de construir la tabla, se puede añadir un dato adicional aprovechando 
 
 <span class="c1"># Definimos la expresión para el Polinomio de Lagrange (versión Newton)</span>
 <span class="n">P_expr</span> <span class="o">=</span> <span class="n">tabla</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">multiplica</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="n">multiplica</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="n">multiplica</span> <span class="o">=</span> <span class="n">multiplica</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_coef</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">P_expr</span> <span class="o">=</span> <span class="n">P_expr</span> <span class="o">+</span> <span class="n">tabla</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">multiplica</span>
@@ -901,7 +891,7 @@ Después de construir la tabla, se puede añadir un dato adicional aprovechando 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07.Lagrange_7_0.png" src="../../_images/07.Lagrange_7_0.png" />
+<img alt="../../_images/07.Lagrange_OLD2_7_0.png" src="../../_images/07.Lagrange_OLD2_7_0.png" />
 </div>
 </div>
 <p><strong>Nota:</strong></p>
@@ -911,8 +901,8 @@ Aunque en este curso no usaremos SciPy (<strong>lo que quiere decir que NO lo ad
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">lagrange</span>
 
-<span class="n">x_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">y_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">x_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y_coef</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
 <span class="n">pol_lag</span> <span class="o">=</span> <span class="n">lagrange</span><span class="p">(</span><span class="n">x_coef</span><span class="p">,</span> <span class="n">y_coef</span><span class="p">)</span>
@@ -929,12 +919,12 @@ Aunque en este curso no usaremos SciPy (<strong>lo que quiere decir que NO lo ad
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07.Lagrange_9_0.png" src="../../_images/07.Lagrange_9_0.png" />
+<img alt="../../_images/07.Lagrange_OLD2_9_0.png" src="../../_images/07.Lagrange_OLD2_9_0.png" />
 </div>
 </div>
 </section>
 <section id="links-para-ampliar">
-<h2><span class="section-number">2.7.4. </span>Links para ampliar<a class="headerlink" href="#links-para-ampliar" title="Permalink to this headline">#</a></h2>
+<h2>Links para ampliar<a class="headerlink" href="#links-para-ampliar" title="Permalink to this headline">#</a></h2>
 <p>Aquí os dejamos algunos links, por si queréis echarles un vistazo:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter17.04-Lagrange-Polynomial-Interpolation.html">Página sobre la construcción de Lagrange en <em>Python Numerical Methods</em>, Berkeley.</a></p></li>
@@ -944,7 +934,7 @@ Aunque en este curso no usaremos SciPy (<strong>lo que quiere decir que NO lo ad
 </ul>
 </section>
 <section id="ejercicios-para-que-hagais">
-<h2><span class="section-number">2.7.5. </span>Ejercicios para que hagáis<a class="headerlink" href="#ejercicios-para-que-hagais" title="Permalink to this headline">#</a></h2>
+<h2>Ejercicios para que hagáis<a class="headerlink" href="#ejercicios-para-que-hagais" title="Permalink to this headline">#</a></h2>
 <p><strong>Ejercicio 1:</strong></p>
 <p>Prepara un programa para evaluar y dibujar el polinomio de Lagrange, construido mediante los monomios fundamentales, utilizando una function.</p>
 <div class="cell docutils container">
@@ -965,7 +955,7 @@ Aunque en este curso no usaremos SciPy (<strong>lo que quiere decir que NO lo ad
 </div>
 </section>
 <section id="ejercicios-para-practicar-un-poco-mas">
-<h2><span class="section-number">2.7.6. </span>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
+<h2>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
 <p>Para practicar un poco sobre lo que acabamos de explicar, te sugerimos que hagas (con la ayuda de Pyhton, si quieres) los siguientes ejercicios:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://existelimite.blogspot.com/2014/02/calculo-del-polinomio-de-interpolacion.html">https://existelimite.blogspot.com/2014/02/calculo-del-polinomio-de-interpolacion.html</a></p></li>
@@ -1001,20 +991,6 @@ Aunque en este curso no usaremos SciPy (<strong>lo que quiere decir que NO lo ad
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="06.Dicotomia.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.6. </span>Método de dicotomía</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="08.Boletin1.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.8. </span>Boletín 1: Funciones reales de una variable real</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
