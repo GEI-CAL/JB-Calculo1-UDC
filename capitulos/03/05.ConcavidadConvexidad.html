@@ -595,9 +595,9 @@ title="Print to PDF"
 <h1><span class="section-number">3.5. </span>Convexidad y concavidad<a class="headerlink" href="#convexidad-y-concavidad" title="Permalink to this headline">#</a></h1>
 <section id="definiciones">
 <h2><span class="section-number">3.5.1. </span>Definiciones<a class="headerlink" href="#definiciones" title="Permalink to this headline">#</a></h2>
-<p>Matemáticamente, la idea de una función convexa es sencilla: es aquella función en la que la recta secante está por encima de la gráfica de la función.
+<p>Matemáticamente, la idea de una función convexa es sencilla: es aquella función en la que las rectas secantes están por encima de la gráfica de la función.
 Dicho de forma coloquial: es un vaso en el que no se derramaría el agua.</p>
-<a class="reference internal image-reference" href="../../_images/cap_deriv_convexidad.png"><img alt="../../_images/cap_deriv_convexidad.png" src="../../_images/cap_deriv_convexidad.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap3-convexidad.png"><img alt="../../_images/cap3-convexidad.png" src="../../_images/cap3-convexidad.png" style="width: 400px;" /></a>
 <p>Si recordamos que la recta secante a <span class="math notranslate nohighlight">\(f\)</span> por <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> tiene ecuación <span class="math notranslate nohighlight">\(r(x) =\frac{f(b)-f(a)}{b-a}(x-a) + f(a)\)</span>, obtenemos la siguiente definición formal:</p>
 <div class="proof definition admonition" id="def_convexidad">
 <p class="admonition-title"><span>Definition </span> (Convexidad)</p>
@@ -605,7 +605,7 @@ Dicho de forma coloquial: es un vaso en el que no se derramaría el agua.</p>
 <p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> es convexa en <span class="math notranslate nohighlight">\([a,b]\)</span> si</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) \leq \frac{f(b)-f(a)}{b-a}(x-a) + f(a) \, , \qquad \forall x \in [a,b].
+f(z) \leq f(x) + \frac{f(y)-f(x)}{y-x}(z-x) \, , \qquad \forall x &lt; z &lt; y, \quad x,y,z \in [a,b].
 \]</div>
 </section>
 </div><p>Análogamente, diremos que <span class="math notranslate nohighlight">\(f\)</span> es cóncava si la gráfica queda por debajo de la recta secante o, equivalentemente, si su inversa es una función convexa.</p>
