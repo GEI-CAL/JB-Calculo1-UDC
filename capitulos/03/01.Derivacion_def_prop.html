@@ -1,68 +1,50 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Funciones elementales &#8212; Calculo en una variable</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    <title>3.1. Definición de derivada y propiedades básicas &#8212; Calculo en una variable</title>
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-148221575-1');
-            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -71,723 +53,835 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/03/01.Derivacion_def_prop';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="next" title="4. Python para cálculo de una variable" href="../05/README.html" />
+    <link rel="prev" title="3. Derivación de una función de variable real" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../README.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../_static/udc_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/udc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01/README.html">1. Conjuntos de números</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../01/01.ConjuntosClasicos.html">1.1. Conjuntos clásicos de números</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/02.NumerosComplejos.html">1.2. Numeros complejos</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02/README.html">2. Funciones reales de variable real</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02/01.Boletin0.html">2.1. Boletín 0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">2.2. Definiciones básicas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/03.FuncionesElementales.html">2.3. Funciones elementales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/04.Limites.html">2.4. Límites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/05.Continuidad.html">2.5. Continuidad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/06.Dicotomia.html">2.6. Método de dicotomía</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/07.Lagrange.html">2.7. Polinomio de interpolación de Lagrange</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/08.Boletin1.html">2.8. Boletín 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/09.Boletin2.html">2.9. Boletín 2</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">3. Derivación</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="01.DerivacionDefProp.html">3.1. Definición de derivada y propiedades básicas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02.NewtonRaphson.html">3.2. Método numérico de Newton-Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03.DerivadasSucesivas.html">3.3. Derivadas sucesivas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.AplicacionesDerivada.html">3.4. Aplicaciones de la derivada</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05.ConcavidadConvexidad.html">3.5. Convexidad y concavidad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="06.TeoremaTaylor.html">3.6. Teorema de Taylor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07.Boletin3.html">3.7. Boletín 3</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04/README.html">4. Integración</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04/01.IntegracionIndefinida.html">4.1. Integración indefinida</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/02.IntegracionRiemann.html">4.2. Integral de Riemann</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/03.TeoremaFundamental.html">4.3. Teorema Fundamental del Cálculo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/04.IntegracionNumerica.html">4.4. Integración numérica</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/05.IntegracionImpropia.html">4.5. Integración impropia</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/06.AplicacionesIntegral.html">4.6. Aplicaciones de la integral</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">4.7. Ecuaciones diferenciales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/08.Boletin4.html">4.8. Boletín 4</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05/README.html">5. Python para cálculo de una variable</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../05/01.IntroduccionSympy.html">5.1. Introducción a SymPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">5.2. Límites y continuidad en SymPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/03.IntroduccionNumpy.html">5.3. Introducción a NumPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">5.4. Gráficas con Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/05.Derivacion.html">5.5. Derivación en Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/06.Integracion.html">5.6. Integración en Python</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/README.html">6. Ejercicios y exámenes</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06/enero_22.html">6.1. Examen Enero 2022</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/julio_22.html">6.2. Examen Julio 2022</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/enero_23.html">6.3. Examen Enero 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/julio_23.html">6.4. Examen Julio 2023</a></li>
-</ul>
-</li>
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Conjuntos de números
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Conjuntos clásicos de números
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Numeros complejos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Funciones reales de variable real
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Funciones elementales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Límites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletín 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   3. Derivación
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   4. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     4.1. Introducción a SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     4.2. Límites y continuidad en SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     4.3. Introducción a NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     4.4. Gráficas con Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/03/01.Derivacion_def_prop.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/03/01.Derivacion_def_prop.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">Binder</span>
+<span class="headerbtn__text-container">Binder</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/capitulos/03/01.Derivacion_def_prop.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/03/01.Derivacion_def_prop.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Funciones elementales</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-valor-absoluto">Función valor absoluto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-polinomicas">Funciones polinómicas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-racionales">Funciones racionales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-exponencial">Función exponencial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-trigonometricas">Funciones trigonométricas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-trigonometricas-inversas">Funciones trigonométricas inversas</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-de-derivada">
+   3.1.1. Definición de derivada
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivadas-laterales">
+   3.1.2. Derivadas laterales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propiedades-de-la-derivacion">
+   3.1.3. Propiedades de la derivación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivacion-de-algunos-casos-especiales">
+   3.1.4. Derivación de algunos casos especiales.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivacion-de-la-funcion-inversa">
+     3.1.4.1. Derivación de la función inversa.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivacion-implicita">
+     3.1.4.2. Derivación implícita
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivacion-logaritmica">
+     3.1.4.3. Derivación logarítmica
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Definición de derivada y propiedades básicas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-de-derivada">
+   3.1.1. Definición de derivada
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivadas-laterales">
+   3.1.2. Derivadas laterales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propiedades-de-la-derivacion">
+   3.1.3. Propiedades de la derivación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivacion-de-algunos-casos-especiales">
+   3.1.4. Derivación de algunos casos especiales.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivacion-de-la-funcion-inversa">
+     3.1.4.1. Derivación de la función inversa.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivacion-implicita">
+     3.1.4.2. Derivación implícita
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivacion-logaritmica">
+     3.1.4.3. Derivación logarítmica
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="funciones-elementales">
-<h1>Funciones elementales<a class="headerlink" href="#funciones-elementales" title="Permalink to this heading">#</a></h1>
-<p>Aquí tenéis el link con la documentación oficial de <strong>Sympy</strong> sobre funciones elementales:
-<a class="reference external" href="https://docs.sympy.org/latest/modules/functions/elementary.html">https://docs.sympy.org/latest/modules/functions/elementary.html</a></p>
-<section id="funcion-valor-absoluto">
-<h2>Función valor absoluto<a class="headerlink" href="#funcion-valor-absoluto" title="Permalink to this heading">#</a></h2>
-<p>Esta función se define mediante</p>
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="definicion-de-derivada-y-propiedades-basicas">
+<h1><span class="section-number">3.1. </span>Definición de derivada y propiedades básicas<a class="headerlink" href="#definicion-de-derivada-y-propiedades-basicas" title="Permalink to this headline">#</a></h1>
+<section id="definicion-de-derivada">
+<h2><span class="section-number">3.1.1. </span>Definición de derivada<a class="headerlink" href="#definicion-de-derivada" title="Permalink to this headline">#</a></h2>
+<p>Vamos a introducir este nuevo concepto mediante un ejemplo. Para ello copiamos
+el célebre experimento de Galileo en la torre de Pisa y nos preguntamos:</p>
+<p>Supongamos que dejamos caer una pelota desde lo más alto de un edificio de
+<span class="math notranslate nohighlight">\(300\)</span> m. ¿Cuál será la velocidad de la pelota después de 5 segundos?</p>
+<p>Galileo llegó a la conclusión de que el espacio recorrido es directamente proporcional
+al cuadrado del tiempo transcurrido, según la fórmula</p>
+<div class="math notranslate nohighlight">
+\[
+s(t)=4.9 t^2,
+\]</div>
+<p>fórmula que se acerca mucho a la realidad… siempre que despreciemos el rozamiento
+ejercido por el aire.</p>
+<p>Entonces, ¿cómo hallamos la velocidad en <span class="math notranslate nohighlight">\(t=5\)</span> segundos? Podemos hacer una
+velocidad promedio:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-|x|:=\left\{\begin{array}{cc}
--x&amp;\text{ si }x&lt; 0,\\
-x&amp;\text{ si }x\geq 0.
+\begin{array}{rcl}
+\text{Velocidad promedio} &amp;=&amp; \dfrac{\text{distancia recorrida}}
+{\text{tiempo transcurrido}}, \\
+&amp;&amp; \\
+v(5)\approx \dfrac{s(5.1)-s(5)}{0.1} &amp;=&amp; \dfrac{4.9(5.1)^2-4.9\, 5^2}{0.1}
+=49.49\; m/s,
+\end{array}
+\end{split}\]</div>
+<p>o, mejor todavía,</p>
+<div class="math notranslate nohighlight">
+\[
+v(5)\approx \frac{s(5.01)-s(5)}{0.01}=\frac{4.9(5.01)^2-4.9(5)^2}{0.01}
+=49.049\; m/s.
+\]</div>
+<p>Realmente, lo que estamos haciendo es aproximar la pendiente de la recta tangente
+a la función <span class="math notranslate nohighlight">\(s\)</span> en el punto <span class="math notranslate nohighlight">\(t=5\)</span>.
+Recordemos, antes de nada, que la <strong>pendiente</strong> de una recta es la tangente del
+ángulo que forma con el eje <span class="math notranslate nohighlight">\(OX\)</span>, como se muestra en la siguiente figura:</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_pendiente_recta.png"><img alt="../../_images/cap_deriv_pendiente_recta.png" src="../../_images/cap_deriv_pendiente_recta.png" style="width: 400px;" /></a>
+<p>Si ahora queremos calcular la pendiente de la recta tangente a una función <span class="math notranslate nohighlight">\(f\)</span>
+en un punto <span class="math notranslate nohighlight">\(x_0\)</span>, lo que haremos será calcular las pendientes de las rectas
+secantes a <span class="math notranslate nohighlight">\(f\)</span> por dos puntos próximos, <span class="math notranslate nohighlight">\(x_0\)</span> y <span class="math notranslate nohighlight">\(x\)</span>, y hacer que <span class="math notranslate nohighlight">\(x\)</span> se
+acerque a <span class="math notranslate nohighlight">\(x_0\)</span> (es decir, tomar el <em>límite cuando <span class="math notranslate nohighlight">\(x\to x_0\)</span></em>). La
+ilustración gráfica de este proceso se muestra en la siguiente figura
+(con la que, por cierto, puedes jugar en el siguiente link: <a class="reference external" href="https://www.desmos.com/calculator/piskepauzm">https://www.desmos.com/calculator/piskepauzm</a>):</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_definicion_derivada.png"><img alt="../../_images/cap_deriv_definicion_derivada.png" src="../../_images/cap_deriv_definicion_derivada.png" style="width: 400px;" /></a>
+<div class="proof definition admonition" id="def_derivada">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:(a,b)\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. Definimos la <strong>derivada de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(x_0\)</span></strong>
+como el límite, si existe,</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x_0):=\lim_{x\to x_0}\dfrac{f(x)-f(x_0)}{x-x_0}=\lim_{h\to 0}\dfrac{f(x_0+h)-f(x_0)}{h}.
+\]</div>
+</section>
+</div><div class="proof remark admonition" id="remark_derivada">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<ol>
+<li><p>Aquí ya vemos la utilidad de no incluir el punto <span class="math notranslate nohighlight">\(x_0\)</span> (en este caso,
+el punto <span class="math notranslate nohighlight">\(h=0\)</span>) en la definición de límite. En la expresión
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h}\)</span> no podemos hacer nada si
+<span class="math notranslate nohighlight">\(h=0\)</span>, ya que tendríamos una división entre <span class="math notranslate nohighlight">\(0\)</span>. Pero, afortunadamente,
+justo el punto <span class="math notranslate nohighlight">\(h=0\)</span> no se incluye en la definición de límite (recordemos eso
+de <span class="math notranslate nohighlight">\(0&lt;|h-0|&lt;\delta\)</span>…).</p></li>
+<li><p>El cociente <span class="math notranslate nohighlight">\(\frac{f(x)-f(x_0)}{x-x_0}\)</span> mide la variación de la función
+respecto a la variación de la variable. Por ese motivo a <span class="math notranslate nohighlight">\(f'(x_0)\)</span> se le denomina,
+en ocasiones, coeficiente de variación de <span class="math notranslate nohighlight">\(f\)</span>, o razón de cambio de la función
+<span class="math notranslate nohighlight">\(f\)</span>, en el punto <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p>Es decir, la derivada de una función en un punto indica la variación instantánea
+de la función en ese punto. Por ejemplo, la aceleración, que es la variación de
+velocidad, se escribe matemáticamente como <span class="math notranslate nohighlight">\(\frac{dv}{dx}\)</span>, es decir,
+la derivada de la velocidad respecto al tiempo.</p>
+<p>Que la derivada sea la variación instantánea de una variable dependiente,
+<span class="math notranslate nohighlight">\(y\)</span>, respecto a otra variable independiente, <span class="math notranslate nohighlight">\(x\)</span>, será fundamental cuando
+veamos los modelos matemáticos en ecuaciones diferenciales.</p>
+</li>
+<li><p>Ahora ya podemos calcular la ecuación de la recta tangente utilizando la
+fórmula punto-pendiente,</p>
+<div class="math notranslate nohighlight">
+\[
+    y-y_{0}=m\left(x-x_{0}\right) \Longrightarrow y=y_{0}+m\left(x-x_{0}\right).
+    \]</div>
+<p>En este caso, <span class="math notranslate nohighlight">\(\left(x_{0},y_{0}\right)=\left(x_{0},f\left(x_{0}\right)\right)\)</span>,
+<span class="math notranslate nohighlight">\(m=f'\left(x_{0}\right)\)</span>. Y la recta tangente,</p>
+<div class="math notranslate nohighlight">
+\[
+    y=f\left(x_{0}\right)+f'\left(x_{0}\right)\left(x-x_{0}\right).
+    \]</div>
+</li>
+</ol>
+</section>
+</div></section>
+<section id="derivadas-laterales">
+<h2><span class="section-number">3.1.2. </span>Derivadas laterales<a class="headerlink" href="#derivadas-laterales" title="Permalink to this headline">#</a></h2>
+<p>Ahora, como estamos definiendo la derivada como un límite, podemos hablar de derivada
+por la izquierda y derivada por la derecha.</p>
+<div class="proof definition admonition" id="def_derivadas_laterales">
+<p class="admonition-title"><span>Definition </span> (Derivadas laterales)</p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:(a,b)\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. Definimos</p>
+<ul>
+<li><p><strong>derivada por la izquierda</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(x_0\)</span> como</p>
+<div class="math notranslate nohighlight">
+\[
+    f'(x_0^{-}):=\lim_{h\to 0^{-}}\frac{f(x_0+h)-f(x_0)}{h},
+    \]</div>
+</li>
+<li><p><strong>derivada por la derecha</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(x_0\)</span> como</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+f'(x_0^{+}):=\lim_{h\to 0^{+}}\frac{f(x_0+h)-f(x_0)}{h}.
+\]</div>
+</section>
+</div><div class="proof property admonition" id="prop_derivadas_laterales">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:(a,b)\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. <span class="math notranslate nohighlight">\(f\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> si y sólo si es
+derivable por la izquierda y por la derecha en <span class="math notranslate nohighlight">\(x_0\)</span> y ambas derivadas coinciden.</p>
+</section>
+</div><p>El <strong>ejemplo</strong> más típico de función no derivable es la
+función valor absoluto, que no es derivable en el <span class="math notranslate nohighlight">\(0\)</span>. Veámoslo, calculando sus
+derivadas parciales.  Recordemos que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|x|=\left\{\begin{array}{ll}
+-x &amp;\quad \mbox{si }x&lt;0, \\
+x &amp;\quad\mbox{si }x\geq 0.
 \end{array}\right.
 \end{split}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/65a93c1db0fa02435f8486a285b95d5a03671a94a3de90b5a2573c0778d4c207.png" src="../../_images/65a93c1db0fa02435f8486a285b95d5a03671a94a3de90b5a2573c0778d4c207.png" />
-</div>
-</div>
-<p>Veamos las principales propiedades de esta función:</p>
-<p><strong>Propiedad:</strong> Sean <span class="math notranslate nohighlight">\(x,y\in\mathbb{R}\)</span>. Se verifica</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(|x|\geq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>.
-Además, <span class="math notranslate nohighlight">\(|x|=0\Longleftrightarrow x=0\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(-|x|\leq x\leq |x|\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(|x|\leq y\Longleftrightarrow -y\leq x\leq y\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(|x+y|\leq |x|+|y|\)</span> (desigualdad triangular),</p></li>
-<li><p><span class="math notranslate nohighlight">\(|x-y|\geq \left| |x|-|y|\right|\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(|xy|=|x||y|,\quad\)</span> <span class="math notranslate nohighlight">\(\displaystyle\left|\frac{x}{y}\right|=\frac{|x|}{|y|}\)</span>.</p></li>
-</ol>
-<p>Destaquemos que el valor absoluto mide la distancia entre dos puntos de la recta real.
-Basta hacer el valor absoluto de su resta. Lo incluimos como una definición.</p>
-<p><strong>Definición:</strong> Sean <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\in\mathbb{R}\)</span>. Definimos la <strong>distancia</strong> entre estos dos puntos como</p>
+<p>Entonces,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+&amp;&amp;f'\left(0^{-}\right)=\lim_{h\to 0^{-}}\frac{|h|-|0|}{h}=\lim_{h\to 0^{-}}\frac{-h}{h}=-1, \\
+&amp;&amp;f'\left(0^{+}\right)=\lim_{h\to 0^{+}}\frac{|h|-|0|}{h}=\lim_{h\to 0^{+}}\frac{h}{h}=1.
+\end{eqnarray*}\]</div>
+<p>Entonces <span class="math notranslate nohighlight">\(f'\left(0^{-}\right)\not=f'\left(0^{+}\right)\)</span>, por lo que la función valor absoluto no es
+derivable en <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Gráficamente, podemos darnos cuenta de lo que pasa si recordamos la gráfica de la
+función valor absoluto:</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_valor_absoluto.png"><img alt="../../_images/cap_deriv_valor_absoluto.png" src="../../_images/cap_deriv_valor_absoluto.png" style="width: 400px;" /></a>
+<p>El punto <span class="math notranslate nohighlight">\(x=0\)</span> es un punto anguloso para
+esta curva, es decir, un punto en el que la pendiente de la curva varía bruscamente.
+Pasa de ser <span class="math notranslate nohighlight">\(-1\)</span> a la izquierda de <span class="math notranslate nohighlight">\(0\)</span> a ser <span class="math notranslate nohighlight">\(1\)</span> a su derecha. Al producirse esta
+variación brusca la función no puede ser derivable en el <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</section>
+<section id="propiedades-de-la-derivacion">
+<h2><span class="section-number">3.1.3. </span>Propiedades de la derivación<a class="headerlink" href="#propiedades-de-la-derivacion" title="Permalink to this headline">#</a></h2>
+<p>Veamos ahora algunas propiedades importantes de la función derivada.</p>
+<div class="proof property admonition" id="prop_derivable_continua">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f(a,b)\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in\mathbb{R}\)</span>. Si <span class="math notranslate nohighlight">\(f\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es
+continua en <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+</section>
+</div><p>Esta propiedad se puede resumir en</p>
 <div class="math notranslate nohighlight">
 \[
-d(x,y):=|x-y|.
+\mathrm{derivable}\,\Rightarrow\, \mathrm{continua}.
 \]</div>
-<p>Veamos algún ejercicio donde intervenga el valor absoluto. Antes de comenzarlos conviene
-recordar siempre que cuando nos enfrentemos a un valor absoluto debemos separar
-los distintos casos que se producen según el signo (positivo o negativo) del interior del valor absoluto.</p>
-<section id="ejercicios">
-<h3>Ejercicios:<a class="headerlink" href="#ejercicios" title="Permalink to this heading">#</a></h3>
-<p><strong>Primer ejercicio:</strong> Encontrar los puntos <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> tales que <span class="math notranslate nohighlight">\(|x-2|&lt;1\)</span>.</p>
-<p><strong>Respuesta:</strong></p>
-<p>Separamos dos casos</p>
-<ul>
-<li><p>Primer caso: <span class="math notranslate nohighlight">\(x-2&gt;0\Longleftrightarrow x&gt;2\)</span>.</p>
-<p>En este caso <span class="math notranslate nohighlight">\(|x-2|=x-2\)</span>. Entonces,</p>
+<p>Conviene saber leerla correctamente. Según la relación lógica</p>
 <div class="math notranslate nohighlight">
 \[
-    |x-2|&lt;1\Longleftrightarrow x-2&lt;1\Longleftrightarrow x&lt;3.
+\left[\textrm{a}\Rightarrow\textrm{b}\right]\Leftrightarrow\left[\textrm{no b}\Rightarrow\textrm{no a}\right],
+\]</div>
+<p>esta propiedad es lo mismo que</p>
+<div class="math notranslate nohighlight">
+\[
+f  \mbox{ no continua en } x_0\Rightarrow f \mbox{ no derivable en }x_0. 
+\]</div>
+<p>Ésta es la forma más habitual de aplicación. Si nos preguntan si determinada
+función es derivable en algún punto, lo primero que debemos hacer es comprobar si es
+continua. Si efectivamente lo es, debemos comprobar si se cumple la definición de
+derivada, pero si no es continua ya habremos acabado, porque en ese caso no podrá ser
+derivable.</p>
+<div class="proof property admonition" id="prop_aritmetica_derivada">
+<p class="admonition-title"><span>Property </span> (Propiedades aritméticas de la derivada )</p>
+<section class="property-content" id="proof-content">
+<p>Sean <span class="math notranslate nohighlight">\(f,g:(a,b)\rightarrow\mathbb{R}\)</span>, dos funciones derivables en un punto <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. Entonces</p>
+<ol>
+<li><p>para cualquier <span class="math notranslate nohighlight">\(\lambda\in\mathbb{R}\)</span>, la función <span class="math notranslate nohighlight">\(\lambda f\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y</p>
+<div class="math notranslate nohighlight">
+\[
+    \left(\lambda f\right)'(x_0)=\lambda f'(x_0),
     \]</div>
-<p>Uniendo las dos condiciones (<span class="math notranslate nohighlight">\(x&gt;2\)</span> y <span class="math notranslate nohighlight">\(x&lt;3\)</span>) resulta <span class="math notranslate nohighlight">\(x\in(2,3)\)</span>.</p>
 </li>
-<li><p>Segundo caso: <span class="math notranslate nohighlight">\(x-2\leq 0\Longleftrightarrow x\leq 2\)</span>.</p>
-<p>En este caso <span class="math notranslate nohighlight">\(|x-2|=2-x\)</span> y, entonces,</p>
+<li><p><span class="math notranslate nohighlight">\(f\pm g\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y</p>
 <div class="math notranslate nohighlight">
 \[
-    |x-2|&lt;1\Longleftrightarrow 2-x&lt;1\Longleftrightarrow x&gt;1.
+    \left(f\pm g\right)'(x_0)=f'(x_0)\pm g'(x_0),
     \]</div>
-<p>Es decir, <span class="math notranslate nohighlight">\(x\in(1,2]\)</span>.</p>
 </li>
-</ul>
-<p>Uniendo los dos casos obtenemos que <span class="math notranslate nohighlight">\(|x-2|&lt;1\Longleftrightarrow x\in(1,3)\)</span>, como podemos representar gráficamente:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/497dddf74ed86f35c506ee9903a128caf0a16b7b20e3c6dc38e9044fff8eb846.png" src="../../_images/497dddf74ed86f35c506ee9903a128caf0a16b7b20e3c6dc38e9044fff8eb846.png" />
-</div>
-</div>
-<p><strong>Segundo ejercicio:</strong></p>
-<p>Encontrar los puntos <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> tales que <span class="math notranslate nohighlight">\(|x-2|=|5x+1|\)</span>.</p>
-<p>Separamos 4 casos.</p>
-<ol class="arabic">
-<li><p><span class="math notranslate nohighlight">\(x-2\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq 2\)</span>) y <span class="math notranslate nohighlight">\(5x+1\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x\geq 2\)</span>. La igualdad planteada resulta</p>
+<li><p><span class="math notranslate nohighlight">\(fg\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y</p>
 <div class="math notranslate nohighlight">
 \[
-    |x-2|=|5x+1|\Longleftrightarrow x-2=5x+1\Longleftrightarrow x=-\frac{3}{4}\not\geq 2.
+    \left(fg\right)'(x_0)=f'(x_0)g(x_0)+f(x_0)g'(x_0),
     \]</div>
-<p>Por lo tanto, la igualdad en este caso es imposible.</p>
 </li>
-<li><p><span class="math notranslate nohighlight">\(x-2&lt;0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;2\)</span>) y <span class="math notranslate nohighlight">\(5x+1\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x\in[-\frac{1}{5},2)\)</span>. La igualdad planteada resulta</p>
+<li><p>si <span class="math notranslate nohighlight">\(g(x_0)\not= 0\)</span>, entonces <span class="math notranslate nohighlight">\(\dfrac{f}{g}\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y</p>
 <div class="math notranslate nohighlight">
 \[
-    |x-2|=|5x+1|\Longleftrightarrow 2-x=5x+1\Longleftrightarrow x=\frac{1}{6}.
+    \left(\frac{f}{g}\right)'(x_0)=\frac{f'(x_0)g(x_0)-f(x_0)g'(x_0)}{g(x_0)^2}.
     \]</div>
-<p>Como <span class="math notranslate nohighlight">\(\frac{1}{6}\in[-\frac{1}{5},2)\)</span>, ya tenemos una solución para nuestra igualdad.</p>
 </li>
-<li><p><span class="math notranslate nohighlight">\(x-2\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq 2\)</span>) y <span class="math notranslate nohighlight">\(5x+1&lt;0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones observamos que son incompatibles.</p></li>
-<li><p><span class="math notranslate nohighlight">\(x-2&lt;0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;2\)</span>) y <span class="math notranslate nohighlight">\(5x+1&lt; 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>. La igualdad planteada resulta</p>
+</ol>
+</section>
+</div><div class="proof property admonition" id="prop_regla_cadena">
+<p class="admonition-title"><span>Property </span> (Regla de la cadena )</p>
+<section class="property-content" id="proof-content">
+<p>Consideramos las funciones <span class="math notranslate nohighlight">\(f:(a,b)\rightarrow\mathbb{R}\)</span>, derivable en <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>, y
+<span class="math notranslate nohighlight">\(g:f(a,b)\to\mathbb{R}\)</span>, derivable en <span class="math notranslate nohighlight">\(f(x_0)\)</span>. Entonces la función composición <span class="math notranslate nohighlight">\(g\circ f\)</span> es
+derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y además</p>
 <div class="math notranslate nohighlight">
 \[
-    |x-2|=|5x+1|\Longleftrightarrow 2-x=-5x-1\Longleftrightarrow x=-\frac{3}{4}.
+\left(g\circ f\right)'(x_0)=g'\left(f(x_0)\right)f'(x_0).
+\]</div>
+</section>
+</div><p>Veamos algunos ejemplos de aplicación de estas reglas:</p>
+<ol>
+<li><p>Derivar <span class="math notranslate nohighlight">\(\ln\left(\cos x\right)\)</span>.</p>
+<p>El resultado es</p>
+<div class="math notranslate nohighlight">
+\[
+    \left(\ln\left(\cos x\right)\right)'=\frac{1}{\cos x}\left(\cos x\right)'=\frac{-\sin x}{\cos x}.
     \]</div>
-<p>Como <span class="math notranslate nohighlight">\(-\frac{3}{4}&lt;-\frac{1}{5}\)</span>, ya hemos encontrado la  segunda (y última) solución
-para nuestra igualdad.</p>
+<p>Pensemos qué es lo que hemos hecho:</p>
+<p>Estamos componiendo la función <span class="math notranslate nohighlight">\(f(x)=\cos x\)</span> con
+<span class="math notranslate nohighlight">\(g(x)=\ln x\)</span>. Esto es sencillo de comprobar, ya que</p>
+<div class="math notranslate nohighlight">
+\[
+    \left(g\circ f\right)(x)=g\left(f(x)\right)=g\left(\cos x\right)=\ln\left(\cos x\right).
+    \]</div>
+<p>Entonces, según la regla de la cadena, <span class="math notranslate nohighlight">\(\left(g\circ f\right)'(x)=g'\left(f(x)\right)f'(x)\)</span>.</p>
+<p>Ahora, <span class="math notranslate nohighlight">\(f'(x)=-\sin x\)</span> y <span class="math notranslate nohighlight">\(g'(x)=\frac{1}{x}\)</span>, por lo que <span class="math notranslate nohighlight">\(g'(\cos x)=\frac{1}{\cos x}\)</span>, lo que
+nos permite obtener el resultado anunciado.</p>
+</li>
+<li><p>Veamos un ejemplo de aplicación un poco más complicado.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+    \left(\textrm{atan}\left(\frac{\sin x}{1+\cos x}\right)\right)'&amp;=&amp;\frac{1}{1+\frac{\sin^2 x}{\left(1+\cos
+    x\right)^2}} \frac{\left(\cos x\right)\left(1+\cos x\right)+\sin^2 x}{\left(1+\cos x\right)^2}=\\
+    &amp;=&amp;\frac{\cos x+\cos^2 x+\sin^2 x}{\left(1+\cos x\right)^2+\sin^2 x} 
+    =\frac{1+\cos x}{1+\cos^2 x+2\cos x+\sin^2 x}= \\
+    &amp;=&amp;\frac{1+\cos x}{2+2\cos x}=\frac{1}{2},
+    \end{eqnarray*}\]</div>
+<p>donde hemos utilizado en dos ocasiones que <span class="math notranslate nohighlight">\(\sin^2 x+\cos^2 x=1\)</span>.</p>
 </li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/1014b760b45c66478274406451f24bba03851a291ecc5fbeb817181e75d71c23.png" src="../../_images/1014b760b45c66478274406451f24bba03851a291ecc5fbeb817181e75d71c23.png" />
-</div>
-</div>
 </section>
-</section>
-<section id="funciones-polinomicas">
-<h2>Funciones polinómicas<a class="headerlink" href="#funciones-polinomicas" title="Permalink to this heading">#</a></h2>
-<p>Son funciones del tipo</p>
+<section id="derivacion-de-algunos-casos-especiales">
+<h2><span class="section-number">3.1.4. </span>Derivación de algunos casos especiales.<a class="headerlink" href="#derivacion-de-algunos-casos-especiales" title="Permalink to this headline">#</a></h2>
+<section id="derivacion-de-la-funcion-inversa">
+<h3><span class="section-number">3.1.4.1. </span>Derivación de la función inversa.<a class="headerlink" href="#derivacion-de-la-funcion-inversa" title="Permalink to this headline">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(f:(a,b)\to\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. Supongamos que <span class="math notranslate nohighlight">\(f\)</span> es derivable en <span class="math notranslate nohighlight">\(x_0\)</span> y que <span class="math notranslate nohighlight">\(f(x_0)\not=0\)</span>.
+Entonces <span class="math notranslate nohighlight">\(f^{-1}\)</span>, si existe, es derivable y</p>
 <div class="math notranslate nohighlight">
 \[
-p(x)=a_n x^n+a_{n-1}x^{n-1}+...+a_1 x+a_0,
+\left(f^{-1}\right)'\left(f(x_0)\right)=\frac{1}{f'(x_0)},
 \]</div>
-<p>con <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_n\in\mathbb{R}\)</span>, y <span class="math notranslate nohighlight">\(a_n\not=0\)</span>. Diremos que el <strong>grado del polinomio</strong> es <span class="math notranslate nohighlight">\(n\)</span> y que su <strong>coeficiente principal</strong> es <span class="math notranslate nohighlight">\(a_n\)</span>.</p>
-<p>Ejemplos de polinomios son</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(p_1(x)=5x^3-4x+2\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle p_2(x)=8x^3-\sqrt{2}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(p_3(x)=\pi x^4+2x^3-3x\)</span>.</p></li>
-</ol>
-<p>El dominio de una función polinómica es siempre <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, mientras que su imagen varía en cada caso.</p>
-</section>
-<section id="funciones-racionales">
-<h2>Funciones racionales<a class="headerlink" href="#funciones-racionales" title="Permalink to this heading">#</a></h2>
-<p>Son cocientes de funciones polinómicas, es decir,</p>
+<p>o, lo que es lo mismo,</p>
 <div class="math notranslate nohighlight">
 \[
-f(x)=\frac{p(x)}{q(x)}.
+\left(f^{-1}\right)'\left(y_0\right)=\frac{1}{f'\left(f^{-1}(y_0)\right)}.
 \]</div>
-<p>Ejemplos de funciones racionales son</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle f_1(x)=\frac{5x^3-4x+2}{8x^3-\sqrt{2}}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle f_2(x)=\frac{1}{x^3+2}\)</span>.</p></li>
-</ol>
-<p>El dominio de estas funciones son todos los números reales, excepto aquéllos que anulen el
-denominador,</p>
+<p>Destaquemos que estamos relacionando la derivada de la función inversa con <span class="math notranslate nohighlight">\(1\)</span> partido
+por la derivada de la función inversa. Esto es bastante sorprendente, porque a estas
+alturas ya debemos saber que <span class="math notranslate nohighlight">\(f^{-1}\not=\frac{1}{f}\)</span>.</p>
+<p>Veamos un <strong>ejemplo</strong>. Si consideramos la función <span class="math notranslate nohighlight">\(y=f(x)=\cos x\)</span>, la función
+inversa es el arco-coseno, <span class="math notranslate nohighlight">\(f^{-1}(y)=\arccos y\)</span>. Derivando directamente,</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{Dom}\, f=\mathbb{R}-\left\{x\in\mathbb{R}:q(x)=0\right\},
+\left(f^{-1}\right)'(y)=\left(\arccos\, y\right)'=-\frac{1}{\sqrt{1-y^2}}.
 \]</div>
-<p>mientras que su imagen varía en cada caso.</p>
-</section>
-<section id="funcion-exponencial">
-<h2>Función exponencial<a class="headerlink" href="#funcion-exponencial" title="Permalink to this heading">#</a></h2>
-<p>Sea <span class="math notranslate nohighlight">\(a&gt;0\)</span>. Definimos la <strong>función exponencial de base <span class="math notranslate nohighlight">\(a\)</span></strong> como</p>
+<p>Vamos a ver si esta expresión coincide con la que obtenemos aplicando la fórmula
+que expusimos al pincipio. En este caso</p>
 <div class="math notranslate nohighlight">
 \[
-f(x)=a^x.
+\left(f^{-1}\right)'\left(f(x)\right)=\frac{1}{f'(x)}=-\frac{1}{\sin x}=-\frac{1}{\sqrt{1-\cos^2
+x}}=-\frac{1}{\sqrt{1-y^2}},
 \]</div>
-<p>Un caso especial (y poco interesante) es cuando <span class="math notranslate nohighlight">\(a=1\)</span>. En este caso <span class="math notranslate nohighlight">\(f(x)=1^x\)</span> es la función constantemente igual a <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<p>Cuando <span class="math notranslate nohighlight">\(a\not=1\)</span>, el comportamiento varía dependiendo de si <span class="math notranslate nohighlight">\(a\)</span> es mayor o menor que <span class="math notranslate nohighlight">\(1\)</span>.
-En los dos casos se verifica que <span class="math notranslate nohighlight">\(\mathrm{Dom}\, f=\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Im}\, f=(0,+\infty)\)</span> y que <span class="math notranslate nohighlight">\(f(0)=a^0=1\)</span>. Lo que cambia es</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\boldsymbol{a&lt;1}\)</span>. En este caso,</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f(x)=a^x\)</span> es una función estrictamente decreciente, <span class="math notranslate nohighlight">\( x&lt;y\Rightarrow a^x&gt;a^y\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to-\infty}a^x=+\infty\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to+\infty}a^x=0\)</span>.</p></li>
-</ul>
-</li>
-<li><p><span class="math notranslate nohighlight">\(\boldsymbol{a&gt;1}\)</span>. En este caso,</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f(x)=a^x\)</span> es una función estrictamente creciente, <span class="math notranslate nohighlight">\(x&lt;y\Rightarrow f(x)&gt;f(y)\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to-\infty}a^x=0\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to+\infty}a^y=+\infty\)</span>.</p></li>
-</ul>
-</li>
-</ol>
-<p>Estas funciones son útiles, entre otras muchas cosas, para medir el crecimiento de una población o la  desintegración de un compuesto radiactivo.</p>
-<p>El caso más importante es la función <span class="math notranslate nohighlight">\(f(x)=e^x\)</span> (recordemos que <span class="math notranslate nohighlight">\(e=2.7182818...\)</span>). A esta función es a la que se suele conocer, por defecto, como <strong>función exponencial</strong>.
-De hecho, en <strong>Sympy</strong>, <code class="docutils literal notranslate"><span class="pre">sp.exp</span></code> se refiere a la función exponencial con base <span class="math notranslate nohighlight">\(e\)</span>. Si queremos tratar otra función de esta familia deberemos escribir <code class="docutils literal notranslate"><span class="pre">a**x</span></code>.</p>
-<p>La propiedad que hace tan interesante la función <span class="math notranslate nohighlight">\(f(x)=e^x\)</span> es que su derivada en el origen vale exactamente <span class="math notranslate nohighlight">\(1\)</span>,
-lo que simplifica muchos cálculos (por ejemplo, como veremos más adelante, los desarrollos de Taylor).
-Observemos que la derivada de <span class="math notranslate nohighlight">\(2^{x}\)</span> en el <span class="math notranslate nohighlight">\(0\)</span> vale, aproximadamente, <span class="math notranslate nohighlight">\(0.7\)</span>, mientras que
-la derivada de <span class="math notranslate nohighlight">\(3^{x}\)</span> en el <span class="math notranslate nohighlight">\(0\)</span> vale, aproximadamente, <span class="math notranslate nohighlight">\(1.1\)</span>, por lo que <span class="math notranslate nohighlight">\(e\)</span> debe estar entre  <span class="math notranslate nohighlight">\(2\)</span> y <span class="math notranslate nohighlight">\(3\)</span>.</p>
-<p>Como curiosidad, el nombre de <span class="math notranslate nohighlight">\(e\)</span> se lo puso Euler. Él decía que venía de que la palabra
-<em>exponencial</em> empieza por <span class="math notranslate nohighlight">\(e\)</span>… cualidad que también cumple su apellido.</p>
-<p>Algunas propiedades generales para la función exponencial y que es fundamental recordar
-y saber aplicar bien son</p>
-<p><strong>Propiedad:</strong></p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(a^{x+y}=a^x a^y,\qquad\forall x,y\in\mathbb{R}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\left(a^x\right)^y=a^{xy},\qquad\forall x,y\in\mathbb{R}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle a^{-x}=\frac{1}{a^x}\qquad\forall x\in\mathbb{R}\)</span> (consecuencia de la anterior propiedad).</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">2</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2ec4b11ea816bff8a48b871989ae7eceb82342c8e49d5a3f1afacd7e63d4f46a.png" src="../../_images/2ec4b11ea816bff8a48b871989ae7eceb82342c8e49d5a3f1afacd7e63d4f46a.png" />
-</div>
-</div>
+<p>donde, en la última igualdad, hemos utilizado la definición inicial de la función: <span class="math notranslate nohighlight">\(y= f(x)=\cos x\)</span>.</p>
 </section>
-<section id="funciones-trigonometricas">
-<h2>Funciones trigonométricas<a class="headerlink" href="#funciones-trigonometricas" title="Permalink to this heading">#</a></h2>
-<p><strong>Función seno</strong></p>
-<p>Tanto esta función como su <em>hermana</em>, la función coseno, son ampliamente utilizadas para representar movimientos oscilatorios, ondas, intensidades de corriente alternas, etc.</p>
-<p>La función <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, verifica</p>
-<ul class="simple">
-<li><p>su dominio es todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>,</p></li>
-<li><p>su imagen es <span class="math notranslate nohighlight">\([-1,1]\)</span>,</p></li>
-<li><p>es una función impar,</p></li>
-<li><p>es una función periódica con período <span class="math notranslate nohighlight">\(2\pi\)</span>.</p></li>
-</ul>
-<p><strong>Función coseno</strong></p>
-<p>La función <span class="math notranslate nohighlight">\(f(x)=\cos(x)\)</span>, verifica</p>
-<ul class="simple">
-<li><p>su dominio es todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>,</p></li>
-<li><p>su imagen es <span class="math notranslate nohighlight">\([-1,1]\)</span>,</p></li>
-<li><p>es una función par,</p></li>
-<li><p>es una función periódica con período <span class="math notranslate nohighlight">\(2\pi\)</span>.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/9901104537ed49337791691b08c101f0dde20d1b147c579042bf3e5e7fc2557e.png" src="../../_images/9901104537ed49337791691b08c101f0dde20d1b147c579042bf3e5e7fc2557e.png" />
-</div>
-</div>
-<p>Si consideramos la circunferencia de radio <span class="math notranslate nohighlight">\(1\)</span>, y pensamos en el ángulo (en radianes, por supuesto) que forma un radio con el eje <span class="math notranslate nohighlight">\(OX\)</span>, el coseno es, gráficamente, la longitud de su proyección con este eje, mientras que el seno es la longitud de la proyección con el eje <span class="math notranslate nohighlight">\(OY\)</span>. Como mostramos en la siguiente figura:</p>
-<a class="reference internal image-reference" href="../../_images/cap3_trigonometria_circunferencia.png"><img alt="../../_images/cap3_trigonometria_circunferencia.png" src="../../_images/cap3_trigonometria_circunferencia.png" style="width: 300px;" /></a>
-<p>De esta imagen se puede sacar mucha información sobre el seno y el coseno, por ejemplo:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\sin(-x) = -\sin(x)\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\cos(-x) = \cos(x)\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\sin\left(x+\frac{\pi}{2}\right) = \cos(x)\)</span>,…</p></li>
-</ul>
-<p>De éstas, vamos a destacar tres:</p>
-<p><strong>Propiedad:</strong></p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \sin^2(x) + \cos^2(x) = 1\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)\)</span>, <span class="math notranslate nohighlight">\(\forall x,y\in\mathbb{R}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)\)</span>, <span class="math notranslate nohighlight">\(\forall x,y\in\mathbb{R}\)</span>.</p></li>
-</ol>
-<p><strong>Función tangente</strong></p>
-<p>Definimos la función tangente como <span class="math notranslate nohighlight">\(\displaystyle \tan(x):=\frac{\sin(x)}{\cos(x)}\)</span>.</p>
-<p>El dominio de esta función lo forman todos los puntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> en los que el coseno no se anule, es decir,</p>
+<section id="derivacion-implicita">
+<h3><span class="section-number">3.1.4.2. </span>Derivación implícita<a class="headerlink" href="#derivacion-implicita" title="Permalink to this headline">#</a></h3>
+<p>Una ecuación implícita es una ecuación de la forma</p>
 <div class="math notranslate nohighlight">
 \[
-\textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\Z\right\},
+F(x,y)=0,
 \]</div>
-<p>mientras que su imagen es todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Además, es una función impar y periódica, con
-período <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.50</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/0a7eab018c1ecb9e0268262cb3007a33155876e8d8027e10dd2bffaf70977703.png" src="../../_images/0a7eab018c1ecb9e0268262cb3007a33155876e8d8027e10dd2bffaf70977703.png" />
-</div>
-</div>
-<p><strong>Otras funciones trigonométricas</strong></p>
-<p>Incluimos aquí las funciones</p>
+<p>es decir, una ecuación donde <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> aparecen mezclados y donde no es posible
+(generalmente) separar la <span class="math notranslate nohighlight">\(y\)</span> para llegar a una ecuación explícita,</p>
+<div class="math notranslate nohighlight">
+\[
+y=f(x). 
+\]</div>
+<p>Un ejemplo de ecuación implícita sería</p>
+<div class="math notranslate nohighlight">
+\[
+\cos(xy)+xy^2=0.
+\]</div>
+<p>Si a partir de una ecuación implícita queremos conocer el valor de la derivada de <span class="math notranslate nohighlight">\(y\)</span>
+respecto a <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y'=\frac{dy}{dx},\)</span> derivaremos término a término, utilizando las
+reglas habituales de derivación, pero teniendo en cuenta que en los términos donde
+aparezca <span class="math notranslate nohighlight">\(y\)</span>, o algo que dependa de <span class="math notranslate nohighlight">\(y\)</span>, al derivar aplicando la regla de la cadena
+obtendremos la correspondiente expresión multiplicada por <span class="math notranslate nohighlight">\(y'\)</span>. Esto no sucede si el
+término depende de <span class="math notranslate nohighlight">\(x\)</span>, ya que cuando derivamos respecto a <span class="math notranslate nohighlight">\(x\)</span> aparecería la derivada
+de <span class="math notranslate nohighlight">\(x\)</span> respecto a la misma <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\frac{dx}{dx}\)</span>, que es <span class="math notranslate nohighlight">\(1\)</span>. Veamos algún ejemplo
+sencillo:</p>
 <ul class="simple">
-<li><p>Cosecante, <span class="math notranslate nohighlight">\(\displaystyle\text{csc}(x):=\frac{1}{\sin(x)}\)</span>,</p></li>
-<li><p>Secante, <span class="math notranslate nohighlight">\(\displaystyle\sec(x):=\frac{1}{\cos(x)}\)</span>,</p></li>
-<li><p>Cotangente, <span class="math notranslate nohighlight">\(\displaystyle\textrm{cot}(x):=\frac{1}{\tan(x)}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \left(x^3\right)'=3x^2\frac{dx}{dx}=3x^2\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \left(y^3\right)'=3y^2\frac{dy}{dx}=3y^2y'\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \left(cos(2y)\right)=-\sin(2y)2\frac{dy}{dx}=-2\sin(2y)y'\)</span>.</p></li>
+</ul>
+<p>Entonces, en una derivada más complicada (utilizando la regla de derivación del
+producto),</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\cos(xy)+xy^2=0&amp;\stackrel{\mathrm{derivando}}{\Rightarrow}
+&amp;-\sin(xy)\left(y+xy'\right)+y^2+2xyy'=0 \\
+&amp;\Rightarrow&amp; y'\Big(2xy-x\sin(xy)\Big)=y\sin(xy)\Rightarrow
+y'=\frac{y\sin(xy)}{2xy-x\sin(xy)}.
+\end{eqnarray*}\]</div>
+<p>Como podemos ver, el resultado final es el valor de <span class="math notranslate nohighlight">\(y'\)</span> en función de <span class="math notranslate nohighlight">\(x\)</span> y de <span class="math notranslate nohighlight">\(y\)</span>.
+Generalmente no es posible obtener el valor de <span class="math notranslate nohighlight">\(y'\)</span> solamente en función de <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Puedes mirar en los siguientes links, si quieres entender esto mejor:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://es.wikipedia.org/wiki/Funci%C3%B3n_impl%C3%ADcita">https://es.wikipedia.org/wiki/Función_implícita</a></p></li>
+<li><p><a class="reference external" href="https://www.fisicalab.com/apartado/derivacion-implicita">https://www.fisicalab.com/apartado/derivacion-implicita</a></p></li>
+<li><p><a class="reference external" href="https://es.snapxam.com/calculators/calculadora-derivacion-implicita">https://es.snapxam.com/calculators/calculadora-derivacion-implicita</a> (¡Calculadora para derivar funciones implícitas! Si es que hay de todo en internet…)</p></li>
+<li><p><a class="reference external" href="https://es.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/a/implicit-differentiation-review">https://es.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/a/implicit-differentiation-review</a></p></li>
 </ul>
 </section>
-<section id="funciones-trigonometricas-inversas">
-<h2>Funciones trigonométricas inversas<a class="headerlink" href="#funciones-trigonometricas-inversas" title="Permalink to this heading">#</a></h2>
-<p><strong>Función arco-seno</strong></p>
-<p>Es la inversa de la función seno. Como ésta no es una función inyectiva,
-restringimos su dominio, quedándonos con el seno definido sólo en el intervalo
-<span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span>.</p>
-<p>Definimos entonces la función arco-seno, <span class="math notranslate nohighlight">\(\text{arcsin}(x)\)</span>, como la función que, dado un
-<span class="math notranslate nohighlight">\(x\in[-1,1]\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span> tal que
-<span class="math notranslate nohighlight">\(x=\sin(y)\)</span>, como se muestra en la siguiente figura:</p>
-<a class="reference internal image-reference" href="../../_images/cap3_funcion_asin.png"><img alt="../../_images/cap3_funcion_asin.png" src="../../_images/cap3_funcion_asin.png" style="width: 300px;" /></a>
-<p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arcsin}(x)\)</span> tiene como dominio el intervalo <span class="math notranslate nohighlight">\([-1,1]\)</span> y como imagen
-el <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span>. Es una función impar.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/7dfdb9714210bf9520d2f1680f5989c11948612a6e06b695b89855688da338a0.png" src="../../_images/7dfdb9714210bf9520d2f1680f5989c11948612a6e06b695b89855688da338a0.png" />
-</div>
-</div>
-<p><strong>Función arco-coseno</strong></p>
-<p>Es la inversa de la función coseno. En este caso, restringimos el dominio para quedarnos
-con el coseno definido en el intervalo <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
-<p>Definimos entonces la función arco-coseno, <span class="math notranslate nohighlight">\(\text{arccos}(x)\)</span>, como la función que, dado un
-<span class="math notranslate nohighlight">\(x\in[-1,1]\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\([0,\pi]\)</span> tal que <span class="math notranslate nohighlight">\(x=\cos(y)\)</span>.</p>
-<a class="reference internal image-reference" href="../../_images/cap3_funcion_acos.png"><img alt="../../_images/cap3_funcion_acos.png" src="../../_images/cap3_funcion_acos.png" style="width: 300px;" /></a>
-<p><strong>Función arco-tangente</strong></p>
-<p>Es la inversa de la función tangente. Restringimos su dominio al intervalo
-<span class="math notranslate nohighlight">\(\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\)</span>.</p>
-<p>Definimos entonces la función arco-tangente, <span class="math notranslate nohighlight">\(\text{arctan}(x)\)</span>, como la función
-que, dado un <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en
-<span class="math notranslate nohighlight">\(\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\)</span> tal que <span class="math notranslate nohighlight">\(x=\tan(y)\)</span>.</p>
-<a class="reference internal image-reference" href="../../_images/cap3_funcion_atan.png"><img alt="../../_images/cap3_funcion_atan.png" src="../../_images/cap3_funcion_atan.png" style="width: 300px;" /></a>
-<p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arctan}(x)\)</span> tiene como dominio todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> y como imagen el
-intervalo <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span>. Es una función impar.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2a0f9b8056bf454ff49f801d3f415742661696ba4694a3b0d197195a5eb391ec.png" src="../../_images/2a0f9b8056bf454ff49f801d3f415742661696ba4694a3b0d197195a5eb391ec.png" />
-</div>
-</div>
+<section id="derivacion-logaritmica">
+<h3><span class="section-number">3.1.4.3. </span>Derivación logarítmica<a class="headerlink" href="#derivacion-logaritmica" title="Permalink to this headline">#</a></h3>
+<p>Supongamos que tenemos una expresión del tipo</p>
+<div class="math notranslate nohighlight">
+\[
+y=f(x)^{g(x)}
+\]</div>
+<p>y queremos derivarla. Como tenemos una función que depende de <span class="math notranslate nohighlight">\(x\)</span> tanto en la base como
+en el exponente no lo podemos hacer directamente. Entonces aplicamos logaritmos y de la
+expresión anterior resulta</p>
+<div class="math notranslate nohighlight">
+\[
+\ln y=\ln\left(f(x)^{g(x)}\right)\Rightarrow\ln y=g(x)\ln\left(f(x)\right),
+\]</div>
+<p>y ahora hacemos una derivación implícita para obtener</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+&amp;&amp;\frac{1}{y}y'=g'(x)\ln\left(f(x)\right)+g(x)\frac{1}{f(x)}f'(x)\Rightarrow
+y'=y\left(g'(x)\ln\left(f(x)\right)+\frac{g(x)f'(x)}{f(x)}\right) \\
+&amp;&amp;\Rightarrow y'=f(x)^{g(x)}\left(g'(x)\ln\left(f(x)\right)+\frac{g(x)f'(x)}{f(x)}\right).
+\end{eqnarray*}\]</div>
+<p>Veámoslo sobre un <strong>ejemplo</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y=\left(x^3-5\right)^{\sin x}&amp;\stackrel{\mathrm{(logaritmos)}}{\Rightarrow}&amp;\ln
+y=\sin(x)\ln\left(x^3-5\right) \\
+&amp;\stackrel{\mathrm{(derivamos)}}{\Rightarrow}&amp;\frac{1}{y}y'=\cos(x)\ln\left(x^3-5\right)+\frac{
+\sin(x)3x^2}{x^3-5} \\
+&amp;\Rightarrow&amp; y'=y\left(\cos(x)\ln\left(x^3-5\right)+\frac{\sin(x)3x^2}{x^3-5}\right) \\
+&amp;\Rightarrow&amp; y'=\left(x^3-5\right)^{\sin(x)}\left(\cos(x)\ln\left(x^3-5\right)+\frac{\sin(x)3x^2}{x^3-5}\right).
+\end{eqnarray*}\]</div>
+<p>Aquí tienes más información y otros ejemplos:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lasmatematicas.eu/derivacion-logaritmica/">https://lasmatematicas.eu/derivacion-logaritmica/</a></p></li>
+<li><p><a class="reference external" href="https://es.snapxam.com/calculators/calculadora-diferenciacion-logaritmica">https://es.snapxam.com/calculators/calculadora-diferenciacion-logaritmica</a></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -803,7 +897,7 @@ intervalo <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./capitulos/03"
         },
         predefinedOutput: true
@@ -811,102 +905,50 @@ intervalo <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-valor-absoluto">Función valor absoluto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-polinomicas">Funciones polinómicas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-racionales">Funciones racionales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-exponencial">Función exponencial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-trigonometricas">Funciones trigonométricas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-trigonometricas-inversas">Funciones trigonométricas inversas</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <div>
-Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
-</div>
-
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Derivación de una función de variable real</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Python para cálculo de una variable</p>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
