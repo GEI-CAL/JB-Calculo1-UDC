@@ -1,50 +1,68 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>5.1. Introducción a SymPy &#8212; Calculo en una variable</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,650 +71,355 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/05/01.IntroduccionSympy';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5.2. Límites y continuidad con Sympy" href="02.LimitesContinuidadSympy.html" />
     <link rel="prev" title="5. Python para cálculo de una variable" href="README.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-148221575-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/udc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/udc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01/README.html">
-   1. Conjuntos de números
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
-     1.1. Conjuntos clásicos de números
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/02.NumerosComplejos.html">
-     1.2. Numeros complejos
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02/README.html">
-   2. Funciones reales de variable real
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/01.Boletin0.html">
-     2.1. Boletín 0
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
-     2.2. Definiciones básicas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/03.FuncionesElementales.html">
-     2.3. Funciones elementales
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/04.Limites.html">
-     2.4. Límites
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/05.Continuidad.html">
-     2.5. Continuidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/06.Dicotomia.html">
-     2.6. Método de dicotomía
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/07.Lagrange.html">
-     2.7. Polinomio de interpolación de Lagrange
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/08.Boletin1.html">
-     2.8. Boletín 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/09.Boletin2.html">
-     2.9. Boletín 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03/README.html">
-   3. Derivación
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
-     3.1. Definición de derivada y propiedades básicas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/02.NewtonRaphson.html">
-     3.2. Método numérico de Newton-Raphson
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
-     3.3. Derivadas sucesivas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
-     3.4. Aplicaciones de la derivada
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
-     3.5. Convexidad y concavidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
-     3.6. Teorema de Taylor
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/07.Boletin3.html">
-     3.7. Boletín 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04/README.html">
-   4. Integración
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
-     4.1. Integración indefinida
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
-     4.2. Integral de Riemann
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/03.TeoremaFundamental.html">
-     4.3. Teorema Fundamental del Cálculo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/04.IntegracionNumerica.html">
-     4.4. Integración numérica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/05.IntegracionImpropia.html">
-     4.5. Integración impropia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/06.AplicacionesIntegral.html">
-     4.6. Aplicaciones de la integral
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">
-     4.7. Ecuaciones diferenciales
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/08.Boletin4.html">
-     4.8. Boletín 4
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   5. Python para cálculo de una variable
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     5.1. Introducción a SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02.LimitesContinuidadSympy.html">
-     5.2. Límites y continuidad en SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03.IntroduccionNumpy.html">
-     5.3. Introducción a NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04.RepresentacionGraficaMatplotlib.html">
-     5.4. Gráficas con Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.Derivacion.html">
-     5.5. Derivación en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06.Integracion.html">
-     5.6. Integración en Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06/README.html">
-   6. Ejercicios y exámenes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/enero_22.html">
-     6.1. Examen Enero 2022
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/julio_22.html">
-     6.2. Examen Julio 2022
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/enero_23.html">
-     6.3. Examen Enero 2023
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/julio_23.html">
-     6.4. Examen Julio 2023
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/README.html">1. Conjuntos de números</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/01.ConjuntosClasicos.html">1.1. Conjuntos clásicos de números</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/02.NumerosComplejos.html">1.2. Numeros complejos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/README.html">2. Funciones reales de variable real</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/01.Boletin0.html">2.1. Boletín 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">2.2. Definiciones básicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/03.FuncionesElementales.html">2.3. Funciones elementales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/04.Limites.html">2.4. Límites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/05.Continuidad.html">2.5. Continuidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/06.Dicotomia.html">2.6. Método de dicotomía</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/07.Lagrange.html">2.7. Polinomio de interpolación de Lagrange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/08.Boletin1.html">2.8. Boletín 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/09.Boletin2.html">2.9. Boletín 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/README.html">3. Derivación</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/01.DerivacionDefProp.html">3.1. Definición de derivada y propiedades básicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/02.NewtonRaphson.html">3.2. Método numérico de Newton-Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/03.DerivadasSucesivas.html">3.3. Derivadas sucesivas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/04.AplicacionesDerivada.html">3.4. Aplicaciones de la derivada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/05.ConcavidadConvexidad.html">3.5. Convexidad y concavidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/06.TeoremaTaylor.html">3.6. Teorema de Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/07.Boletin3.html">3.7. Boletín 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/README.html">4. Integración</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/01.IntegracionIndefinida.html">4.1. Integración indefinida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/02.IntegracionRiemann.html">4.2. Integral de Riemann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/03.TeoremaFundamental.html">4.3. Teorema Fundamental del Cálculo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/04.IntegracionNumerica.html">4.4. Integración numérica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/05.IntegracionImpropia.html">4.5. Integración impropia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/06.AplicacionesIntegral.html">4.6. Aplicaciones de la integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">4.7. Ecuaciones diferenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/08.Boletin4.html">4.8. Boletín 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">5. Python para cálculo de una variable</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.1. Introducción a SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.LimitesContinuidadSympy.html">5.2. Límites y continuidad en SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.IntroduccionNumpy.html">5.3. Introducción a NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.RepresentacionGraficaMatplotlib.html">5.4. Gráficas con Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05.Derivacion.html">5.5. Derivación en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06.Integracion.html">5.6. Integración en Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/README.html">6. Ejercicios y exámenes</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/enero_22.html">6.1. Examen Enero 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/julio_22.html">6.2. Examen Julio 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/enero_23.html">6.3. Examen Enero 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/julio_23.html">6.4. Examen Julio 2023</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/05/01.IntroduccionSympy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/05/01.IntroduccionSympy.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/capitulos/05/01.IntroduccionSympy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/capitulos/05/01.IntroduccionSympy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objetivos">
-   5.1.1. Objetivos:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda">
-   5.1.2. Nota previa: instalación de
-   <em>
-    Jupyter notebook
-   </em>
-   bajo Anaconda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-expresiones-y-funciones">
-   5.1.3. Variables, expresiones y funciones
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instalacion-y-carga-del-modulo">
-     5.1.3.1. Instalación y carga del módulo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variables-simbolicas">
-     5.1.3.2. Variables simbólicas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hipotesis-sobre-las-variables">
-     5.1.3.3. Hipótesis sobre las variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expresiones-simbolicas">
-     5.1.3.4. Expresiones simbólicas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejercicios">
-     5.1.3.5.
-     <strong>
-      Ejercicios
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#representacion-grafica">
-   5.1.4. Representación gráfica
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regiones-en-el-plano">
-     5.1.4.1. Regiones en el plano
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficas-de-funciones">
-     5.1.4.2. Gráficas de funciones
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introducción a SymPy</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objetivos">
-   5.1.1. Objetivos:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda">
-   5.1.2. Nota previa: instalación de
-   <em>
-    Jupyter notebook
-   </em>
-   bajo Anaconda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-expresiones-y-funciones">
-   5.1.3. Variables, expresiones y funciones
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instalacion-y-carga-del-modulo">
-     5.1.3.1. Instalación y carga del módulo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variables-simbolicas">
-     5.1.3.2. Variables simbólicas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hipotesis-sobre-las-variables">
-     5.1.3.3. Hipótesis sobre las variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expresiones-simbolicas">
-     5.1.3.4. Expresiones simbólicas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejercicios">
-     5.1.3.5.
-     <strong>
-      Ejercicios
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#representacion-grafica">
-   5.1.4. Representación gráfica
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regiones-en-el-plano">
-     5.1.4.1. Regiones en el plano
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficas-de-funciones">
-     5.1.4.2. Gráficas de funciones
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a SymPy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">5.1.1. Objetivos:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda">5.1.2. Nota previa: instalación de <em>Jupyter notebook</em> bajo Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-expresiones-y-funciones">5.1.3. Variables, expresiones y funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-y-carga-del-modulo">5.1.3.1. Instalación y carga del módulo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-simbolicas">5.1.3.2. Variables simbólicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis-sobre-las-variables">5.1.3.3. Hipótesis sobre las variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-simbolicas">5.1.3.4. Expresiones simbólicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">5.1.3.5. <strong>Ejercicios</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-grafica">5.1.4. Representación gráfica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-en-el-plano">5.1.4.1. Regiones en el plano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-funciones">5.1.4.2. Gráficas de funciones</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-sympy">
-<h1><span class="section-number">5.1. </span>Introducción a <strong>SymPy</strong><a class="headerlink" href="#introduccion-a-sympy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.1. </span>Introducción a <strong>SymPy</strong><a class="headerlink" href="#introduccion-a-sympy" title="Permalink to this heading">#</a></h1>
 <section id="objetivos">
-<h2><span class="section-number">5.1.1. </span>Objetivos:<a class="headerlink" href="#objetivos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1.1. </span>Objetivos:<a class="headerlink" href="#objetivos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Uso de variables simbólicas.</p></li>
 <li><p>Suposiciones y requerimentos de las variables.</p></li>
@@ -706,22 +429,22 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda">
-<h2><span class="section-number">5.1.2. </span>Nota previa: instalación de <em>Jupyter notebook</em> bajo Anaconda<a class="headerlink" href="#nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1.2. </span>Nota previa: instalación de <em>Jupyter notebook</em> bajo Anaconda<a class="headerlink" href="#nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda" title="Permalink to this heading">#</a></h2>
 <p>Para emplear directamente este guión de prácticas desde una instalación de Python con <em>Anaconda</em>, basta con hacer click en la aplicación ‘Jupyter notebook’, que ya está instalada por defecto (para más detalles: <a class="reference external" href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html">https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html</a>).</p>
 <p>Desde aquí podéis instalar <em>Anaconda</em> para vuestro sistema operativo:
 <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">https://docs.anaconda.com/anaconda/install/</a></p>
 </section>
 <section id="variables-expresiones-y-funciones">
-<h2><span class="section-number">5.1.3. </span>Variables, expresiones y funciones<a class="headerlink" href="#variables-expresiones-y-funciones" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1.3. </span>Variables, expresiones y funciones<a class="headerlink" href="#variables-expresiones-y-funciones" title="Permalink to this heading">#</a></h2>
 <section id="instalacion-y-carga-del-modulo">
-<h3><span class="section-number">5.1.3.1. </span>Instalación y carga del módulo<a class="headerlink" href="#instalacion-y-carga-del-modulo" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.3.1. </span>Instalación y carga del módulo<a class="headerlink" href="#instalacion-y-carga-del-modulo" title="Permalink to this heading">#</a></h3>
 <p>En Python, además de las variables numéricas, que veremos con mayor profundidad un poco más adelante, existen las variables simbólicas, que permiten calcular límites, derivadas, integrales, etc., como hacemos habitualmente en las clases de matemáticas.
 Para poder hacer estas operaciones, habituales y necesarias en un curso de Cálculo, necesitamos tener instaladas la librería <strong>SymPy</strong>.</p>
 <p>Este módulo no trabaja con una estructura de datos basada en números sino con objetos que poseen atributos y métodos que intentan reproducir el comportamiento matemático de variables, funciones, regiones, ecuaciones, etc., con las que se trabaja habitualmente en las disciplinas de álgebra y cálculo diferencial e integral.</p>
 <p>Para hacer que esté disponible el módulo <strong>SymPy</strong>, hay que instalarlo usando la herramienta <code class="docutils literal notranslate"><span class="pre">pip</span></code> (o <code class="docutils literal notranslate"><span class="pre">conda</span></code>, si trabajáis en entornos de trabajo diferenciados). Para el uso de <em>Microsoft Azute Notebooks</em> (<a class="reference external" href="https://notebooks.azure.com/">https://notebooks.azure.com/</a>), se utiliza la siguiente instalación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip -q install sympy
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>-q<span class="w"> </span>install<span class="w"> </span>sympy
 </pre></div>
 </div>
 </div>
@@ -736,7 +459,7 @@ Para poder hacer estas operaciones, habituales y necesarias en un curso de Cálc
 </div>
 </section>
 <section id="variables-simbolicas">
-<h3><span class="section-number">5.1.3.2. </span>Variables simbólicas<a class="headerlink" href="#variables-simbolicas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.3.2. </span>Variables simbólicas<a class="headerlink" href="#variables-simbolicas" title="Permalink to this heading">#</a></h3>
 <p>Para trabajar en modo simbólico es necesario definir variables simbólicas. Para hacer
 esto usaremos la función <code class="docutils literal notranslate"><span class="pre">sp.Symbol</span></code>.</p>
 <p>Veamos algunos ejemplos de su uso:</p>
@@ -1176,7 +899,7 @@ d:  0.3333333333333333
 </div>
 </section>
 <section id="hipotesis-sobre-las-variables">
-<h3><span class="section-number">5.1.3.3. </span>Hipótesis sobre las variables<a class="headerlink" href="#hipotesis-sobre-las-variables" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.3.3. </span>Hipótesis sobre las variables<a class="headerlink" href="#hipotesis-sobre-las-variables" title="Permalink to this heading">#</a></h3>
 <p>Cuando se define una variable simbólica, se le puede asignar cierta información adicional sobre el tipo de valores que puede alcanzar, o las hipótesis que se le van a aplicar. Por ejemplo, podemos decidir antes de hacer calquier cálculo si la variable toma valores enteros o reales, si es positiva o negativa, mayor que un cierto número, <em>etc.</em>. Este tipo de información se añade en el momento de la definición de la variable simbólica como un argumento opcional.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1229,7 +952,7 @@ q + Abs(x) &gt; 0
 </div>
 </section>
 <section id="expresiones-simbolicas">
-<h3><span class="section-number">5.1.3.4. </span>Expresiones simbólicas<a class="headerlink" href="#expresiones-simbolicas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.3.4. </span>Expresiones simbólicas<a class="headerlink" href="#expresiones-simbolicas" title="Permalink to this heading">#</a></h3>
 <p>De la misma manera que el módulo <strong>SymPy</strong> nos permite definir variables simbólicas, también podemos definir expresiones matemáticas a partir de estas y manipularlas, factorizarlas, expandirlas, simplificarlas, o, incluso, imprimirlas de manera similar a como lo haríamos con lápiz y papel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1309,8 +1032,8 @@ y  + 2⋅y⋅(1 - y) + (1 - y)
 </div>
 </section>
 <section id="ejercicios">
-<h3><span class="section-number">5.1.3.5. </span><strong>Ejercicios</strong><a class="headerlink" href="#ejercicios" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3><span class="section-number">5.1.3.5. </span><strong>Ejercicios</strong><a class="headerlink" href="#ejercicios" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Define la expresión dada por la suma de <span class="math notranslate nohighlight">\(\displaystyle a+a^2+a^3+\ldots+a^N\)</span>, donde <span class="math notranslate nohighlight">\(a\)</span> es una variable real arbitraria y <span class="math notranslate nohighlight">\(N\)</span> un valor entero positivo.</p></li>
 <li><p>¿Cuál es el valor exacto de la expresión anterior cuando <span class="math notranslate nohighlight">\(N=15\)</span> y <span class="math notranslate nohighlight">\(a=5/6\)</span>? ¿Cuál es el valor numérico en coma flotante?</p></li>
 </ol>
@@ -1324,11 +1047,11 @@ y  + 2⋅y⋅(1 - y) + (1 - y)
 </section>
 </section>
 <section id="representacion-grafica">
-<h2><span class="section-number">5.1.4. </span>Representación gráfica<a class="headerlink" href="#representacion-grafica" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1.4. </span>Representación gráfica<a class="headerlink" href="#representacion-grafica" title="Permalink to this heading">#</a></h2>
 <p>Antes de empezar, para cualquier duda, podéis consultar, en el siguiente link, la documentación oficial de <strong>SymPy</strong> sobre representación gráfica:
 <a class="reference external" href="https://docs.sympy.org/latest/modules/plotting.html">https://docs.sympy.org/latest/modules/plotting.html</a></p>
 <section id="regiones-en-el-plano">
-<h3><span class="section-number">5.1.4.1. </span>Regiones en el plano<a class="headerlink" href="#regiones-en-el-plano" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.4.1. </span>Regiones en el plano<a class="headerlink" href="#regiones-en-el-plano" title="Permalink to this heading">#</a></h3>
 <p>Podemos representar regiones con la instrucción <code class="docutils literal notranslate"><span class="pre">plot_implicit</span></code>, para la cual podremos utilizar como argumento una igualdad o una desigualdad:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1341,9 +1064,9 @@ y  + 2⋅y⋅(1 - y) + (1 - y)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01.IntroduccionSympy_31_0.png" src="../../_images/01.IntroduccionSympy_31_0.png" />
-<img alt="../../_images/01.IntroduccionSympy_31_1.png" src="../../_images/01.IntroduccionSympy_31_1.png" />
-<img alt="../../_images/01.IntroduccionSympy_31_2.png" src="../../_images/01.IntroduccionSympy_31_2.png" />
+<img alt="../../_images/85a19734665dcc06212ae7e63e32049e48be65cc1919ebe9f7b04c71558bba0e.png" src="../../_images/85a19734665dcc06212ae7e63e32049e48be65cc1919ebe9f7b04c71558bba0e.png" />
+<img alt="../../_images/e863571607eecafedb0528acbdbc46d30ccc553658d7f15c35e59d1420bceeb2.png" src="../../_images/e863571607eecafedb0528acbdbc46d30ccc553658d7f15c35e59d1420bceeb2.png" />
+<img alt="../../_images/ef52acd6be34cfb3939f34ba21e4913ac7f535eb994eef60ed6afe31d61ba5a9.png" src="../../_images/ef52acd6be34cfb3939f34ba21e4913ac7f535eb994eef60ed6afe31d61ba5a9.png" />
 </div>
 </div>
 <p><strong>Ejercicio:</strong></p>
@@ -1363,7 +1086,7 @@ y  + 2⋅y⋅(1 - y) + (1 - y)
 </div>
 </section>
 <section id="graficas-de-funciones">
-<h3><span class="section-number">5.1.4.2. </span>Gráficas de funciones<a class="headerlink" href="#graficas-de-funciones" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.4.2. </span>Gráficas de funciones<a class="headerlink" href="#graficas-de-funciones" title="Permalink to this heading">#</a></h3>
 <p>Para graficar funciones con <strong>SymPy</strong> utilizaremos, dentro de este paquete, la orden <code class="docutils literal notranslate"><span class="pre">plot</span></code> y a continuación la expresión de la función que queramos graficar.
 En el ejemplo a continuación mostramos algunas de las opciones en la representación:</p>
 <div class="cell docutils container">
@@ -1380,7 +1103,7 @@ En el ejemplo a continuación mostramos algunas de las opciones en la representa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01.IntroduccionSympy_35_0.png" src="../../_images/01.IntroduccionSympy_35_0.png" />
+<img alt="../../_images/cee3be03d37227c7224a35f426d55acb49d1faf23fba6488128aac7a5128ee75.png" src="../../_images/cee3be03d37227c7224a35f426d55acb49d1faf23fba6488128aac7a5128ee75.png" />
 </div>
 </div>
 </section>
@@ -1399,7 +1122,7 @@ En el ejemplo a continuación mostramos algunas de las opciones en la representa
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./capitulos/05"
         },
         predefinedOutput: true
@@ -1407,57 +1130,126 @@ En el ejemplo a continuación mostramos algunas de las opciones en la representa
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Python para cálculo de una variable</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Python para cálculo de una variable</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="02.LimitesContinuidadSympy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="02.LimitesContinuidadSympy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">5.2. </span>Límites y continuidad con <strong>Sympy</strong></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">5.1.1. Objetivos:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nota-previa-instalacion-de-jupyter-notebook-bajo-anaconda">5.1.2. Nota previa: instalación de <em>Jupyter notebook</em> bajo Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-expresiones-y-funciones">5.1.3. Variables, expresiones y funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-y-carga-del-modulo">5.1.3.1. Instalación y carga del módulo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-simbolicas">5.1.3.2. Variables simbólicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis-sobre-las-variables">5.1.3.3. Hipótesis sobre las variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-simbolicas">5.1.3.4. Expresiones simbólicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">5.1.3.5. <strong>Ejercicios</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-grafica">5.1.4. Representación gráfica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-en-el-plano">5.1.4.1. Regiones en el plano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-funciones">5.1.4.2. Gráficas de funciones</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela
+</p>
+
+  </div>
   
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <div>
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
 Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
 </div>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
