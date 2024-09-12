@@ -1,676 +1,567 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2.9. Boletín 2: Límites, continuidad, Lagrange y dicotomía &#8212; Calculo en una variable</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/02/09.Boletin2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. Derivación de una función de variable real" href="../03/README.html" />
     <link rel="prev" title="2.8. Boletín 1: Funciones reales de una variable real" href="08.Boletin1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-148221575-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/udc_logo.png" class="logo__image only-light" alt="Calculo en una variable - Home"/>
+    <script>document.write(`<img src="../../_static/udc_logo.png" class="logo__image only-dark" alt="Calculo en una variable - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01/README.html">
-   1. Conjuntos de números
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
-     1.1. Conjuntos clásicos de números
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/02.NumerosComplejos.html">
-     1.2. Numeros complejos
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   2. Funciones reales de variable real
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01.Boletin0.html">
-     2.1. Boletín 0
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02.IntroduccionFuncionReal.html">
-     2.2. Definiciones básicas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03.FuncionesElementales.html">
-     2.3. Funciones elementales
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04.Limites.html">
-     2.4. Límites
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.Continuidad.html">
-     2.5. Continuidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06.Dicotomia.html">
-     2.6. Método de dicotomía
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07.Lagrange.html">
-     2.7. Polinomio de interpolación de Lagrange
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="08.Boletin1.html">
-     2.8. Boletín 1
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     2.9. Boletín 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03/README.html">
-   3. Derivación
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
-     3.1. Definición de derivada y propiedades básicas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/02.NewtonRaphson.html">
-     3.2. Método numérico de Newton-Raphson
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
-     3.3. Derivadas sucesivas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
-     3.4. Aplicaciones de la derivada
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
-     3.5. Convexidad y concavidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
-     3.6. Teorema de Taylor
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/07.Boletin3.html">
-     3.7. Boletín 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04/README.html">
-   4. Integración
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
-     4.1. Integración indefinida
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
-     4.2. Integral de Riemann
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/03.TeoremaFundamental.html">
-     4.3. Teorema Fundamental del Cálculo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/04.IntegracionNumerica.html">
-     4.4. Integración numérica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/05.IntegracionImpropia.html">
-     4.5. Integración impropia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/06.AplicacionesIntegral.html">
-     4.6. Aplicaciones de la integral
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">
-     4.7. Ecuaciones diferenciales
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/08.Boletin4.html">
-     4.8. Boletín 4
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   5. Python para cálculo de una variable
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     5.1. Introducción a SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     5.2. Límites y continuidad en SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     5.3. Introducción a NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     5.4. Gráficas con Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/05.Derivacion.html">
-     5.5. Derivación en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/06.Integracion.html">
-     5.6. Integración en Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06/README.html">
-   6. Ejercicios y exámenes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/enero_22.html">
-     6.1. Examen Enero 2022
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/julio_22.html">
-     6.2. Examen Julio 2022
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/enero_23.html">
-     6.3. Examen Enero 2023
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/julio_23.html">
-     6.4. Examen Julio 2023
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/README.html">1. Conjuntos de números</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/01.ConjuntosClasicos.html">1.1. Conjuntos clásicos de números</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/02.NumerosComplejos.html">1.2. Numeros complejos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">2. Funciones reales de variable real</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01.Boletin0.html">2.1. Boletín 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.IntroduccionFuncionReal.html">2.2. Definiciones básicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.FuncionesElementales.html">2.3. Funciones elementales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.Limites.html">2.4. Límites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05.Continuidad.html">2.5. Continuidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06.Dicotomia.html">2.6. Método de dicotomía</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07.Lagrange.html">2.7. Polinomio de interpolación de Lagrange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08.Boletin1.html">2.8. Boletín 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.9. Boletín 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/README.html">3. Derivación</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/01.DerivacionDefProp.html">3.1. Definición de derivada y propiedades básicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/02.NewtonRaphson.html">3.2. Método numérico de Newton-Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/03.DerivadasSucesivas.html">3.3. Derivadas sucesivas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/04.AplicacionesDerivada.html">3.4. Aplicaciones de la derivada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/05.ConcavidadConvexidad.html">3.5. Convexidad y concavidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/06.TeoremaTaylor.html">3.6. Teorema de Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/07.Boletin3.html">3.7. Boletín 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/README.html">4. Integración</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/01.IntegracionIndefinida.html">4.1. Integración indefinida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/02.IntegracionRiemann.html">4.2. Integral de Riemann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/03.TeoremaFundamental.html">4.3. Teorema Fundamental del Cálculo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/04.IntegracionNumerica.html">4.4. Integración numérica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/05.IntegracionImpropia.html">4.5. Integración impropia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/06.AplicacionesIntegral.html">4.6. Aplicaciones de la integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">4.7. Ecuaciones diferenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/08.Boletin4.html">4.8. Boletín 4</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/README.html">5. Python para cálculo de una variable</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/01.IntroduccionSympy.html">5.1. Introducción a SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">5.2. Límites y continuidad en SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/03.IntroduccionNumpy.html">5.3. Introducción a NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">5.4. Gráficas con Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/05.Derivacion.html">5.5. Derivación en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/06.Integracion.html">5.6. Integración en Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/README.html">6. Ejercicios y exámenes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/enero_22.html">6.1. Examen Enero 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/julio_22.html">6.2. Examen Julio 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/enero_23.html">6.3. Examen Enero 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/julio_23.html">6.4. Examen Julio 2023</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/02/09.Boletin2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/02/09.Boletin2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/capitulos/02/09.Boletin2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/capitulos/02/09.Boletin2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
       
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
+    </div>
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
 </div>
+</div>
+              
+              
 
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Boletín 2: Límites, continuidad, Lagrange y dicotomía</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Boletín 2: Límites, continuidad, Lagrange y dicotomía</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
-            </div>
-            <main id="main-content" role="main">
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="boletin-2-limites-continuidad-lagrange-y-dicotomia">
-<h1><span class="section-number">2.9. </span>Boletín 2: Límites, continuidad, Lagrange y dicotomía<a class="headerlink" href="#boletin-2-limites-continuidad-lagrange-y-dicotomia" title="Permalink to this headline">#</a></h1>
-<ol>
-<li><p>Calcula, si es posible,</p>
-<p>a. <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{|2x-1|-|2x+1|}{x}}}\)</span>,</p>
-<p>b. <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{\sqrt{x^2+4}-2}{x^2}}}\)</span>,</p>
-<p>c. <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\left (\frac{1}{x}-\frac{1}{|x|}\right)}}\)</span>.</p>
-</li>
-<li><p>Calcula, si es posible, los siguientes límites:</p>
+<h1><span class="section-number">2.9. </span>Boletín 2: Límites, continuidad, Lagrange y dicotomía<a class="headerlink" href="#boletin-2-limites-continuidad-lagrange-y-dicotomia" title="Link to this heading">#</a></h1>
+<p><strong><FONT SIZE=4>[1]</font></strong> Calcula, si es posible,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{|2x-1|-|2x+1|}{x}}}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{\sqrt{x^2+4}-2}{x^2}}}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\left (\frac{1}{x}-\frac{1}{|x|}\right)}}\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[2]</font></strong> Calcula, si es posible, los siguientes límites:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \begin{array}{lllll}
-    %\text{$(a)$ } \displaystyle{\lim_{x\rightarrow -\infty} e^x}   &amp;\qquad
-    %\text{$(b)$ } \displaystyle{\lim_{x\rightarrow 0}       e^x}   &amp;\qquad
-    %\text{$(c)$ } \displaystyle{\lim_{x\rightarrow +\infty} e^x}   &amp;\qquad
-    \text{$a)$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt[3]{x}}   &amp; \qquad
-    \text{$b)$ } \displaystyle{\lim_{x\rightarrow +\infty} \sqrt{x}}  &amp;\qquad
-    \text{$c)$ } \displaystyle{\lim_{x\rightarrow 0^+}     \sqrt{x}}   &amp;\qquad
-    \text{$d)$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt{x}}   \\
-    \\
-    \text{$e)$ } \displaystyle{\lim_{x\rightarrow +\infty} \dfrac{1}{\sqrt{x}}}  &amp; \qquad
-    \text{$f)$ } \displaystyle{\lim_{x\rightarrow 0^+}     \dfrac{1}{\sqrt{x}} }  &amp;\qquad
-    %\text{$j)$ } \displaystyle{\lim_{x\rightarrow +\infty} x^2}   &amp;\qquad
-    \text{$g)$ } \displaystyle{\lim_{x\rightarrow -\infty} x^2 }  &amp;\qquad
-    \text{$h)$ } \displaystyle{\lim_{x\rightarrow +\infty} \left( x^3 - 5x^2 + 8 \right)}
-    \end{array}
-    \end{split}\]</div>
-</li>
-<li><p>El valor, en euros, de un coche <span class="math notranslate nohighlight">\(x\)</span> años después de su adquisición (nuevo) viene dado por la función</p>
+\begin{array}{lllll}
+%\text{$(a)$ } \displaystyle{\lim_{x\rightarrow -\infty} e^x}   &amp;\qquad
+%\text{$(b)$ } \displaystyle{\lim_{x\rightarrow 0}       e^x}   &amp;\qquad
+%\text{$(c)$ } \displaystyle{\lim_{x\rightarrow +\infty} e^x}   &amp;\qquad
+\text{$1.$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt[3]{x}}   &amp; \qquad
+\text{$2.$ } \displaystyle{\lim_{x\rightarrow +\infty} \sqrt{x}}  &amp;\qquad
+\text{$3.$ } \displaystyle{\lim_{x\rightarrow 0^+}     \sqrt{x}}   &amp;\qquad
+\text{$4.$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt{x}}   \\
+\\
+\text{$5.$ } \displaystyle{\lim_{x\rightarrow +\infty} \dfrac{1}{\sqrt{x}}}  &amp; \qquad
+\text{$6.$ } \displaystyle{\lim_{x\rightarrow 0^+}     \dfrac{1}{\sqrt{x}} }  &amp;\qquad
+%\text{$7.$ } \displaystyle{\lim_{x\rightarrow +\infty} x^2}   &amp;\qquad
+\text{$8.$ } \displaystyle{\lim_{x\rightarrow -\infty} x^2 }  &amp;\qquad
+\text{$9.$ } \displaystyle{\lim_{x\rightarrow +\infty} \left( x^3 - 5x^2 + 8 \right)}
+\end{array}
+\end{split}\]</div>
+<p><strong><FONT SIZE=4>[3]</font></strong> El valor, en euros, de un coche <span class="math notranslate nohighlight">\(x\)</span> años después de su adquisición (nuevo) viene dado por la función</p>
 <div class="math notranslate nohighlight">
 \[
-    v(x)=2000+\frac{60000}{4^{0.25 x}}.
-    \]</div>
+v(x)=2000+\frac{60000}{4^{0.25 x}}.
+\]</div>
 <p>Se llama <em>valor residual</em> del coche a su valor límite cuando el número de años aumenta indefinidamente.</p>
-<p>a. ¿Cuál fue el precio de compra del vehículo nuevo?</p>
-<p>b. ¿Cuál será su valor residual?</p>
-<p>c. ¿Al cabo de cuántos años diferirá su valor en menos de 1000 euros del valor residual?</p>
-</li>
-<li><p>Dibuja, con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> la gráfica de la curva <span class="math notranslate nohighlight">\(y=\sqrt{x^2+1}-x\)</span>.</p>
+<ol class="arabic simple">
+<li><p>¿Cuál fue el precio de compra del vehículo nuevo?</p></li>
+<li><p>¿Cuál será su valor residual?</p></li>
+<li><p>¿Al cabo de cuántos años diferirá su valor en menos de 1000 euros del valor residual?</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[4]</font></strong> Dibuja, con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> la gráfica de la curva <span class="math notranslate nohighlight">\(y=\sqrt{x^2+1}-x\)</span>.</p>
 <p>Comprueba, con lápiz y papel y comprobando los resultados en el ordenador, si esta gráfica tiene alguna asíntota y, en caso afirmativo, obtén sus ecuaciones.</p>
-</li>
-<li><p>Calcula las asíntotas de las siguientes funciones:</p>
-<p>a. <span class="math notranslate nohighlight">\(\displaystyle{v_{1}(x)= \frac{3x^2-2}{4x^2 +1}}\)</span>,</p>
-<p>b. <span class="math notranslate nohighlight">\(\displaystyle{h(t)= \frac{t^2+2}{t -2}}\)</span>,</p>
-<p>c. <span class="math notranslate nohighlight">\(\displaystyle{v_{2}(x)= \frac{3x^2-2}{4x^2 -1}}\)</span>,</p>
-<p>d. <span class="math notranslate nohighlight">\(\displaystyle{f(x)=x^\frac{|x|}{x} + \frac{1}{x}}\)</span>.</p>
-</li>
-<li><p>Considera la  función <span class="math notranslate nohighlight">\(f\)</span>, dada por <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span>.</p>
-<p>a. ¿Cuál es su dominio? ¿Cuál es su imagen?</p>
-<p>b. ¿Cuánto valen <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow  +\infty}\ln(x)} \,\,\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0^+}\ln (x)}\)</span>?</p>
-<p>c. ¿Existe <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow -\infty}\ln(x)}\)</span>? ¿Por qué?</p>
-<p>d. ¿Posee <span class="math notranslate nohighlight">\(f\)</span> alguna asíntota vertical? En caso afirmativo, ¿cuál es su ecuación?</p>
-<p>e. Dibuja la gráfica de <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<p>f. Utilizando la relación entre la gráfica de una función y la de su inversa, esboza la gráfica de <span class="math notranslate nohighlight">\(g(x)=e^x\)</span>.
-De la observación de esta gráfica deduce la existencia de una asíntota horizontal.</p>
-</li>
-<li><p>Vamos a repasar la función arco-tangente (<span class="math notranslate nohighlight">\(\arctan\)</span>):</p>
-<p>a. ¿Cuál es el dominio de la función <span class="math notranslate nohighlight">\(f(x)=\arctan(x)\)</span>? ¿Y su imagen?</p>
-<p>b. ¿Es cierto que <span class="math notranslate nohighlight">\(\dfrac{1}{\tan(x)} = \arctan(x)\)</span>? ¿Por qué?</p>
-<p>c. ¿Cuáles son los ángulos cuya tangente vale <span class="math notranslate nohighlight">\(1\)</span>?</p>
-<p>d. ¿Es correcto decir que <span class="math notranslate nohighlight">\(\arctan (1)=\dfrac{\pi}{4}+k\pi\)</span>, <span class="math notranslate nohighlight">\(\,k \in \mathbb{Z}\)</span>? ¿Por qué?</p>
-</li>
-<li><p>Si la longitud de un animal <span class="math notranslate nohighlight">\(t\)</span> días después de su nacimiento es</p>
+<p><strong><FONT SIZE=4>[5]</font></strong> Calcula las asíntotas de las siguientes funciones:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{v_{1}(x)= \frac{3x^2-2}{4x^2 +1}}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{h(t)= \frac{t^2+2}{t -2}}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{v_{2}(x)= \frac{3x^2-2}{4x^2 -1}}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{f(x)=x^\frac{|x|}{x} + \frac{1}{x}}\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[6]</font></strong> Considera la  función <span class="math notranslate nohighlight">\(f\)</span>, dada por <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>¿Cuál es su dominio? ¿Cuál es su imagen?</p></li>
+<li><p>¿Cuánto valen <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow  +\infty}\ln(x)} \,\,\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0^+}\ln (x)}\)</span>?</p></li>
+<li><p>¿Existe <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow -\infty}\ln(x)}\)</span>? ¿Por qué?</p></li>
+<li><p>¿Posee <span class="math notranslate nohighlight">\(f\)</span> alguna asíntota vertical? En caso afirmativo, ¿cuál es su ecuación?</p></li>
+<li><p>Dibuja la gráfica de <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p>Utilizando la relación entre la gráfica de una función y la de su inversa, esboza la gráfica de <span class="math notranslate nohighlight">\(g(x)=e^x\)</span>.
+De la observación de esta gráfica deduce la existencia de una asíntota horizontal.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[7]</font></strong> Vamos a repasar la función arco-tangente (<span class="math notranslate nohighlight">\(\arctan\)</span>):</p>
+<ol class="arabic simple">
+<li><p>¿Cuál es el dominio de la función <span class="math notranslate nohighlight">\(f(x)=\arctan(x)\)</span>? ¿Y su imagen?</p></li>
+<li><p>¿Es cierto que <span class="math notranslate nohighlight">\(\dfrac{1}{\tan(x)} = \arctan(x)\)</span>? ¿Por qué?</p></li>
+<li><p>¿Cuáles son los ángulos cuya tangente vale <span class="math notranslate nohighlight">\(1\)</span>?</p></li>
+<li><p>¿Es correcto decir que <span class="math notranslate nohighlight">\(\arctan (1)=\dfrac{\pi}{4}+k\pi\)</span>, <span class="math notranslate nohighlight">\(\,k \in \mathbb{Z}\)</span>? ¿Por qué?</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[8]</font></strong> Si la longitud de un animal <span class="math notranslate nohighlight">\(t\)</span> días después de su nacimiento es</p>
 <div class="math notranslate nohighlight">
 \[
-    \ell(t)= \frac{300}{1+9\left(0.8\right)^t}
-    \]</div>
+\ell(t)= \frac{300}{1+9\left(0.8\right)^t}
+\]</div>
 <p>¿cuánto midió al nacer? Obtén una cota superior de su tamaño máximo.</p>
-</li>
-<li><p>Elige la opción correcta:</p>
+<p><strong><FONT SIZE=4>[9]</font></strong> Elige la opción correcta:</p>
 <p>Para aproximar el valor de la solución de la ecuación  <span class="math notranslate nohighlight">\(x^3+2=0\)</span> con un error menor que <span class="math notranslate nohighlight">\(0.30\)</span> usando el algoritmo de dicotomía en el intervalo <span class="math notranslate nohighlight">\([-2,\,2]\)</span>:</p>
-<p>a. debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y <span class="math notranslate nohighlight">\(x_3=-3/2\)</span></p>
-<p>b. debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y  <span class="math notranslate nohighlight">\(x_3=-1/2\)</span></p>
-<p>c. debemos realizar tres iteraciones y las dos primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span> y <span class="math notranslate nohighlight">\(x_2=-1\)</span></p>
-<p>d. debemos realizar tres iteraciones y las dos primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span> y <span class="math notranslate nohighlight">\(x_2=1\)</span>.</p>
-</li>
-<li><p>¿Dónde es continua la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x)=\displaystyle{\frac{e^x+\ln(2x)}{x^2-3}}?\)</span></p></li>
-<li><p>Elige la opción correcta:</p>
+<ol class="arabic simple">
+<li><p>debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y <span class="math notranslate nohighlight">\(x_3=-3/2\)</span></p></li>
+<li><p>debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y  <span class="math notranslate nohighlight">\(x_3=-1/2\)</span></p></li>
+<li><p>debemos realizar tres iteraciones y las dos primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span> y <span class="math notranslate nohighlight">\(x_2=-1\)</span></p></li>
+<li><p>debemos realizar tres iteraciones y las dos primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span> y <span class="math notranslate nohighlight">\(x_2=1\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[10]</font></strong> ¿Dónde es continua la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x)=\displaystyle{\frac{e^x+\ln(2x)}{x^2-3}}?\)</span></p>
+<p><strong><FONT SIZE=4>[11]</font></strong> Elige la opción correcta:</p>
 <p>La función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    f(x) =
-    \begin{cases}
-    \sqrt{{x}^{2}-1} \,\,\,\,  \qquad\,  \text{  si  } x \in (-\infty,-1] \\
-                {x}^{2}+2x+1 \qquad    \text{si } x \in (-1,10] \\
-                \frac{121}{10}x   \qquad\, \, \, \, \qquad   \text{     si   } x \in (10,+\infty)
-    \end{cases}
-    \end{split}\]</div>
-<p>a. No es continua en <span class="math notranslate nohighlight">\(x=-1\)</span></p>
-<p>b. Es continua en <span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></p>
-<p>c. No es continua en <span class="math notranslate nohighlight">\(x=10\)</span></p>
-<p>d. No es continua en <span class="math notranslate nohighlight">\(x=0\)</span></p>
-</li>
-<li><p>Estudia la continuidad en <span class="math notranslate nohighlight">\(x=0\)</span> de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
+f(x) =
+\begin{cases}
+\sqrt{{x}^{2}-1} \,\,\,\,  \qquad\,  \text{  si  } x \in (-\infty,-1] \\
+            {x}^{2}+2x+1 \qquad    \text{si } x \in (-1,10] \\
+            \frac{121}{10}x   \qquad\, \, \, \, \qquad   \text{     si   } x \in (10,+\infty)
+\end{cases}
+\end{split}\]</div>
+<ol class="arabic simple">
+<li><p>No es continua en <span class="math notranslate nohighlight">\(x=-1\)</span></p></li>
+<li><p>Es continua en <span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></p></li>
+<li><p>No es continua en <span class="math notranslate nohighlight">\(x=10\)</span></p></li>
+<li><p>No es continua en <span class="math notranslate nohighlight">\(x=0\)</span></p></li>
+</ol>
+<p><strong><FONT SIZE=4>[12]</font></strong> Estudia la continuidad en <span class="math notranslate nohighlight">\(x=0\)</span> de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    f(x) =
-    \begin{cases}
-    x e^{-x} \,  \qquad\,\quad  \text{si } x &lt; 0 \\
-                1 \qquad \qquad \,\,\,\,\,\,   \text{si } x = 0 \\
-                \sqrt{x^2+1}   \qquad   \text{si } x &gt; 0
-    \end{cases}
-    \end{split}\]</div>
-</li>
-<li><p>Si <span class="math notranslate nohighlight">\(a&gt;1\)</span> estudia la continuidad de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
+f(x) =
+\begin{cases}
+x e^{-x} \,  \qquad\,\quad  \text{si } x &lt; 0 \\
+            1 \qquad \qquad \,\,\,\,\,\,   \text{si } x = 0 \\
+            \sqrt{x^2+1}   \qquad   \text{si } x &gt; 0
+\end{cases}
+\end{split}\]</div>
+<p><strong><FONT SIZE=4>[13]</font></strong> Si <span class="math notranslate nohighlight">\(a&gt;1\)</span> estudia la continuidad de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    f(x) =
-    \begin{cases}
-    {x}^{2} {\cos^2\left(\frac{1}{x}\right)}   \qquad\,\quad  \text{si } x &lt; 0 \\
-                0 \qquad \qquad \,\,\,\,\,\,\,\,\quad   \text{     si } x = 0 \\
-            \dfrac{x {a}^{x}-x} {\sqrt{1+x}-1}  \qquad   \text{si } x &gt; 0
-    \end{cases}
-    \end{split}\]</div>
-</li>
-<li><p>Demuestra que la ecuación <span class="math notranslate nohighlight">\(x + \sin (x) = \dfrac{1}{\sqrt{x}+3}\)</span> tiene al menos una raíz en <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p></li>
-<li><p>Justifica la existencia de una solución de la ecuación <span class="math notranslate nohighlight">\(e^x+4x=0\)</span> en el intervalo <span class="math notranslate nohighlight">\([-1, 0]\)</span>.
+f(x) =
+\begin{cases}
+{x}^{2} {\cos^2\left(\frac{1}{x}\right)}   \qquad\,\quad  \text{si } x &lt; 0 \\
+            0 \qquad \qquad \,\,\,\,\,\,\,\,\quad   \text{     si } x = 0 \\
+        \dfrac{x {a}^{x}-x} {\sqrt{1+x}-1}  \qquad   \text{si } x &gt; 0
+\end{cases}
+\end{split}\]</div>
+<p><strong><FONT SIZE=4>[14]</font></strong> Demuestra que la ecuación <span class="math notranslate nohighlight">\(x + \sin (x) = \dfrac{1}{\sqrt{x}+3}\)</span> tiene al menos una raíz en <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
+<p><strong><FONT SIZE=4>[15]</font></strong> Justifica la existencia de una solución de la ecuación <span class="math notranslate nohighlight">\(e^x+4x=0\)</span> en el intervalo <span class="math notranslate nohighlight">\([-1, 0]\)</span>.
 Determina el número de iteraciones necesarias para aproximar la solución mediante el método de dicotomía con un
-error inferior a  una centésima y calcula las tres primeras iteraciones.</p></li>
-<li><p>Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por:</p>
+error inferior a  una centésima y calcula las tres primeras iteraciones.</p>
+<p><strong><FONT SIZE=4>[16]</font></strong> Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    f(x) = \begin{cases}
-    \displaystyle{\frac{x^2}{1+e^{1/x}} - 1}    &amp; \quad  \text{si } x \neq 0 \\
-    \\
-    - 1   &amp; \quad  \text{si } x =0. \end{cases}
-    \end{split}\]</div>
-<p>a. Estudia la continuidad de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}.\)</span></p>
-<p>b. Justifica la existencia de una raíz de <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\, 2].\)</span></p>
-<p>c. Calcula los dos primeros iterantes del algoritmo de dicotomía, aplicado a <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\,2],\)</span> para aproximar la raíz a la que se refiere el apartado anterior.</p>
-</li>
-<li><p>Mediciones puntuales han determinado que una función <span class="math notranslate nohighlight">\(f\)</span> desconocida pasa por <span class="math notranslate nohighlight">\((-2, -16)\)</span>, <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((1, -1)\)</span> y <span class="math notranslate nohighlight">\((3, 9)\)</span>. Calcula, mediante diferencias divididas, una aproximación polinómica de <span class="math notranslate nohighlight">\(f\)</span>. Utiliza este polinomio para aproximar <span class="math notranslate nohighlight">\(f(2)\)</span>.</p></li>
-<li><p>Calcula el polinomio de interpolación de Lagrange de orden tres relativo a <span class="math notranslate nohighlight">\(f(x) = 2^{x+1}-5\)</span> en los puntos <span class="math notranslate nohighlight">\(x_0 = 1\)</span>, <span class="math notranslate nohighlight">\(x_1 = 2\)</span>, <span class="math notranslate nohighlight">\(x_2 = 3\)</span> y <span class="math notranslate nohighlight">\(x_3 = 4\)</span>.
-Utilizando los cálculos previos, calcula una aproximación del número <span class="math notranslate nohighlight">\(r = 4 \sqrt{2}-5\)</span> y una aproximación de la raíz de la ecuación <span class="math notranslate nohighlight">\(\log_2 (y+5) = 3.5\)</span>.</p></li>
-<li><p>Utiliza la fórmula de Newton para obtener el polinomio de interpolación de la función <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span> relativo a los puntos <span class="math notranslate nohighlight">\(\displaystyle{ 0, \frac{\pi}{2}, \pi}\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\frac{3\pi}{2} }\)</span>. Utilízalo para aproximar el seno de <span class="math notranslate nohighlight">\(\displaystyle{\frac{\pi}{4}}\)</span>.</p></li>
-<li><p>Considera la siguiente tabla de valores, correspondiente a mediciones de una función <span class="math notranslate nohighlight">\(f\)</span>:</p>
-<table class="colwidths-auto table">
+f(x) = \begin{cases}
+\displaystyle{\frac{x^2}{1+e^{1/x}} - 1}    &amp; \quad  \text{si } x \neq 0 \\
+\\
+- 1   &amp; \quad  \text{si } x =0. \end{cases}
+\end{split}\]</div>
+<ol class="arabic simple">
+<li><p>Estudia la continuidad de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}.\)</span></p></li>
+<li><p>Justifica la existencia de una raíz de <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\, 2].\)</span></p></li>
+<li><p>Calcula los dos primeros iterantes del algoritmo de dicotomía, aplicado a <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\,2],\)</span> para aproximar la raíz a la que se refiere el apartado anterior.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[17]</font></strong> Mediciones puntuales han determinado que una función <span class="math notranslate nohighlight">\(f\)</span> desconocida pasa por <span class="math notranslate nohighlight">\((-2, -16)\)</span>, <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((1, -1)\)</span> y <span class="math notranslate nohighlight">\((3, 9)\)</span>. Calcula, mediante diferencias divididas, una aproximación polinómica de <span class="math notranslate nohighlight">\(f\)</span>. Utiliza este polinomio para aproximar <span class="math notranslate nohighlight">\(f(2)\)</span>.</p>
+<p><strong><FONT SIZE=4>[18]</font></strong> Calcula el polinomio de interpolación de Lagrange de orden tres relativo a <span class="math notranslate nohighlight">\(f(x) = 2^{x+1}-5\)</span> en los puntos <span class="math notranslate nohighlight">\(x_0 = 1\)</span>, <span class="math notranslate nohighlight">\(x_1 = 2\)</span>, <span class="math notranslate nohighlight">\(x_2 = 3\)</span> y <span class="math notranslate nohighlight">\(x_3 = 4\)</span>.
+Utilizando los cálculos previos, calcula una aproximación del número <span class="math notranslate nohighlight">\(r = 4 \sqrt{2}-5\)</span> y una aproximación de la raíz de la ecuación <span class="math notranslate nohighlight">\(\log_2 (y+5) = 3.5\)</span>.</p>
+<p><strong><FONT SIZE=4>[19]</font></strong> Utiliza la fórmula de Newton para obtener el polinomio de interpolación de la función <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span> relativo a los puntos <span class="math notranslate nohighlight">\(\displaystyle{ 0, \frac{\pi}{2}, \pi}\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\frac{3\pi}{2} }\)</span>. Utilízalo para aproximar el seno de <span class="math notranslate nohighlight">\(\displaystyle{\frac{\pi}{4}}\)</span>.</p>
+<p><strong><FONT SIZE=4>[20]</font></strong> Considera la siguiente tabla de valores, correspondiente a mediciones de una función <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_{i}\)</span></p></th>
 <th class="head"><p>-1</p></th>
@@ -690,20 +581,23 @@ Utilizando los cálculos previos, calcula una aproximación del número <span cl
 </tr>
 </tbody>
 </table>
-<p>a. Calcula el polinomio <span class="math notranslate nohighlight">\(p\)</span> de interpolación de Lagrange de orden <span class="math notranslate nohighlight">\(2\)</span> relativo a <span class="math notranslate nohighlight">\(f\)</span> en los nodos <span class="math notranslate nohighlight">\(\{ 1,3,4 \}\)</span>.</p>
-<p>b. Calcula el polinomio <span class="math notranslate nohighlight">\(q\)</span> de interpolación de Lagrange de orden <span class="math notranslate nohighlight">\(2\)</span> relativo a <span class="math notranslate nohighlight">\(f\)</span> en los nodos <span class="math notranslate nohighlight">\(\{ -1,0,1 \}\)</span>.</p>
-<p>c. Aproxima <span class="math notranslate nohighlight">\(f(0.25)\)</span>  y <span class="math notranslate nohighlight">\(f(2)\)</span>.</p>
-</li>
-<li><p>Elige la opción correcta:</p>
+</div>
+<ol class="arabic simple">
+<li><p>Calcula el polinomio <span class="math notranslate nohighlight">\(p\)</span> de interpolación de Lagrange de orden <span class="math notranslate nohighlight">\(2\)</span> relativo a <span class="math notranslate nohighlight">\(f\)</span> en los nodos <span class="math notranslate nohighlight">\(\{ 1,3,4 \}\)</span>.</p></li>
+<li><p>Calcula el polinomio <span class="math notranslate nohighlight">\(q\)</span> de interpolación de Lagrange de orden <span class="math notranslate nohighlight">\(2\)</span> relativo a <span class="math notranslate nohighlight">\(f\)</span> en los nodos <span class="math notranslate nohighlight">\(\{ -1,0,1 \}\)</span>.</p></li>
+<li><p>Aproxima <span class="math notranslate nohighlight">\(f(0.25)\)</span>  y <span class="math notranslate nohighlight">\(f(2)\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[21]</font></strong> Elige la opción correcta:</p>
 <p>Si usamos el polinomio de Lagrange que interpola a los nodos <span class="math notranslate nohighlight">\((-2,-8)\)</span>, <span class="math notranslate nohighlight">\((-1, 0)\)</span> y <span class="math notranslate nohighlight">\((1, 4)\)</span>, para aproximar el valor en <span class="math notranslate nohighlight">\(x=0\)</span> obtenemos:</p>
-<p>a. -4</p>
-<p>b. 0</p>
-<p>c. 4</p>
-<p>d. con el polinomio de Lagrange que interpola esos nodos no se puede aproximar el valor en <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
-</li>
-<li><p>Elige la opción correcta:</p>
+<ol class="arabic simple">
+<li><p>-4</p></li>
+<li><p>0</p></li>
+<li><p>4</p></li>
+<li><p>con el polinomio de Lagrange que interpola esos nodos no se puede aproximar el valor en <span class="math notranslate nohighlight">\(x=2\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[22]</font></strong> Elige la opción correcta:</p>
 <p>El coeficiente de grado <span class="math notranslate nohighlight">\(1\)</span> del polinomio de Lagrange que interpola los datos de la siguiente tabla</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_{i}\)</span></p></th>
 <th class="head"><p>-2</p></th>
@@ -721,19 +615,21 @@ Utilizando los cálculos previos, calcula una aproximación del número <span cl
 </tr>
 </tbody>
 </table>
-<p>a. es 0</p>
-<p>b. es 1</p>
-<p>c. es 3</p>
-<p>d. no existe ese polinomio.</p>
-</li>
-<li><p><strong>Razona</strong> la veracidad o falsedad de las siguientes afirmaciones:</p>
-<p>a.  Sea <span class="math notranslate nohighlight">\(f:[0,2]\rightarrow \mathbb{R}\)</span> continua y tal que <span class="math notranslate nohighlight">\(f(1)=0\)</span>. Entonces, por el teorema de Bolzano debe ser <span class="math notranslate nohighlight">\(f(0)f(2)&lt;0\)</span>.</p>
-<p>b. Existe un punto <span class="math notranslate nohighlight">\(x \in (0,1)\)</span> tal que <span class="math notranslate nohighlight">\(\displaystyle{e^{x}=\frac{3}{2}}\)</span>.</p>
-<p>c. La función <span class="math notranslate nohighlight">\(g\)</span> dada por <span class="math notranslate nohighlight">\(\,g(x)=\dfrac{16}{{a}^2+2abx+{b}^2{x}^2}\,\)</span>, donde <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> son dos números reales no nulos, es continua siempre que <span class="math notranslate nohighlight">\(x\)</span> difiera de <span class="math notranslate nohighlight">\(\,\frac{-a}{b}\)</span>.</p>
-<p>d. La función <span class="math notranslate nohighlight">\(h\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle{ h(x)=\frac{1}{1+e^{-1/x}} }\)</span> no tiene límite en <span class="math notranslate nohighlight">\(0\)</span>.</p>
-<p>e. La gráfica de la función <span class="math notranslate nohighlight">\(\dfrac{{x}^{3}}{{(x+1)}^2}\)</span> se corta con su asíntota oblícua en un punto de abscisa comprendida entre <span class="math notranslate nohighlight">\(-1\)</span> y <span class="math notranslate nohighlight">\(0\)</span>.</p>
-<p>f. Todo polinomio <span class="math notranslate nohighlight">\(p\)</span> verifica <span class="math notranslate nohighlight">\(p(x+y)=p(x) + p(y)\)</span>.</p>
-</li>
+</div>
+<ol class="arabic simple">
+<li><p>es 0</p></li>
+<li><p>es 1</p></li>
+<li><p>es 3</p></li>
+<li><p>no existe ese polinomio.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[23]</font></strong> <strong>Razona</strong> la veracidad o falsedad de las siguientes afirmaciones:</p>
+<ol class="arabic simple">
+<li><p>Sea <span class="math notranslate nohighlight">\(f:[0,2]\rightarrow \mathbb{R}\)</span> continua y tal que <span class="math notranslate nohighlight">\(f(1)=0\)</span>. Entonces, por el teorema de Bolzano debe ser <span class="math notranslate nohighlight">\(f(0)f(2)&lt;0\)</span>.</p></li>
+<li><p>Existe un punto <span class="math notranslate nohighlight">\(x \in (0,1)\)</span> tal que <span class="math notranslate nohighlight">\(\displaystyle{e^{x}=\frac{3}{2}}\)</span>.</p></li>
+<li><p>La función <span class="math notranslate nohighlight">\(g\)</span> dada por <span class="math notranslate nohighlight">\(\,g(x)=\dfrac{16}{{a}^2+2abx+{b}^2{x}^2}\,\)</span>, donde <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> son dos números reales no nulos, es continua siempre que <span class="math notranslate nohighlight">\(x\)</span> difiera de <span class="math notranslate nohighlight">\(\,\frac{-a}{b}\)</span>.</p></li>
+<li><p>La función <span class="math notranslate nohighlight">\(h\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle{ h(x)=\frac{1}{1+e^{-1/x}} }\)</span> no tiene límite en <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>La gráfica de la función <span class="math notranslate nohighlight">\(\dfrac{{x}^{3}}{{(x+1)}^2}\)</span> se corta con su asíntota oblícua en un punto de abscisa comprendida entre <span class="math notranslate nohighlight">\(-1\)</span> y <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Todo polinomio <span class="math notranslate nohighlight">\(p\)</span> verifica <span class="math notranslate nohighlight">\(p(x+y)=p(x) + p(y)\)</span>.</p></li>
 </ol>
 </section>
 
@@ -749,65 +645,103 @@ Utilizando los cálculos previos, calcula una aproximación del número <span cl
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
-            path: "./capitulos/02"
+            name: "python3",
+            path: "./capitulos\02"
         },
         predefinedOutput: true
     }
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="08.Boletin1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.8. </span>Boletín 1: Funciones reales de una variable real</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="08.Boletin1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.8. </span>Boletín 1: Funciones reales de una variable real</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../03/README.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../03/README.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">3. </span>Derivación de una función de variable real</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela
+</p>
+
+  </div>
   
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <div>
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
 Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
 </div>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,593 +1,419 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Prefacio: técnicas de resolución de problemas &#8212; Calculo en una variable</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/01/NO_INCLUIDO_resolucion_ejercicios';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-148221575-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/udc_logo.png" class="logo__image only-light" alt="Calculo en una variable - Home"/>
+    <script>document.write(`<img src="../../_static/udc_logo.png" class="logo__image only-dark" alt="Calculo en una variable - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="README.html">
-   1. Conjuntos de números
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01.ConjuntosClasicos.html">
-     1.1. Conjuntos clásicos de números
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02.NumerosComplejos.html">
-     1.2. Numeros complejos
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02/README.html">
-   2. Funciones reales de variable real
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/01.Boletin0.html">
-     2.1. Boletín 0
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
-     2.2. Definiciones básicas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/03.FuncionesElementales.html">
-     2.3. Funciones elementales
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/04.Limites.html">
-     2.4. Límites
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/05.Continuidad.html">
-     2.5. Continuidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/06.Dicotomia.html">
-     2.6. Método de dicotomía
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/07.Lagrange.html">
-     2.7. Polinomio de interpolación de Lagrange
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/08.Boletin1.html">
-     2.8. Boletín 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/09.Boletin2.html">
-     2.9. Boletín 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03/README.html">
-   3. Derivación
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
-     3.1. Definición de derivada y propiedades básicas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/02.NewtonRaphson.html">
-     3.2. Método numérico de Newton-Raphson
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
-     3.3. Derivadas sucesivas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
-     3.4. Aplicaciones de la derivada
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
-     3.5. Convexidad y concavidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
-     3.6. Teorema de Taylor
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/07.Boletin3.html">
-     3.7. Boletín 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04/README.html">
-   4. Integración
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
-     4.1. Integración indefinida
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
-     4.2. Integral de Riemann
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/03.TeoremaFundamental.html">
-     4.3. Teorema Fundamental del Cálculo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/04.IntegracionNumerica.html">
-     4.4. Integración numérica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/05.IntegracionImpropia.html">
-     4.5. Integración impropia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/06.AplicacionesIntegral.html">
-     4.6. Aplicaciones de la integral
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">
-     4.7. Ecuaciones diferenciales
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/08.Boletin4.html">
-     4.8. Boletín 4
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   5. Python para cálculo de una variable
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     5.1. Introducción a SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     5.2. Límites y continuidad en SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     5.3. Introducción a NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     5.4. Gráficas con Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/05.Derivacion.html">
-     5.5. Derivación en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/06.Integracion.html">
-     5.6. Integración en Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06/README.html">
-   6. Ejercicios y exámenes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/enero_22.html">
-     6.1. Examen Enero 2022
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/julio_22.html">
-     6.2. Examen Julio 2022
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/enero_23.html">
-     6.3. Examen Enero 2023
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/julio_23.html">
-     6.4. Examen Julio 2023
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">1. Conjuntos de números</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01.ConjuntosClasicos.html">1.1. Conjuntos clásicos de números</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.NumerosComplejos.html">1.2. Numeros complejos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/README.html">2. Funciones reales de variable real</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/01.Boletin0.html">2.1. Boletín 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">2.2. Definiciones básicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/03.FuncionesElementales.html">2.3. Funciones elementales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/04.Limites.html">2.4. Límites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/05.Continuidad.html">2.5. Continuidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/06.Dicotomia.html">2.6. Método de dicotomía</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/07.Lagrange.html">2.7. Polinomio de interpolación de Lagrange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/08.Boletin1.html">2.8. Boletín 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/09.Boletin2.html">2.9. Boletín 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/README.html">3. Derivación</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/01.DerivacionDefProp.html">3.1. Definición de derivada y propiedades básicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/02.NewtonRaphson.html">3.2. Método numérico de Newton-Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/03.DerivadasSucesivas.html">3.3. Derivadas sucesivas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/04.AplicacionesDerivada.html">3.4. Aplicaciones de la derivada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/05.ConcavidadConvexidad.html">3.5. Convexidad y concavidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/06.TeoremaTaylor.html">3.6. Teorema de Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/07.Boletin3.html">3.7. Boletín 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/README.html">4. Integración</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/01.IntegracionIndefinida.html">4.1. Integración indefinida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/02.IntegracionRiemann.html">4.2. Integral de Riemann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/03.TeoremaFundamental.html">4.3. Teorema Fundamental del Cálculo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/04.IntegracionNumerica.html">4.4. Integración numérica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/05.IntegracionImpropia.html">4.5. Integración impropia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/06.AplicacionesIntegral.html">4.6. Aplicaciones de la integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">4.7. Ecuaciones diferenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/08.Boletin4.html">4.8. Boletín 4</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/README.html">5. Python para cálculo de una variable</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/01.IntroduccionSympy.html">5.1. Introducción a SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">5.2. Límites y continuidad en SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/03.IntroduccionNumpy.html">5.3. Introducción a NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">5.4. Gráficas con Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/05.Derivacion.html">5.5. Derivación en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/06.Integracion.html">5.6. Integración en Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/README.html">6. Ejercicios y exámenes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/enero_22.html">6.1. Examen Enero 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/julio_22.html">6.2. Examen Julio 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/enero_23.html">6.3. Examen Enero 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/julio_23.html">6.4. Examen Julio 2023</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/capitulos/01/NO_INCLUIDO_resolucion_ejercicios.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/capitulos/01/NO_INCLUIDO_resolucion_ejercicios.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leer-bien-el-problema">
-   Leer bien el problema.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pensar-un-plan">
-   Pensar un plan.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#llevar-a-cabo-el-plan">
-   Llevar a cabo el plan.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#revisar-el-resultado">
-   Revisar el resultado.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#escribirlo-de-forma-que-otra-persona-pueda-entenderlo">
-   Escribirlo de forma que otra persona pueda entenderlo.
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Prefacio: técnicas de resolución de problemas</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leer-bien-el-problema">
-   Leer bien el problema.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pensar-un-plan">
-   Pensar un plan.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#llevar-a-cabo-el-plan">
-   Llevar a cabo el plan.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#revisar-el-resultado">
-   Revisar el resultado.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#escribirlo-de-forma-que-otra-persona-pueda-entenderlo">
-   Escribirlo de forma que otra persona pueda entenderlo.
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Prefacio: técnicas de resolución de problemas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leer-bien-el-problema">Leer bien el problema.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pensar-un-plan">Pensar un plan.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llevar-a-cabo-el-plan">Llevar a cabo el plan.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisar-el-resultado">Revisar el resultado.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escribirlo-de-forma-que-otra-persona-pueda-entenderlo">Escribirlo de forma que otra persona pueda entenderlo.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="prefacio-tecnicas-de-resolucion-de-problemas">
-<h1>Prefacio: técnicas de resolución de problemas<a class="headerlink" href="#prefacio-tecnicas-de-resolucion-de-problemas" title="Permalink to this headline">#</a></h1>
+<h1>Prefacio: técnicas de resolución de problemas<a class="headerlink" href="#prefacio-tecnicas-de-resolucion-de-problemas" title="Link to this heading">#</a></h1>
 <p>Antes de nada, debemos indicar que no existen reglas rígidas para resolver un problema
 matemático. Cada uno de ellos debe estudiarse por separado. Sin embargo, hay una serie
 de pasos que en algunos casos nos ayudan y en otros son imprescindibles para la
 resolución del problema.</p>
 <section id="leer-bien-el-problema">
-<h2>Leer bien el problema.<a class="headerlink" href="#leer-bien-el-problema" title="Permalink to this headline">#</a></h2>
+<h2>Leer bien el problema.<a class="headerlink" href="#leer-bien-el-problema" title="Link to this heading">#</a></h2>
 <p>Debemos asegurarnos de que lo hemos comprendido con claridad. Debemos hacernos unas
 preguntas:</p>
 <ul class="simple">
@@ -604,9 +430,9 @@ velocidad, <span class="math notranslate nohighlight">\(t\)</span> para el tiemp
 cuando no venga ya escrita en el enunciado.</p>
 </section>
 <section id="pensar-un-plan">
-<h2>Pensar un plan.<a class="headerlink" href="#pensar-un-plan" title="Permalink to this headline">#</a></h2>
+<h2>Pensar un plan.<a class="headerlink" href="#pensar-un-plan" title="Link to this heading">#</a></h2>
 <p>¿Cómo puedo resolver el problema?  Hay algunos pasos que suelen ayudar:</p>
-<ol>
+<ol class="arabic">
 <li><p>Intentamos reconocer algún patrón conocido. Es decir, intentamos clasificar el
 problema dentro de alguno de los temas que hemos \textit{aprendido} en la asignatura.</p>
 <p>Una vez hecho esto intentamos recordar algunas cosas de ese tema. De qué armas
@@ -631,11 +457,11 @@ final ya es <strong>para nota</strong>.</p>
 </ol>
 </section>
 <section id="llevar-a-cabo-el-plan">
-<h2>Llevar a cabo el plan.<a class="headerlink" href="#llevar-a-cabo-el-plan" title="Permalink to this headline">#</a></h2>
+<h2>Llevar a cabo el plan.<a class="headerlink" href="#llevar-a-cabo-el-plan" title="Link to this heading">#</a></h2>
 <p>No basta con pensar cómo hacerlo. ¡Hay que hacerlo!</p>
 </section>
 <section id="revisar-el-resultado">
-<h2>Revisar el resultado.<a class="headerlink" href="#revisar-el-resultado" title="Permalink to this headline">#</a></h2>
+<h2>Revisar el resultado.<a class="headerlink" href="#revisar-el-resultado" title="Link to this heading">#</a></h2>
 <p>Debemos pensar si el resultado al que hemos llegado tiene sentido, tanto matemático
 como lógico. Si nos pide que calculemos, por ejemplo, el precio óptimo de venta de un
 objeto, éste no podrá ser negativo. Cuando sea posible, debemos buscar algún modo de
@@ -644,7 +470,7 @@ comprobar el resultado.</p>
 utilidad de él.</p>
 </section>
 <section id="escribirlo-de-forma-que-otra-persona-pueda-entenderlo">
-<h2>Escribirlo de forma que otra persona pueda entenderlo.<a class="headerlink" href="#escribirlo-de-forma-que-otra-persona-pueda-entenderlo" title="Permalink to this headline">#</a></h2>
+<h2>Escribirlo de forma que otra persona pueda entenderlo.<a class="headerlink" href="#escribirlo-de-forma-que-otra-persona-pueda-entenderlo" title="Link to this heading">#</a></h2>
 <p>Lamentablemente, es insuficiente con resolver un problema. <em>Debemos mostrarlo</em>.
 Pasar a limpio los ejercicios es importante, incluyendo todos los pasos claves para su
 resolución. El razonamiento debe ser claro y breve. <em>Nunca</em> debemos dar cosas por
@@ -665,51 +491,104 @@ hacía era…</strong>).</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
-            path: "./capitulos/01"
+            name: "python3",
+            path: "./capitulos\01"
         },
         predefinedOutput: true
     }
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leer-bien-el-problema">Leer bien el problema.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pensar-un-plan">Pensar un plan.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llevar-a-cabo-el-plan">Llevar a cabo el plan.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisar-el-resultado">Revisar el resultado.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escribirlo-de-forma-que-otra-persona-pueda-entenderlo">Escribirlo de forma que otra persona pueda entenderlo.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela
+</p>
+
+  </div>
   
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <div>
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
 Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
 </div>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
