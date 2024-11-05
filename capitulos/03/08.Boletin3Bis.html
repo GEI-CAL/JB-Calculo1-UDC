@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.5. Convexidad y concavidad &#8212; Calculo en una variable</title>
+    <title>3.8. Ejercicios que han caído otros años en el tercer control de prácticas &#8212; Calculo en una variable</title>
   
   
   
@@ -73,11 +73,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/03/05.ConcavidadConvexidad';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/03/08.Boletin3Bis';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.6. Teorema de Taylor" href="06.TeoremaTaylor.html" />
-    <link rel="prev" title="3.4. Aplicaciones de la derivada" href="04.AplicacionesDerivada.html" />
+    <link rel="next" title="4. Integración de una función de variable real" href="../04/README.html" />
+    <link rel="prev" title="3.7. Boletín III: Cálculo diferencial de funciones de una variable" href="07.Boletin3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,10 +211,10 @@
 <li class="toctree-l2"><a class="reference internal" href="02.NewtonRaphson.html">3.2. Método numérico de Newton-Raphson</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03.DerivadasSucesivas.html">3.3. Derivadas sucesivas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04.AplicacionesDerivada.html">3.4. Aplicaciones de la derivada</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. Convexidad y concavidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05.ConcavidadConvexidad.html">3.5. Convexidad y concavidad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06.TeoremaTaylor.html">3.6. Teorema de Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07.Boletin3.html">3.7. Boletín 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08.Boletin3Bis.html">3.8. Boletín 3 Bis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Boletín 3 Bis</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../04/README.html">4. Integración</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/03/05.ConcavidadConvexidad.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/03/08.Boletin3Bis.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +329,7 @@
       
       
       
-      <li><a href="../../_sources/capitulos/03/05.ConcavidadConvexidad.ipynb" target="_blank"
+      <li><a href="../../_sources/capitulos/03/08.Boletin3Bis.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,9 +400,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -413,21 +411,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Convexidad y concavidad</h1>
+    <h1>Ejercicios que han caído otros años en el tercer control de prácticas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones">3.5.1. Definiciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convexidad-y-concavidad-para-funciones-suficientemente-derivables">3.5.2. Convexidad y concavidad para funciones suficientemente derivables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-informacion">3.5.3. Más información</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -437,63 +425,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="convexidad-y-concavidad">
-<h1><span class="section-number">3.5. </span>Convexidad y concavidad<a class="headerlink" href="#convexidad-y-concavidad" title="Link to this heading">#</a></h1>
-<section id="definiciones">
-<h2><span class="section-number">3.5.1. </span>Definiciones<a class="headerlink" href="#definiciones" title="Link to this heading">#</a></h2>
-<p>Matemáticamente, la idea de una función convexa es sencilla: es aquella función en la que las rectas secantes están por encima de la gráfica de la función.
-Dicho de forma coloquial: es un vaso en el que no se derramaría el agua.</p>
-<a class="reference internal image-reference" href="../../_images/cap3-convexidad.png"><img alt="../../_images/cap3-convexidad.png" src="../../_images/cap3-convexidad.png" style="width: 400px;" /></a>
-<p>Si recordamos que la recta secante a <span class="math notranslate nohighlight">\(f\)</span> por <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> tiene ecuación <span class="math notranslate nohighlight">\(r(x) =\frac{f(b)-f(a)}{b-a}(x-a) + f(a)\)</span>, obtenemos la siguiente definición formal:</p>
-<div class="proof definition admonition" id="def_convexidad">
-<p class="admonition-title"><span>Definition </span> (Convexidad)</p>
-<section class="definition-content" id="proof-content">
-<p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> es convexa en <span class="math notranslate nohighlight">\([a,b]\)</span> si</p>
-<div class="math notranslate nohighlight">
-\[
-f(z) \leq f(x) + \frac{f(y)-f(x)}{y-x}(z-x) \, , \qquad \forall x &lt; z &lt; y, \quad x,y,z \in [a,b].
-\]</div>
-</section>
-</div><p>Análogamente, diremos que <span class="math notranslate nohighlight">\(f\)</span> es cóncava si la gráfica queda por debajo de la recta secante o, equivalentemente, si su inversa es una función convexa.</p>
-<div class="proof definition admonition" id="def_concavidad">
-<p class="admonition-title"><span>Definition </span> (Concavidad)</p>
-<section class="definition-content" id="proof-content">
-<p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> es cóncava en <span class="math notranslate nohighlight">\([a,b]\)</span> si <span class="math notranslate nohighlight">\(-f\)</span> es convexa en ese intervalo.</p>
-</section>
-</div><p>La última definición vinculada a concavidad/convexidad es la siguiente:</p>
-<div class="proof definition admonition" id="def_punto_inflexion">
-<p class="admonition-title"><span>Definition </span> (Punto de inflexión)</p>
-<section class="definition-content" id="proof-content">
-<p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> tiene un punto de inflexión en <span class="math notranslate nohighlight">\(x_{0}\)</span> si en ese punto la función pasa de cóncava a convexa o viceversa.</p>
-</section>
-</div><a class="reference internal image-reference" href="../../_images/cap_deriv_puntos_inflexion.png"><img alt="../../_images/cap_deriv_puntos_inflexion.png" src="../../_images/cap_deriv_puntos_inflexion.png" style="width: 400px;" /></a>
-</section>
-<section id="convexidad-y-concavidad-para-funciones-suficientemente-derivables">
-<h2><span class="section-number">3.5.2. </span>Convexidad y concavidad para funciones suficientemente derivables<a class="headerlink" href="#convexidad-y-concavidad-para-funciones-suficientemente-derivables" title="Link to this heading">#</a></h2>
-<p>Y ahora una reflexión, que nos llevará a una importante propiedad: si una función es convexa (mira el gráfico del principio de esta sección), su derivada, si existe, será negativa al principio, luego valdrá <span class="math notranslate nohighlight">\(0\)</span> en el mínimo relativo para pasar a ser positiva a continuación. Es decir, la derivada de una función convexa es creciente. Y, por tanto, la derivada de ésta (es decir, la segunda derivada de <span class="math notranslate nohighlight">\(f\)</span>, siempre que exista) será positiva. Por supuesto, pasa lo contrario para una función cóncava.</p>
-<p>Todo esto se resume en la siguiente</p>
-<div class="proof property admonition" id="prop_concavidad_convexidad">
-<p class="admonition-title"><span>Property </span></p>
-<section class="property-content" id="proof-content">
+  <section id="ejercicios-que-han-caido-otros-anos-en-el-tercer-control-de-practicas">
+<h1><span class="section-number">3.8. </span>Ejercicios que han caído otros años en el tercer control de prácticas<a class="headerlink" href="#ejercicios-que-han-caido-otros-anos-en-el-tercer-control-de-practicas" title="Link to this heading">#</a></h1>
+<p><strong><FONT SIZE=4>[1]</font></strong>   Consideramos la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = \left|\log(x)\right| - \frac{1}{2}\)</span> en el intervalo <span class="math notranslate nohighlight">\(I=[\frac{1}{2},\frac{3}{2}]\)</span>.</p>
 <ul class="simple">
-<li><p>Sea <span class="math notranslate nohighlight">\(f:[a,b] \longrightarrow \mathbb{R}\)</span> continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y
-derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>. Entonces <span class="math notranslate nohighlight">\(f\)</span> es convexa en <span class="math notranslate nohighlight">\([a,b]\)</span> si y sólo
-si <span class="math notranslate nohighlight">\(f'\)</span> es creciente en <span class="math notranslate nohighlight">\((a,b)\)</span>. Esto equivale a que <span class="math notranslate nohighlight">\(f'' \geq 0\)</span>,
-si <span class="math notranslate nohighlight">\(f\)</span> tiene derivada segunda.</p></li>
-<li><p>Análogamente, <span class="math notranslate nohighlight">\(f\)</span> es cóncava en <span class="math notranslate nohighlight">\([a,b]\)</span> si y sólo si <span class="math notranslate nohighlight">\(f'\)</span> es decreciente
-en <span class="math notranslate nohighlight">\((a,b)\)</span> (es decir, si y sólo si <span class="math notranslate nohighlight">\(f'' \leq 0\)</span>, en caso de  existir derivada segunda).</p></li>
+<li><p>Represéntala con <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>.</p></li>
+<li><p>Comprueba (ayudándote de <code class="docutils literal notranslate"><span class="pre">Python</span></code>) que tiene una raíz en <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+<li><p>Para nota: ¿podrías demostrar que esa raíz es única?</p></li>
+<li><p>Aproxímala utilizando el método de Newton-Raphson tomando <span class="math notranslate nohighlight">\(x_{0}=\frac{8}{10}\)</span> con un error relativo menor que <span class="math notranslate nohighlight">\(1.e-9\)</span>.</p></li>
+<li><p>Aproxímala utilizando el método de Newton-Raphson tomando <span class="math notranslate nohighlight">\(x_{0}=\frac{12}{10}\)</span> con un error relativo menor que <span class="math notranslate nohighlight">\(1.e-9\)</span>.</p></li>
+<li><p>¿Podrías explicar que ha pasado en los dos apartados anteriores?</p></li>
+<li><p>Calcula, ayudándote de <code class="docutils literal notranslate"><span class="pre">Python</span></code>, el máximo y el mínimo absoluto de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
 </ul>
-</section>
-</div><p>Ilustramos esta propiedad en la siguiente figura:</p>
-<a class="reference internal image-reference" href="../../_images/cap_deriv_prop_convexidad.png"><img alt="../../_images/cap_deriv_prop_convexidad.png" src="../../_images/cap_deriv_prop_convexidad.png" style="width: 400px;" /></a>
-</section>
-<section id="mas-informacion">
-<h2><span class="section-number">3.5.3. </span>Más información<a class="headerlink" href="#mas-informacion" title="Link to this heading">#</a></h2>
+<p><strong><FONT SIZE=4>[2]</font></strong>  Consideramos la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = e^{\left|\sin(x)\right|} - 2\)</span> en el intervalo <span class="math notranslate nohighlight">\(I=[1.8,3.6]\)</span>.</p>
 <ul class="simple">
-<li><p>En esta página web puedes ver más explicaciones y algunos ejemplos (tanto resueltos como propuestos): <a class="reference external" href="https://www.funciones.xyz/concavidad-y-convexidad-de-una-funcion-curvatura/">https://www.funciones.xyz/concavidad-y-convexidad-de-una-funcion-curvatura/</a></p></li>
-<li><p>En la wiki empiezan fácil, pero van hacia conceptos más abstractos. Aún así, puedes echarle un vistazo: <a class="reference external" href="https://es.wikipedia.org/wiki/Funci%C3%B3n_convexa">https://es.wikipedia.org/wiki/Función_convexa</a></p></li>
+<li><p>Represéntala con <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>.</p></li>
+<li><p>Comprueba (ayudándote de <code class="docutils literal notranslate"><span class="pre">Python</span></code>) que tiene una raíz en <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+<li><p>Para nota: ¿podrías demostrar que esa raíz es única?</p></li>
+<li><p>Aproxímala utilizando el método de Newton-Raphson tomando <span class="math notranslate nohighlight">\(x_{0}=1.8\)</span> con un error relativo menor que <span class="math notranslate nohighlight">\(1.e-9\)</span>.</p></li>
+<li><p>Aproxímala utilizando el método de Newton-Raphson tomando <span class="math notranslate nohighlight">\(x_{0}=3.6\)</span> con un error relativo menor que <span class="math notranslate nohighlight">\(1.e-9\)</span>.</p></li>
+<li><p>¿Podrías explicar que ha pasado en los dos apartados anteriores?</p></li>
+<li><p>Calcula, ayudándote de <code class="docutils literal notranslate"><span class="pre">Python</span></code>, el máximo y el mínimo absoluto de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
 </ul>
-</section>
+<p><strong><FONT SIZE=4>[3]</font></strong> Consideramos la ecuación <span class="math notranslate nohighlight">\(\sin (3x) = 0\)</span></p>
+<ul class="simple">
+<li><p>Prueba que tiene una única raíz en el intervalo <span class="math notranslate nohighlight">\([\pi/6, \pi/2]\)</span>.</p></li>
+<li><p>Aproxima, con una tolerancia inferior a <span class="math notranslate nohighlight">\(10^{-10}\)</span>, una raíz de la ecuación mediante el algoritmo de Newton,
+partiendo de <span class="math notranslate nohighlight">\(x_0 = 1\)</span> y de  <span class="math notranslate nohighlight">\(x_0 = \pi / 6\)</span>.
+El código deberá ir mostrando las imágenes de las aproximaciones que va calculando.
+Interpreta las salidas obtenidas.</p></li>
+</ul>
+<p><strong><FONT SIZE=4>[4]</font></strong></p>
+<ul>
+<li><p>Calcula el polinomio de MacLaurin de grado cinco de la función <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> y utilízalo para calcular una aproximación del número <span class="math notranslate nohighlight">\(r=e\)</span>. Acota el error cometido en la aproximación. Dibuja la función <span class="math notranslate nohighlight">\(f\)</span> y el polinomio de interpolación en el intervalo <span class="math notranslate nohighlight">\([-4,4]\)</span>.</p>
+<p>Debes resolver todo a mano y en Python. La representación gráfica es suficiente hacerla con Python.</p>
+</li>
+<li><p>Aproxima numéricamente la raíz del polinomio que has construído en el apartado anterior con el método de Newton-Raphson partiendo de cero como aproximación inicial. Calcula la primera iteración del método a mano.</p></li>
+</ul>
+<p><strong><FONT SIZE=4>[5]</font></strong>   Consideramos la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x) = x\log(x)\)</span>, en el intervalo <span class="math notranslate nohighlight">\(I=[0,2]\)</span>.</p>
+<ul class="simple">
+<li><p>Represéntala con <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>.</p></li>
+<li><p>Calcula su polinomio de Taylor centrado en <span class="math notranslate nohighlight">\(x_{0}=1\)</span> de orden <span class="math notranslate nohighlight">\(n=10\)</span>.</p></li>
+<li><p>Calcula su polinomio de Taylor centrado en <span class="math notranslate nohighlight">\(x_{0}=0.5\)</span> de orden <span class="math notranslate nohighlight">\(n=10\)</span>.</p></li>
+<li><p>Calcula su polinomio de Taylor centrado en <span class="math notranslate nohighlight">\(x_{0}=1.25\)</span> de orden <span class="math notranslate nohighlight">\(n=10\)</span>.</p></li>
+<li><p>Aproxima con los polinomios anteriores el valor <span class="math notranslate nohighlight">\(\log\left(\frac{3}{2}\sqrt{\frac{3}{2}}\right)\)</span>. Compara los resultados con la solución exacta. ¿Qué conclusiones sacas?</p></li>
+<li><p>Toma el polinomio que haya dado mejor resultado en el apartado anterior y súbelo a orden <span class="math notranslate nohighlight">\(n=20\)</span>. Con él, vuelve a aproximar <span class="math notranslate nohighlight">\(\log\left(\frac{3}{2}\sqrt{\frac{3}{2}}\right)\)</span>. ¿Qué conclusiones sacas?</p></li>
+</ul>
+<p><strong><FONT SIZE=4>[6]</font></strong></p>
+<ul>
+<li><p>Sea <span class="math notranslate nohighlight">\(f(x)=\log\left(\dfrac{1+x}{1-x}\right)\)</span>. Calcula el dominio de <span class="math notranslate nohighlight">\(f\)</span>. Estudia la concavidad y la convexidad de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Debes resolver todo a mano. Puedes ayudarte de Python para comprobar los resultados.</p>
+</li>
+<li><p>Calcula el polinomio de Maclaurin de grado dos de la función <span class="math notranslate nohighlight">\(f\)</span> y utilízalo para calcular una aproximación del número <span class="math notranslate nohighlight">\(r=\log(3)\)</span>. Acota el error cometido en la aproximación. Dibuja la función <span class="math notranslate nohighlight">\(f\)</span> y el polinomio
+en el intervalo <span class="math notranslate nohighlight">\((-1,1)\)</span>. Nota:</p>
+<p>Debes resolver todo a mano y en Python. La representación gráfica es suficiente hacerla con Python.</p>
+</li>
+</ul>
+<p><strong><FONT SIZE=4>[7]</font></strong> Sea <span class="math notranslate nohighlight">\(f(x) = \sin {(x -\pi)}\)</span>. Para <span class="math notranslate nohighlight">\(x_0 = 3\)</span> se pide:</p>
+<ul class="simple">
+<li><p>Aproxima <span class="math notranslate nohighlight">\(\sin {(4 - \pi)}\)</span> mediante <span class="math notranslate nohighlight">\(P_6\,\)</span>, polinomio de Taylor de orden 6 centrado en <span class="math notranslate nohighlight">\(x_0\)</span>. Muestra al menos 6 cifras decimales.</p></li>
+<li><p>Obtén el resto de Taylor para dicha aproximación y acótalo.</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -527,20 +519,20 @@ en <span class="math notranslate nohighlight">\((a,b)\)</span> (es decir, si y s
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="04.AplicacionesDerivada.html"
+       href="07.Boletin3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.4. </span>Aplicaciones de la derivada</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Boletín III: Cálculo diferencial de funciones de una variable</p>
       </div>
     </a>
     <a class="right-next"
-       href="06.TeoremaTaylor.html"
+       href="../04/README.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.6. </span>Teorema de Taylor</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Integración de una función de variable real</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -550,23 +542,6 @@ en <span class="math notranslate nohighlight">\((a,b)\)</span> (es decir, si y s
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones">3.5.1. Definiciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convexidad-y-concavidad-para-funciones-suficientemente-derivables">3.5.2. Convexidad y concavidad para funciones suficientemente derivables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-informacion">3.5.3. Más información</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
